@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Hook
   - Terrain
+  - Player Detector
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - Terrain
   - Player
   - Grappling Hook
-  - 
+  - Player Detector
   - 
   - 
   - 
