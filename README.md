@@ -8,10 +8,18 @@
  - Blender - 3D Modelling, UV Mapping, Texture Editing
 
 ## Todo
- - [ ] Player Movement
+- [ ] Player Movement
 	- [x] Walking
 	- [ ] Jumping
 	- [x] Grappling hook
- - [ ] Aesthetics
-	 - [x] Blooming Shader
-	 - [ ] Water
+- [x] Torch (Environment)
+	- [x] Bloom
+	- [x] 2D Light
+	- [x] Particles
+- [ ] Handheld Torch
+	- [x] Bloom
+	- [x] 2D Light
+	- [x] Particles
+	- [x] Switching Directions
+	- [ ] Throwing Mechanic
+	- [ ] Fire Mechanic
