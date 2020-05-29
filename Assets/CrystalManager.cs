@@ -1,15 +1,13 @@
-﻿//using System;
-//using System.Collections;
-//using System.Collections.Generic;
-
-using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
 public class CrystalManager : MonoBehaviour
 {
     public GameObject ParticleBurst;
+    //private ParticleSystem CurrentParticleBurst;
     private Animator CrystalAnimator;
+    [SerializeField]
+    private bool CreatedBurst = false;
     // Start is called before the first frame update
     
     void Start()
@@ -25,20 +23,23 @@ public class CrystalManager : MonoBehaviour
 
     public void DestroyThis()
     {
+        //CurrentParticleBurst.Stop();
         Destroy(gameObject);
     }
 
     public void CreateParticleBurst()
     {
-        Instantiate(ParticleBurst);
+        if (!CreatedBurst)
+        {
+            CreatedBurst = true;
+            Instantiate(ParticleBurst);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player")){
             CrystalAnimator.SetBool("Destroying", true);
-            print("Heck2");
         }
-        print("Heck");
     }
 }
