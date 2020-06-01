@@ -1,6 +1,7 @@
 # DTG-2020
 > WARNING: This Branch is Under Active Development Scripts Maybe Incomplete And/Or Fail To Compile
 
+> WARNING: By using the code in this project in any form I and any person who has contributed code to this project is entitled to take any bluetooth device off your body and eat it.
 ## Required Software
  - Unity 2020.2.0a10 - To build and edit levels
  - Code Editor (e.g. Jetbrains Rider, Visual Studio etc.) - To Edit Code
