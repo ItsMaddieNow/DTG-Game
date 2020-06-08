@@ -1,4 +1,4 @@
-﻿namespace UnityEngine.U2D.Animation
+namespace UnityEngine.U2D.Animation
 {
     internal class SpriteSkinManager
     {

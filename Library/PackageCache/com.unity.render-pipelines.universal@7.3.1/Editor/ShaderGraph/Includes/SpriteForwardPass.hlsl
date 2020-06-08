@@ -1,4 +1,4 @@
-﻿#if ETC1_EXTERNAL_ALPHA
+#if ETC1_EXTERNAL_ALPHA
     TEXTURE2D(_AlphaTex); SAMPLER(sampler_AlphaTex);
     float _EnableAlphaTexture;
 #endif

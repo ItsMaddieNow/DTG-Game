@@ -1,4 +1,4 @@
-﻿void BuildInputData(Varyings input, float3 normal, out InputData inputData)
+void BuildInputData(Varyings input, float3 normal, out InputData inputData)
 {
     inputData.positionWS = input.positionWS;
 #ifdef _NORMALMAP

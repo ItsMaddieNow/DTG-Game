@@ -1,4 +1,4 @@
-﻿#if ENABLE_ANIMATION_COLLECTION
+#if ENABLE_ANIMATION_COLLECTION
 using Unity.Collections;
 using Unity.Jobs;
 using Unity.Mathematics;

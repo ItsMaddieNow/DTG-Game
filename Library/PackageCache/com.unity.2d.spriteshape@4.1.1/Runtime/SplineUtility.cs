@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Unity.Collections;
 using System.Runtime.InteropServices;
 using Unity.Collections.LowLevel.Unsafe;

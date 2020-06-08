@@ -1,4 +1,4 @@
-﻿#if ENABLE_ANIMATION_COLLECTION && ENABLE_ANIMATION_BURST
+#if ENABLE_ANIMATION_COLLECTION && ENABLE_ANIMATION_BURST
 using System;
 using System.Collections.Generic;
 using Unity.Collections;

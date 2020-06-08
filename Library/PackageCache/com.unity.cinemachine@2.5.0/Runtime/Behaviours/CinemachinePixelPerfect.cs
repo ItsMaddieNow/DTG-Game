@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 #if CINEMACHINE_LWRP_7_1_3 || CINEMACHINE_PIXEL_PERFECT_2_0_3
 

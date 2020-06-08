@@ -1,4 +1,4 @@
-﻿using System.IO;
+using System.IO;
 using UnityEditor;
 
 namespace Unity.U2D.Animation.Sample

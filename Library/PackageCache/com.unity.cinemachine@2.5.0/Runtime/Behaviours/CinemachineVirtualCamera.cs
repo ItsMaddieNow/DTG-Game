@@ -1,4 +1,4 @@
-﻿using Cinemachine.Utility;
+using Cinemachine.Utility;
 using System;
 using System.Collections.Generic;
 using UnityEngine;

@@ -1,4 +1,4 @@
-﻿struct vertex_t
+struct vertex_t
 {
     float4	position		: POSITION;
     float3	normal			: NORMAL;

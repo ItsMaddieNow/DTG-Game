@@ -1,4 +1,4 @@
-﻿PackedVaryings vert(Attributes input)
+PackedVaryings vert(Attributes input)
 {
     Varyings output = (Varyings)0;
     output = BuildVaryings(input);

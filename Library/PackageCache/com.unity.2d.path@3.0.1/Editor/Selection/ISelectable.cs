@@ -1,4 +1,4 @@
-﻿namespace UnityEditor.U2D.Path
+namespace UnityEditor.U2D.Path
 {
     public interface ISelectable<T>
     {

@@ -1,4 +1,4 @@
-﻿using UnityEditor.U2D.Animation;
+using UnityEditor.U2D.Animation;
 using UnityEngine.UIElements;
 
 namespace UnityEditor.U2D.Layout
