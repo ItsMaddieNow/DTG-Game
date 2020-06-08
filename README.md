@@ -3,7 +3,7 @@
 
 > WARNING: By using the code in this project in any form I and any person who has contributed code to this project is entitled to take any bluetooth device off your body and eat it.
 ## Required Software
- - Unity 2020.2.0a10 - To build and edit levels
+ - Unity 2019.4.15f1 - To build and edit levels
  - Code Editor (e.g. Jetbrains Rider, Visual Studio etc.) - To Edit Code
  - Image editors (e.g. Glimpse, Photoshop, Piskel)
  - Blender - 3D Modelling, UV Mapping, Texture Editing
