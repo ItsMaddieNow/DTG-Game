@@ -30,3 +30,6 @@
 	- [ ] Particles
 	- [ ] Animations
 	- [ ] Item Effects
+- [ ] Pause Screen
+	- [ ] Blur Effect
+	- [ ] Stop Time
