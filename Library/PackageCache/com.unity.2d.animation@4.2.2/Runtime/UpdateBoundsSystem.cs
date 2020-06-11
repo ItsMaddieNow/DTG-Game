@@ -1,4 +1,4 @@
-#if ENABLE_ENTITIES
+﻿#if ENABLE_ENTITIES
 
 using System.Collections.Generic;
 using Unity.Collections;

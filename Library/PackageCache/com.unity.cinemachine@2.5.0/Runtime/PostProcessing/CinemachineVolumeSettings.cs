@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 #if CINEMACHINE_HDRP
     using System.Collections.Generic;
