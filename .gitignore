@@ -12,8 +12,6 @@
 
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta
-# Never ignore PSD files
-!/[Aa]ssets/**/*.psd
 
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # /[Aa]ssets/AssetStoreTools*
