@@ -5377,6 +5377,7 @@ GameObject:
   - component: {fileID: 467081878}
   - component: {fileID: 467081877}
   - component: {fileID: 467081876}
+  - component: {fileID: 467081879}
   m_Layer: 0
   m_Name: Fireflies
   m_TagString: Untagged
@@ -5405,7 +5406,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: e969c3f2501b8654fbe40ef6c3ab6153, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10179,6 +10179,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &467081879
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467081875}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 22c3482b6f13661348601bf8a230c43a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &602493284
 GameObject:
   m_ObjectHideFlags: 0
@@ -10232,7 +10251,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: d4777cc455d629826a73d57acf41b990, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15307,7 +15325,7 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.0625}
+  m_Offset: {x: 0, y: 0.015625}
   m_Size: {x: 0.75, y: 1.40625}
   m_Direction: 0
 --- !u!114 &899566046
@@ -15404,10 +15422,11 @@ MonoBehaviour:
   GravityScale: 0.5
   FallMultiplier: 2
   OnGround: 0
-  MaxDistance: 0.75
+  MaxDistance: 0.71875
   RaycastLayerDetect:
     serializedVersion: 2
     m_Bits: 311
+  ColliderOffset: {x: 0.37, y: 0, z: 0}
 --- !u!95 &899566050
 Animator:
   serializedVersion: 3
@@ -15608,7 +15627,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1047972911
 Transform:
   m_ObjectHideFlags: 0
@@ -15950,10 +15969,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AssetsPPU: 32
-  m_RefResolutionX: 256
-  m_RefResolutionY: 144
+  m_RefResolutionX: 384
+  m_RefResolutionY: 216
   m_UpscaleRT: 0
-  m_PixelSnapping: 1
+  m_PixelSnapping: 0
   m_CropFrameX: 0
   m_CropFrameY: 0
   m_StretchFill: 0
@@ -20939,7 +20958,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: ff382213dbc7584da8dc7fac8625f476, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -26623,7 +26641,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 20, y: 25}
+  m_Size: {x: 0.625, y: 0.78125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

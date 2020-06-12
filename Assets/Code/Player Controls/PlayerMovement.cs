@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     private bool OnGround;
     public float MaxDistance = 0.6f;
     public LayerMask RaycastLayerDetect;
+    public Vector3 ColliderOffset;
 
     //Controls
     private PlayerControls Controls;
@@ -54,7 +55,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        OnGround = (Physics2D.Raycast(transform.position, -transform.up, MaxDistance, RaycastLayerDetect) || Physics2D.Raycast(transform.position, -transform.up, MaxDistance, RaycastLayerDetect));
+        OnGround = (
+            Physics2D.Raycast(transform.position + ColliderOffset, -transform.up, MaxDistance, RaycastLayerDetect) || 
+            Physics2D.Raycast(transform.position - ColliderOffset, -transform.up, MaxDistance, RaycastLayerDetect) || 
+            Physics2D.Raycast(transform.position, -transform.up, MaxDistance, RaycastLayerDetect)
+        );
     }
 
     private void FixedUpdate()
@@ -134,6 +139,8 @@ public class PlayerMovement : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position + ColliderOffset, transform.position + ColliderOffset + -transform.up * MaxDistance);
+        Gizmos.DrawLine(transform.position - ColliderOffset, transform.position - ColliderOffset + -transform.up * MaxDistance);
         Gizmos.DrawLine(transform.position, transform.position + -transform.up * MaxDistance);
     }
 

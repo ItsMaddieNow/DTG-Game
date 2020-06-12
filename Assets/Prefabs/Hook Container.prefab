@@ -68,9 +68,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Rb: {fileID: -8320911978712150761}
-  Player: {fileID: 0}
+  PlayerScript: {fileID: 0}
   InitialForce: 3.46
   Direction: {x: 0, y: 0}
+  RopeRenderer: {fileID: 0}
 --- !u!60 &5008615455934875718
 PolygonCollider2D:
   m_ObjectHideFlags: 0
