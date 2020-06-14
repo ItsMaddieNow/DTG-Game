@@ -6,7 +6,7 @@
  - Unity 2020.2.0a13 - To build and edit levels
  - Code Editor (e.g. Jetbrains Rider, Visual Studio etc.) - To Edit Code
  - Image editors (e.g. Glimpse, Photoshop, Piskel)
- - Blender - 3D Modelling, UV Mapping, Texture Editing
+ - Blender - 3D Modeling, UV Mapping, Texture Editing
 
 ## Todo
 - [x] Player Movement
