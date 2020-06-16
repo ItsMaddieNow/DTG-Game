@@ -14,45 +14,121 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> c546bfa6... fuck
-    x: 0
-<<<<<<< HEAD
-    y: 64
-    width: 3840
-    height: 2071
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    x: 32
-    y: 28.666668
+    x: 7.3333335
+    y: 50
     width: 1265.3334
     height: 622.6667
->>>>>>> c276296a... Fuckngffgfj
-=======
->>>>>>> 3e9e649f... Completed Jumping (Still a bit buggy but it works)
-=======
-    x: 25.333334
-    y: 180
-    width: 1265.3334
-    height: 622.6667
->>>>>>> 874932ca... working on shaders
-=======
->>>>>>> c546bfa6... fuck
-=======
-    y: 42.666668
-    width: 1280
-    height: 637.3334
->>>>>>> 5a92a979... Progress on Water shader
   m_ShowMode: 4
-  m_Title: Scene
-  m_RootView: {fileID: 2}
+  m_Title: 
+  m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
-  m_Maximized: 1
+  m_Maximized: 0
 --- !u!114 &2
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 9}
+  - {fileID: 3}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 30
+    width: 1265
+    height: 573
+  m_MinSize: {x: 679, y: 492}
+  m_MaxSize: {x: 14002, y: 14042}
+  vertical: 0
+  controlID: 47
+--- !u!114 &3
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 989
+    y: 0
+    width: 276
+    height: 573
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 14}
+  m_Panes:
+  - {fileID: 14}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &4
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 244
+    height: 302
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 15}
+  m_Panes:
+  - {fileID: 15}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &5
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 302
+    width: 989
+    height: 271
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
+  m_ActualView: {fileID: 13}
+  m_Panes:
+  - {fileID: 13}
+  - {fileID: 18}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -65,22 +141,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
-  - {fileID: 3}
-  - {fileID: 5}
-  - {fileID: 4}
+  - {fileID: 7}
+  - {fileID: 2}
+  - {fileID: 8}
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1280
-    height: 637.3334
+    width: 1265
+    height: 623
   m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
   m_TopViewHeight: 30
   m_UseBottomView: 1
   m_BottomViewHeight: 20
---- !u!114 &3
+--- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,15 +173,14 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1280
+    width: 1265
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
-  m_LoadedToolbars:
-  - {fileID: 21}
-  m_MainToolbar: {fileID: 21}
+  m_LoadedToolbars: []
+  m_MainToolbar: {fileID: 19}
   m_LastLoadedLayoutName: 
---- !u!114 &4
+--- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,258 +196,12 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 617.3334
-    width: 1280
+    y: 603
+    width: 1265
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
---- !u!114 &5
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children:
-  - {fileID: 6}
-  - {fileID: 11}
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 30
-    width: 1280
-    height: 587.3334
-  m_MinSize: {x: 679, y: 492}
-  m_MaxSize: {x: 14002, y: 14042}
-  vertical: 0
-  controlID: 1351
---- !u!114 &6
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children:
-  - {fileID: 7}
-  - {fileID: 10}
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    width: 3840
-    height: 2071
-<<<<<<< HEAD
-<<<<<<< HEAD
-  m_MinSize: {x: 875, y: 300}
-=======
-    width: 1265.3334
-    height: 622.6667
-  m_MinSize: {x: 875, y: 542}
->>>>>>> c276296a... Fuckngffgfj
-=======
-  m_MinSize: {x: 875, y: 392}
->>>>>>> 3e9e649f... Completed Jumping (Still a bit buggy but it works)
-=======
-  m_MinSize: {x: 875, y: 442}
->>>>>>> d282b9ad... start of water shader
-  m_MaxSize: {x: 10000, y: 10000}
-  m_UseTopView: 1
-  m_TopViewHeight: 30
-  m_UseBottomView: 1
-  m_BottomViewHeight: 20
-=======
-    width: 989.3333
-    height: 572.6667
-  m_MinSize: {x: 403, y: 342}
-  m_MaxSize: {x: 8003, y: 8042}
-  vertical: 1
-  controlID: 381
->>>>>>> 874932ca... working on shaders
-=======
-    width: 3564
-=======
-    width: 2257
->>>>>>> 1231d815... stuff
-    height: 2021
-  m_MinSize: {x: 403, y: 342}
-  m_MaxSize: {x: 8003, y: 8042}
-  vertical: 1
-<<<<<<< HEAD
-  controlID: 103
->>>>>>> c546bfa6... fuck
-=======
-  controlID: 16
->>>>>>> 1231d815... stuff
-=======
-    width: 751.3333
-    height: 587.3334
-  m_MinSize: {x: 403, y: 492}
-  m_MaxSize: {x: 10001, y: 14042}
-  vertical: 1
-  controlID: 1352
->>>>>>> 5a92a979... Progress on Water shader
---- !u!114 &7
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children:
-  - {fileID: 8}
-  - {fileID: 9}
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    width: 3840
-<<<<<<< HEAD
-=======
-    width: 1265.3334
->>>>>>> c276296a... Fuckngffgfj
-=======
->>>>>>> 3e9e649f... Completed Jumping (Still a bit buggy but it works)
-    height: 30
-  m_MinSize: {x: 0, y: 0}
-  m_MaxSize: {x: 0, y: 0}
-  m_LoadedToolbars:
-  - {fileID: 21}
-  m_MainToolbar: {fileID: 21}
-  m_LastLoadedLayoutName: 
-=======
-    width: 989.3333
-    height: 452
-  m_MinSize: {x: 403, y: 221}
-  m_MaxSize: {x: 8003, y: 4021}
-  vertical: 0
-  controlID: 382
->>>>>>> 874932ca... working on shaders
-=======
-    width: 3564
-    height: 1631
-  m_MinSize: {x: 303, y: 221}
-  m_MaxSize: {x: 8003, y: 4021}
-  vertical: 0
-  controlID: 104
->>>>>>> c546bfa6... fuck
-=======
-    width: 2257
-    height: 1302
-  m_MinSize: {x: 403, y: 221}
-  m_MaxSize: {x: 8003, y: 4021}
-  vertical: 0
-  controlID: 17
->>>>>>> 1231d815... stuff
-=======
-    width: 751.3333
-    height: 310
-  m_MinSize: {x: 403, y: 221}
-  m_MaxSize: {x: 8003, y: 4021}
-  vertical: 0
-  controlID: 1353
->>>>>>> 5a92a979... Progress on Water shader
---- !u!114 &8
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children: []
-  m_Position:
-    serializedVersion: 2
-    x: 0
-<<<<<<< HEAD
-    y: 2051
-    width: 3840
-<<<<<<< HEAD
-=======
-    y: 602.6667
-    width: 1265.3334
->>>>>>> c276296a... Fuckngffgfj
-    height: 20
-  m_MinSize: {x: 0, y: 0}
-  m_MaxSize: {x: 0, y: 0}
---- !u!114 &5
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children:
-  - {fileID: 6}
-  - {fileID: 11}
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 30
-<<<<<<< HEAD
-    width: 3840
-    height: 2021
-  m_MinSize: {x: 679, y: 492}
-  m_MaxSize: {x: 14002, y: 14042}
-=======
-    width: 1265.3334
-    height: 572.6667
-  m_MinSize: {x: 680, y: 492}
-  m_MaxSize: {x: 14003, y: 14042}
->>>>>>> c276296a... Fuckngffgfj
-  vertical: 0
-  controlID: 15
---- !u!114 &6
-=======
-    height: 20
-  m_MinSize: {x: 0, y: 0}
-  m_MaxSize: {x: 0, y: 0}
-=======
-    y: 0
-    width: 374
-    height: 310
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 13}
-  m_Panes:
-  - {fileID: 13}
-  m_Selected: 0
-  m_LastSelected: 0
->>>>>>> 874932ca... working on shaders
 --- !u!114 &9
->>>>>>> 3e9e649f... Completed Jumping (Still a bit buggy but it works)
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -381,79 +210,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 1
-  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: SceneView
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
   m_EditorClassIdentifier: 
-  m_Children: []
+  m_Children:
+  - {fileID: 10}
+  - {fileID: 5}
   m_Position:
     serializedVersion: 2
-    x: 374
+    x: 0
     y: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    width: 3480
-    height: 2021
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    width: 987
-    height: 572.6667
->>>>>>> c276296a... Fuckngffgfj
+    width: 989
+    height: 573
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
-=======
-  m_MinSize: {x: 403, y: 342}
-=======
-  m_MinSize: {x: 303, y: 342}
->>>>>>> d282b9ad... start of water shader
-  m_MaxSize: {x: 8003, y: 8042}
->>>>>>> 3e9e649f... Completed Jumping (Still a bit buggy but it works)
   vertical: 1
-  controlID: 16
-=======
-    width: 788.6666
-    height: 452
-  m_MinSize: {x: 202, y: 221}
-=======
-    width: 3106
-    height: 1631
-  m_MinSize: {x: 102, y: 121}
->>>>>>> c546bfa6... fuck
-=======
-    width: 1131
-    height: 1302
-=======
-    width: 377.3333
-    height: 310
->>>>>>> 5a92a979... Progress on Water shader
-  m_MinSize: {x: 202, y: 221}
->>>>>>> 1231d815... stuff
-  m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 14}
-  m_Panes:
-  - {fileID: 14}
-  - {fileID: 15}
-  - {fileID: 16}
-  - {fileID: 12}
-<<<<<<< HEAD
-<<<<<<< HEAD
-  m_Selected: 0
-  m_LastSelected: 3
->>>>>>> 874932ca... working on shaders
-=======
-  m_Selected: 3
-  m_LastSelected: 0
->>>>>>> c546bfa6... fuck
-=======
-  m_Selected: 0
-<<<<<<< HEAD
-  m_LastSelected: 1
->>>>>>> 1231d815... stuff
-=======
-  m_LastSelected: 3
->>>>>>> 5a92a979... Progress on Water shader
+  controlID: 48
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -463,79 +235,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 1
-  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ProjectBrowser
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
   m_EditorClassIdentifier: 
-  m_Children: []
+  m_Children:
+  - {fileID: 4}
+  - {fileID: 11}
   m_Position:
     serializedVersion: 2
     x: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     y: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    width: 3389
-    height: 1602
-=======
-    width: 987
+    width: 989
     height: 302
->>>>>>> c276296a... Fuckngffgfj
-=======
-    width: 3334
-    height: 1592
->>>>>>> 3e9e649f... Completed Jumping (Still a bit buggy but it works)
   m_MinSize: {x: 403, y: 221}
-=======
-    width: 3480
-    height: 1723
-  m_MinSize: {x: 303, y: 221}
->>>>>>> d282b9ad... start of water shader
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 17
-=======
-    y: 452
-    width: 989.3333
-    height: 120.66669
-=======
-    y: 1631
-    width: 3564
-    height: 390
->>>>>>> c546bfa6... fuck
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
-=======
-    y: 1302
-    width: 2257
-    height: 719
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
->>>>>>> 1231d815... stuff
-  m_ActualView: {fileID: 18}
-=======
-    y: 310
-    width: 751.3333
-    height: 277.33337
-  m_MinSize: {x: 231, y: 271}
-  m_MaxSize: {x: 10001, y: 10021}
-  m_ActualView: {fileID: 17}
->>>>>>> 5a92a979... Progress on Water shader
-  m_Panes:
-  - {fileID: 17}
-  - {fileID: 18}
-  - {fileID: 19}
-<<<<<<< HEAD
-  m_Selected: 1
-  m_LastSelected: 0
->>>>>>> 874932ca... working on shaders
-=======
-  m_Selected: 0
-  m_LastSelected: 1
->>>>>>> 5a92a979... Progress on Water shader
+  controlID: 49
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -551,65 +266,19 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 751.3333
+    x: 244
     y: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    width: 519
-    height: 1602
-=======
-    width: 201
+    width: 745
     height: 302
->>>>>>> c276296a... Fuckngffgfj
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 13}
-=======
-    width: 2620
-    height: 1592
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 18}
->>>>>>> 3e9e649f... Completed Jumping (Still a bit buggy but it works)
-=======
-    width: 3116
-    height: 1723
-  m_MinSize: {x: 102, y: 121}
-  m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 12}
->>>>>>> d282b9ad... start of water shader
-=======
-    width: 276.00006
-    height: 572.6667
-=======
-    width: 276
-    height: 2021
->>>>>>> c546bfa6... fuck
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
-=======
-    width: 1583
-    height: 2021
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
->>>>>>> 1231d815... stuff
-=======
-    width: 528.6667
-    height: 587.3334
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
->>>>>>> 5a92a979... Progress on Water shader
-  m_ActualView: {fileID: 20}
->>>>>>> 874932ca... working on shaders
+  m_ActualView: {fileID: 16}
   m_Panes:
-  - {fileID: 20}
+  - {fileID: 16}
+  - {fileID: 17}
+  - {fileID: 12}
   m_Selected: 0
-  m_LastSelected: 0
+  m_LastSelected: 1
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -618,110 +287,24 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 924ffcbe75518854f97b48776d0f1939, type: 3}
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12111, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 400, y: 100}
+  m_MaxSize: {x: 2048, y: 2048}
   m_TitleContent:
-<<<<<<< HEAD
-    m_Text: Water*
-    m_Image: {fileID: 2800000, guid: 7d62654fc399cc349a1ed7e0eab44ff0, type: 3}
+    m_Text: Asset Store
+    m_Image: {fileID: 357073275683767465, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    x: 519
-    y: 0
-    width: 2870
-    height: 1602
-=======
-    x: 201
-    y: 0
-    width: 786
-    height: 302
->>>>>>> c276296a... Fuckngffgfj
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 14}
-  m_Panes:
-  - {fileID: 14}
-  - {fileID: 15}
-  - {fileID: 16}
-  - {fileID: 12}
-  m_Selected: 0
-  m_LastSelected: 3
---- !u!114 &10
-=======
-    x: 714
-=======
-    x: 364
->>>>>>> d282b9ad... start of water shader
-    y: 119
-    width: 3114
-    height: 1702
+    x: 468
+    y: 181
+    width: 973
+    height: 501
   m_ViewDataDictionary: {fileID: 0}
-  m_Selected: 6f209a1227a423f3fa64c2319cf01003
-  m_GraphObject: {fileID: 0}
-  m_PromptChangedOnDisk: 0
 --- !u!114 &13
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 12071, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Animation
-    m_Image: {fileID: 1561878555887300916, guid: 0000000000000000d000000000000000, type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 0
-    y: 1430
-    width: 2277
-    height: 689
-  m_ViewDataDictionary: {fileID: 0}
-  m_LockTracker:
-    m_IsLocked: 0
-  m_LastSelectedObjectID: 18922
---- !u!114 &14
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 13953, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 800, y: 250}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Package Manager
-    m_Image: {fileID: 2532104554704294423, guid: 0000000000000000d000000000000000, type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 364
-    y: 119
-    width: 3114
-    height: 1702
-  m_ViewDataDictionary: {fileID: 0}
---- !u!114 &15
->>>>>>> 3e9e649f... Completed Jumping (Still a bit buggy but it works)
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -741,36 +324,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    y: 1602
-    width: 3389
-    height: 419
-=======
-    y: 302
-    width: 987
-    height: 270.6667
->>>>>>> c276296a... Fuckngffgfj
-  m_MinSize: {x: 231, y: 271}
-  m_MaxSize: {x: 10001, y: 10021}
-  m_ActualView: {fileID: 17}
-  m_Panes:
-  - {fileID: 17}
-  - {fileID: 18}
-  m_Selected: 0
-  m_LastSelected: 1
---- !u!114 &11
-=======
-    y: 1711
-    width: 3333
-    height: 408
-=======
-    y: 1593
-    width: 3513
-    height: 526
->>>>>>> d282b9ad... start of water shader
+    x: 7.3333335
+    y: 382
+    width: 988
+    height: 250
   m_ViewDataDictionary: {fileID: 0}
   m_SearchFilter:
     m_NameFilter: 
@@ -785,22 +342,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Sprites
+    - Assets
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Sprites
+  - Assets
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: /home/mario-whitmore/Documents/as91893-and-91897-Mario
+  m_LastProjectPath: C:\Users\frank\Documents\GitHub\as91893-and-91897-Mario
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 464d0000
-    m_LastClickedID: 19782
-    m_ExpandedIDs: 000000006e480000
+    m_SelectedIDs: 044a0000
+    m_LastClickedID: 18948
+    m_ExpandedIDs: 00000000044a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -828,7 +385,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000006e480000
+    m_ExpandedIDs: 00000000044a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -853,9 +410,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 2cabffff
-    m_LastClickedInstanceID: -21716
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -883,9 +440,8 @@ MonoBehaviour:
     m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
-  m_DirectoriesAreaWidth: 207
---- !u!114 &16
->>>>>>> 3e9e649f... Completed Jumping (Still a bit buggy but it works)
+  m_DirectoriesAreaWidth: 115
+--- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -894,69 +450,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 1
-<<<<<<< HEAD
-  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: InspectorWindow
-  m_EditorClassIdentifier: 
-  m_Children: []
-  m_Position:
-    serializedVersion: 2
-<<<<<<< HEAD
-    x: 3389
-    y: 0
-    width: 451
-    height: 2021
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
-=======
-    x: 987
-    y: 0
-    width: 278.33337
-    height: 572.6667
-  m_MinSize: {x: 277, y: 71}
-  m_MaxSize: {x: 4002, y: 4021}
->>>>>>> c276296a... Fuckngffgfj
-  m_ActualView: {fileID: 19}
-  m_Panes:
-  - {fileID: 19}
-  m_Selected: 0
-  m_LastSelected: 1
---- !u!114 &12
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 924ffcbe75518854f97b48776d0f1939, type: 3}
-=======
   m_Script: {fileID: 12019, guid: 0000000000000000e000000000000000, type: 0}
->>>>>>> 3e9e649f... Completed Jumping (Still a bit buggy but it works)
   m_Name: 
   m_EditorClassIdentifier: 
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Inspector
-    m_Image: {fileID: -6905738622615590433, guid: 0000000000000000d000000000000000, type: 0}
-=======
-    m_Text: Water
-    m_Image: {fileID: 2800000, guid: 7d62654fc399cc349a1ed7e0eab44ff0, type: 3}
->>>>>>> 874932ca... working on shaders
+    m_Image: {fileID: 8356117983803934776, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 374
-    y: 72.66667
-    width: 375.3333
-    height: 289
+    x: 996.6667
+    y: 80
+    width: 274
+    height: 552
   m_ViewDataDictionary: {fileID: 0}
-  m_Selected: 6f209a1227a423f3fa64c2319cf01003
-  m_GraphObject: {fileID: 0}
-  m_PromptChangedOnDisk: 0
---- !u!114 &13
+  m_ObjectsLockedBeforeSerialization: []
+  m_InstanceIDsLockedBeforeSerialization: 
+  m_PreviewResizer:
+    m_CachedPref: 160
+    m_ControlHash: -371814159
+    m_PrefName: Preview_InspectorPreview
+  m_LastInspectedObjectInstanceID: -1
+  m_LastVerticalScrollValue: 0
+  m_AssetGUID: 
+  m_InstanceID: 0
+  m_LockTracker:
+    m_IsLocked: 0
+  m_PreviewWindow: {fileID: 0}
+--- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -972,60 +495,21 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Hierarchy
-    m_Image: {fileID: -9000905672528348964, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: -590624980919486359, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    y: 119
-<<<<<<< HEAD
-<<<<<<< HEAD
-    width: 518
-    height: 1581
-=======
-    x: 32
-    y: 58.666668
-    width: 200
+    x: 7.3333335
+    y: 80
+    width: 243
     height: 281
->>>>>>> c276296a... Fuckngffgfj
-=======
-    width: 713
-    height: 1571
->>>>>>> 3e9e649f... Completed Jumping (Still a bit buggy but it works)
-=======
-    width: 363
-    height: 1702
->>>>>>> d282b9ad... start of water shader
-=======
-    y: 19
-    width: 199.66667
-    height: 431
->>>>>>> 874932ca... working on shaders
-=======
-    y: 119
-<<<<<<< HEAD
-    width: 457
-    height: 1610
->>>>>>> c546bfa6... fuck
-=======
-    width: 1125
-    height: 1281
->>>>>>> 1231d815... stuff
-=======
-    y: 72.66667
-    width: 373
-    height: 289
->>>>>>> 5a92a979... Progress on Water shader
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: ac490000
-      m_LastClickedID: 18860
-      m_ExpandedIDs: 76f3ffff50fbffff
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: d6faffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1041,15 +525,15 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 8}
+        m_ClientGUIView: {fileID: 0}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
     m_LockTracker:
       m_IsLocked: 0
     m_CurrentSortingName: TransformSorting
-  m_WindowGUID: 4c969a2b90040154d917609493e03593
---- !u!114 &14
+  m_WindowGUID: c731f5baba3161641b33664c9b5b2b9d
+--- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1065,61 +549,17 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Scene
-    m_Image: {fileID: -131512000283675692, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: 2318424515335265636, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    x: 364
-    y: 119
-<<<<<<< HEAD
-<<<<<<< HEAD
-    width: 2868
-    height: 1581
-=======
-    x: 233.33334
-    y: 58.666668
-    width: 784
+    x: 251.33334
+    y: 80
+    width: 743
     height: 281
->>>>>>> c276296a... Fuckngffgfj
-=======
-    width: 2618
-    height: 1571
->>>>>>> 3e9e649f... Completed Jumping (Still a bit buggy but it works)
-=======
-    width: 3114
-    height: 1702
->>>>>>> d282b9ad... start of water shader
-=======
-    x: 226
-    y: 210
-    width: 786.6666
-    height: 431
->>>>>>> 874932ca... working on shaders
-=======
-    x: 458
-    y: 119
-    width: 3104
-    height: 1610
->>>>>>> c546bfa6... fuck
-=======
-    x: 1126
-    y: 119
-    width: 1129
-    height: 1281
->>>>>>> 1231d815... stuff
-=======
-    x: 374
-    y: 72.66667
-    width: 375.3333
-    height: 289
->>>>>>> 5a92a979... Progress on Water shader
   m_ViewDataDictionary: {fileID: 0}
   m_ShowContextualTools: 0
-  m_WindowGUID: cc27987af1a868c49b0894db9c0f5429
+  m_WindowGUID: 740e6204a9b83e74aa4c17f6e5f5fb8b
   m_Gizmos: 1
   m_OverrideSceneCullingMask: 6917529027641081856
   m_SceneIsLit: 1
@@ -1129,9 +569,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -13.260918, y: -1.2963283, z: -21.36525}
+    m_Target: {x: 0, y: 0, z: 0}
     speed: 2
-    m_Value: {x: -13.260918, y: -1.2963283, z: -21.36525}
+    m_Value: {x: 0, y: 0, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1165,7 +605,7 @@ MonoBehaviour:
         m_Value: 0
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
-      m_Size: {x: 1, y: 1}
+      m_Size: {x: 0, y: 0}
     zGrid:
       m_Fade:
         m_Target: 1
@@ -1182,9 +622,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1.4775382
+    m_Target: 10
     speed: 2
-    m_Value: 1.4775382
+    m_Value: 10
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1209,7 +649,7 @@ MonoBehaviour:
   m_SceneVisActive: 1
   m_LastLockedObject: {fileID: 0}
   m_ViewIsLockedToObject: 0
---- !u!114 &15
+--- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1225,14 +665,14 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Game
-    m_Image: {fileID: 257045534191678443, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: -2087823869225018852, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 375
-    y: 19
-    width: 375.3333
-    height: 357
+    x: 507
+    y: 94
+    width: 1532
+    height: 790
   m_ViewDataDictionary: {fileID: 0}
   m_SerializedViewNames: []
   m_SerializedViewValues: []
@@ -1240,10 +680,10 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 375.3333, y: 336}
+  m_TargetSize: {x: 1532, y: 769}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
-  m_RenderIMGUI: 1
+  m_RenderIMGUI: 0
   m_MaximizeOnPlay: 0
   m_UseMipMap: 0
   m_VSyncEnabled: 0
@@ -1255,10 +695,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -125.11111
-    m_HBaseRangeMax: 125.11111
-    m_VBaseRangeMin: -119
-    m_VBaseRangeMax: 119
+    m_HBaseRangeMin: -766
+    m_HBaseRangeMax: 766
+    m_VBaseRangeMin: -395
+    m_VBaseRangeMax: 395
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -1267,7 +707,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -1276,336 +716,29 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 0
-      width: 375.3333
-      height: 357
+      width: 1532
+      height: 790
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 187.66666, y: 178.5}
+    m_Translation: {x: 766, y: 395}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -187.66666
-      y: -178.5
-      width: 375.3333
-      height: 357
+      x: -766
+      y: -395
+      width: 1532
+      height: 790
     m_MinimalGUI: 1
   m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 563, y: 535.5}
+  m_LastWindowPixelSize: {x: 1532, y: 790}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
   m_XRRenderMode: 0
   m_RenderTexture: {fileID: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 874932ca... working on shaders
---- !u!114 &16
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 13953, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 800, y: 250}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Package Manager
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    m_Image: {fileID: 2532104554704294423, guid: 0000000000000000d000000000000000, type: 0}
-=======
-    m_Image: {fileID: 6524541947987886810, guid: 0000000000000000d000000000000000, type: 0}
->>>>>>> 5a92a979... Progress on Water shader
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 601
-    y: 119
-    width: 2408
-    height: 985
-=======
-    m_Image: {fileID: 6524541947987886810, guid: 0000000000000000d000000000000000, type: 0}
-=======
-    m_Image: {fileID: 2532104554704294423, guid: 0000000000000000d000000000000000, type: 0}
->>>>>>> c546bfa6... fuck
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 458
-    y: 119
-<<<<<<< HEAD
-    width: 3114
-    height: 1702
->>>>>>> 874932ca... working on shaders
-=======
-    width: 3104
-    height: 1610
->>>>>>> c546bfa6... fuck
-  m_ViewDataDictionary: {fileID: 0}
---- !u!114 &17
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12014, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 230, y: 250}
-  m_MaxSize: {x: 10000, y: 10000}
-  m_TitleContent:
-    m_Text: Project
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    m_Image: {fileID: -7501376956915960154, guid: 0000000000000000d000000000000000, type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-<<<<<<< HEAD
-    x: 0
-    y: 1721
-    width: 3388
-    height: 398
-=======
-    x: 32
-    y: 360.6667
-    width: 986
-    height: 249.66669
->>>>>>> c276296a... Fuckngffgfj
-=======
-    m_Image: {fileID: -2032128904892744680, guid: 0000000000000000d000000000000000, type: 0}
-=======
-    m_Image: {fileID: -7501376956915960154, guid: 0000000000000000d000000000000000, type: 0}
->>>>>>> c546bfa6... fuck
-=======
-    m_Image: {fileID: -2032128904892744680, guid: 0000000000000000d000000000000000, type: 0}
->>>>>>> 5a92a979... Progress on Water shader
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 0
-<<<<<<< HEAD
-    y: 1593
-    width: 3513
-    height: 526
->>>>>>> 874932ca... working on shaders
-=======
-    y: 382.6667
-    width: 750.3333
-    height: 256.33337
->>>>>>> 5a92a979... Progress on Water shader
-  m_ViewDataDictionary: {fileID: 0}
-  m_SearchFilter:
-    m_NameFilter: 
-    m_ClassNames: []
-    m_AssetLabels: []
-    m_AssetBundleNames: []
-    m_VersionControlStates: []
-    m_SoftLockControlStates: []
-    m_ReferencingInstanceIDs: 
-    m_SceneHandles: 
-    m_ShowAllHits: 0
-    m_SkipHidden: 0
-    m_SearchArea: 1
-    m_Folders:
-<<<<<<< HEAD
-    - Assets
-=======
-    - Assets/Sprites
->>>>>>> 874932ca... working on shaders
-    m_Globs: []
-    m_OriginalText: 
-  m_ViewMode: 1
-  m_StartGridSize: 64
-  m_LastFolders:
-<<<<<<< HEAD
-  - Assets
-=======
-  - Assets/Sprites
->>>>>>> 874932ca... working on shaders
-  m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\frank\Documents\GitHub\as91893-and-91897-Mario
-  m_LockTracker:
-    m_IsLocked: 0
-  m_FolderTreeState:
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 944b0000
-    m_LastClickedID: 19348
-    m_ExpandedIDs: 00000000944b000000ca9a3b
-=======
-    scrollPos: {x: 0, y: 35}
-    m_SelectedIDs: fa4c0000
-    m_LastClickedID: 19706
-    m_ExpandedIDs: 000000006648000000ca9a3b
->>>>>>> c276296a... Fuckngffgfj
-=======
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 464d0000
-    m_LastClickedID: 19782
-<<<<<<< HEAD
-<<<<<<< HEAD
-    m_ExpandedIDs: 000000006e480000
->>>>>>> 874932ca... working on shaders
-=======
-    m_ExpandedIDs: 00000000e24b0000
->>>>>>> c546bfa6... fuck
-=======
-    m_ExpandedIDs: 000000006e480000
->>>>>>> 1231d815... stuff
-=======
-    scrollPos: {x: 0, y: 71.666626}
-    m_SelectedIDs: 384d0000
-    m_LastClickedID: 19768
-    m_ExpandedIDs: 000000007448000000ca9a3b
->>>>>>> 5a92a979... Progress on Water shader
-    m_RenameOverlay:
-      m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
-      m_EditFieldRect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
-      m_UserData: 0
-      m_IsWaitingForDelay: 0
-      m_IsRenaming: 0
-      m_OriginalEventType: 11
-      m_IsRenamingFilename: 1
-<<<<<<< HEAD
-      m_ClientGUIView: {fileID: 10}
-=======
-      m_ClientGUIView: {fileID: 0}
->>>>>>> 874932ca... working on shaders
-    m_SearchString: 
-    m_CreateAssetUtility:
-      m_EndAction: {fileID: 0}
-      m_InstanceID: 0
-      m_Path: 
-      m_Icon: {fileID: 0}
-      m_ResourceFile: 
-  m_AssetTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    m_ExpandedIDs: 00000000944b0000
-=======
-    m_ExpandedIDs: 0000000066480000
->>>>>>> c276296a... Fuckngffgfj
-=======
-    m_ExpandedIDs: 000000006e480000
->>>>>>> 874932ca... working on shaders
-=======
-    m_ExpandedIDs: 00000000e24b0000
->>>>>>> c546bfa6... fuck
-=======
-    m_ExpandedIDs: 000000006e480000
->>>>>>> 1231d815... stuff
-=======
-    m_ExpandedIDs: 000000007448000000ca9a3b
->>>>>>> 5a92a979... Progress on Water shader
-    m_RenameOverlay:
-      m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
-      m_EditFieldRect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
-      m_UserData: 0
-      m_IsWaitingForDelay: 0
-      m_IsRenaming: 0
-      m_OriginalEventType: 11
-      m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
-    m_SearchString: 
-    m_CreateAssetUtility:
-      m_EndAction: {fileID: 0}
-      m_InstanceID: 0
-      m_Path: 
-      m_Icon: {fileID: 0}
-      m_ResourceFile: 
-  m_ListAreaState:
-<<<<<<< HEAD
-<<<<<<< HEAD
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
-=======
-    m_SelectedInstanceIDs: 2cabffff
-    m_LastClickedInstanceID: -21716
-    m_HadKeyboardFocusLastEvent: 1
->>>>>>> 874932ca... working on shaders
-=======
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
->>>>>>> 5a92a979... Progress on Water shader
-    m_ExpandedInstanceIDs: c6230000
-    m_RenameOverlay:
-      m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
-      m_EditFieldRect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
-      m_UserData: 0
-      m_IsWaitingForDelay: 0
-      m_IsRenaming: 0
-      m_OriginalEventType: 11
-      m_IsRenamingFilename: 1
-<<<<<<< HEAD
-      m_ClientGUIView: {fileID: 10}
-=======
-      m_ClientGUIView: {fileID: 0}
->>>>>>> 874932ca... working on shaders
-    m_CreateAssetUtility:
-      m_EndAction: {fileID: 0}
-      m_InstanceID: 0
-      m_Path: 
-      m_Icon: {fileID: 0}
-      m_ResourceFile: 
-    m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
-    m_GridSize: 64
-  m_SkipHiddenPackages: 0
-<<<<<<< HEAD
-  m_DirectoriesAreaWidth: 115
 --- !u!114 &18
-=======
---- !u!114 &20
->>>>>>> 3e9e649f... Completed Jumping (Still a bit buggy but it works)
-=======
-  m_DirectoriesAreaWidth: 207
---- !u!114 &18
->>>>>>> 874932ca... working on shaders
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1621,142 +754,16 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Console
-    m_Image: {fileID: -3303252850963283158, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: 111653112392082826, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 0
-    y: 450.6667
-    width: 750.3333
-    height: 188.33337
+    x: 8
+    y: 718
+    width: 1366
+    height: 308
   m_ViewDataDictionary: {fileID: 0}
 --- !u!114 &19
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 12071, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Animation
-    m_Image: {fileID: -8967370667835289719, guid: 0000000000000000d000000000000000, type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    y: 450.6667
-    width: 999
-    height: 188.33337
-  m_ViewDataDictionary: {fileID: 0}
---- !u!114 &19
-=======
-    y: 1430
-    width: 2277
-    height: 689
-  m_ViewDataDictionary: {fileID: 0}
-  m_LockTracker:
-    m_IsLocked: 0
-  m_LastSelectedObjectID: 19008
---- !u!114 &20
->>>>>>> 874932ca... working on shaders
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12019, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Inspector
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    m_Image: {fileID: -6905738622615590433, guid: 0000000000000000d000000000000000, type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-<<<<<<< HEAD
-    x: 3389
-    y: 119
-    width: 450
-    height: 2000
-=======
-    x: 1019.3334
-    y: 58.666668
-    width: 277.33337
-    height: 551.6667
->>>>>>> c276296a... Fuckngffgfj
-=======
-    y: 1711
-    width: 3333
-    height: 408
->>>>>>> 3e9e649f... Completed Jumping (Still a bit buggy but it works)
-=======
-    y: 1842
-    width: 3479
-    height: 277
->>>>>>> d282b9ad... start of water shader
-=======
-    m_Image: {fileID: 8356117983803934776, guid: 0000000000000000d000000000000000, type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 990.3333
-    y: 19
-    width: 275.00006
-    height: 551.6667
->>>>>>> 874932ca... working on shaders
-=======
-    m_Image: {fileID: -6905738622615590433, guid: 0000000000000000d000000000000000, type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 2257
-    y: 119
-    width: 1582
-    height: 2000
->>>>>>> c546bfa6... fuck
-=======
-    m_Image: {fileID: 8356117983803934776, guid: 0000000000000000d000000000000000, type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 751.3334
-    y: 72.66667
-    width: 527.6667
-    height: 566.3334
->>>>>>> 5a92a979... Progress on Water shader
-  m_ViewDataDictionary: {fileID: 0}
-  m_ObjectsLockedBeforeSerialization: []
-  m_InstanceIDsLockedBeforeSerialization: 
-  m_PreviewResizer:
-    m_CachedPref: 160
-    m_ControlHash: -371814159
-    m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
-  m_AssetGUID: 
-  m_InstanceID: 0
-  m_LockTracker:
-    m_IsLocked: 0
-  m_PreviewWindow: {fileID: 0}
---- !u!114 &21
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
