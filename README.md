@@ -36,6 +36,8 @@
 - [ ] Water
 	- [ ] Shader
 		- [x] Waves
-		- [ ] Bubble Textures 
+		- [x] Bubble Textures 
 		- [ ] Tiles
-	- [ ] Bouyancy
+	- [ ] Level Elements
+		- [ ] Walls and Floor Behind Water
+	- [x] Bouyancy
