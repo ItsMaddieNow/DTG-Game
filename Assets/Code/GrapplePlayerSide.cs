@@ -50,6 +50,7 @@ public class GrapplePlayerSide : MonoBehaviour
     public GameObject Torch;
     public GameObject TorchAnchor;
     public GameObject TorchContainer;
+    public GameObject Flame;
 
     private void Awake()
     {
@@ -82,14 +83,13 @@ public class GrapplePlayerSide : MonoBehaviour
     void Update()
     {
         TorchContainer.transform.eulerAngles = Vector3.zero;
+        Flame.SetActive(this.GetComponent<Fire>().CanCatchFire);
         Torch.SetActive(CurrentItem == "Torch");
-
         if (CurrentItem == "Torch")
         {
             Torch.transform.position = Vector2.Lerp(Torch.transform.position, TorchAnchor.transform.position, TorchSmoothing/Vector2.Distance(Torch.transform.position, TorchAnchor.transform.position)*Time.deltaTime);
             Torch.transform.eulerAngles = new Vector3(0, 0, Mathf.Lerp(-30f,30f, Mathf.InverseLerp(TorchAnchor.transform.localPosition.x, -TorchAnchor.transform.localPosition.x, Torch.transform.localPosition.x)));
         }
-        
         GrapplingGun.SetActive(CurrentItem == "Grappling Hook");
         RopeRenderer.enabled = HookPresent;
         HookSpawn.GetComponent<SpriteRenderer>().enabled = !HookPresent;
@@ -120,8 +120,7 @@ public class GrapplePlayerSide : MonoBehaviour
         Line.distance -= DistanceModifier * CoilRate * Time.deltaTime;
         
         Line.distance = Mathf.Clamp(Line.distance, MinDistance, MaxDistance);
-        
-        
+
         if (HookPresent && Vector2.Distance(HookSpawn.transform.position, SpawnedHook.transform.position) > MaxDistance & !HookLatched)
         {
             Destroy(SpawnedHook);
@@ -152,13 +151,13 @@ public class GrapplePlayerSide : MonoBehaviour
     {
         if (CurrentItem == "Grappling Hook")
         {
-            Destroy(SpawnedHook);
-
             CurrentItem = null;
+            ItemSwitchCleanup();
         }
         else
         {
             CurrentItem = "Grappling Hook";
+            ItemSwitchCleanup();
         }
     }
 
@@ -167,10 +166,12 @@ public class GrapplePlayerSide : MonoBehaviour
         if (CurrentItem == "Torch")
         {
             CurrentItem = null;
+            ItemSwitchCleanup();
         }
         else
         {
             CurrentItem = "Torch";
+            ItemSwitchCleanup();
             Torch.SetActive(true);
             Torch.transform.position = TorchAnchor.transform.position;
         }
@@ -196,5 +197,14 @@ public class GrapplePlayerSide : MonoBehaviour
     {
         //callback
         //Debug.Log(context.ReadValue<Vector2>());
+    }
+
+    private void ItemSwitchCleanup()
+    {
+        if (CurrentItem != "Grappling Hook")
+        {
+            Destroy(SpawnedHook);
+        }
+        RopeRenderer.enabled = HookPresent;
     }
 }
