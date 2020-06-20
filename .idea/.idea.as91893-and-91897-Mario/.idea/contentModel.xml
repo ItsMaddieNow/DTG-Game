@@ -20,6 +20,7 @@
         <e p="Input" t="Include">
           <e p="Player Controls.cs" t="Include" />
         </e>
+        <e p="TorchFlameController.cs" t="Include" />
       </e>
       <e p="Temp/Bin" t="ExcludeRecursive" />
       <e p="as91893-and-91897-Mario.sln" t="IncludeFlat" />

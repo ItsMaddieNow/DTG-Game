@@ -22,16 +22,16 @@ public class Darkening : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Flammable") || other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            Debug.Log("Trigger Enter");
+            //Put Darkening code Here
         }
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Flammable") || other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            other.GetComponent<Fire>().UnderWater = false;
+            //Put Darkening code Here
         }
     }
 }

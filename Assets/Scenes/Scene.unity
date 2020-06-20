@@ -548,7 +548,7 @@ GameObject:
   - component: {fileID: 188944735}
   - component: {fileID: 188944737}
   - component: {fileID: 188944736}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5365,7 +5365,7 @@ GameObject:
   - component: {fileID: 404794262}
   - component: {fileID: 404794261}
   - component: {fileID: 404794266}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Flame Carryable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20048,9 +20048,12 @@ GameObject:
   m_Component:
   - component: {fileID: 827929357}
   - component: {fileID: 827929358}
-  m_Layer: 0
+  - component: {fileID: 827929359}
+  - component: {fileID: 827929360}
+  - component: {fileID: 827929361}
+  m_Layer: 9
   m_Name: Torch Carryable
-  m_TagString: Untagged
+  m_TagString: Flammable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20121,6 +20124,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &827929359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827929356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfb09591e287375a699b39dc321764e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UnderWater: 0
+  CanCatchFire: 0
+--- !u!70 &827929360
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827929356}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.265625}
+  m_Size: {x: 0.1875, y: 0.28125}
+  m_Direction: 0
+--- !u!114 &827929361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827929356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d8c1e972662fe7939fb6a329583f825, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ThisFire: {fileID: 0}
+  Flame: {fileID: 404794259}
 --- !u!1 &890353244
 GameObject:
   m_ObjectHideFlags: 0
@@ -20240,7 +20287,6 @@ GameObject:
   - component: {fileID: 899566050}
   - component: {fileID: 899566046}
   - component: {fileID: 899566047}
-  - component: {fileID: 899566051}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -20404,20 +20450,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &899566051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 899566043}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfb09591e287375a699b39dc321764e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UnderWater: 0
-  CanCatchFire: 0
 --- !u!1 &901482463
 GameObject:
   m_ObjectHideFlags: 0
@@ -20926,7 +20958,7 @@ MonoBehaviour:
       corner: 0
       m_CornerMode: 1
   m_SpriteShape: {fileID: 11400000, guid: 139c55b659c0ff65f8b9f0e88c48dbe4, type: 2}
-  m_FillPixelPerUnit: 100
+  m_FillPixelPerUnit: 32
   m_StretchTiling: 1
   m_SplineDetail: 16
   m_AdaptiveUV: 1
@@ -30899,7 +30931,7 @@ MonoBehaviour:
       corner: 1
       m_CornerMode: 1
   m_SpriteShape: {fileID: 11400000, guid: 139c55b659c0ff65f8b9f0e88c48dbe4, type: 2}
-  m_FillPixelPerUnit: 100
+  m_FillPixelPerUnit: 32
   m_StretchTiling: 1
   m_SplineDetail: 16
   m_AdaptiveUV: 1

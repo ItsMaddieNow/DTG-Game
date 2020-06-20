@@ -82,22 +82,21 @@ public class GrapplePlayerSide : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Torch
         TorchContainer.transform.eulerAngles = Vector3.zero;
-        Flame.SetActive(this.GetComponent<Fire>().CanCatchFire);
         Torch.SetActive(CurrentItem == "Torch");
+        //Setting Torch Position
         if (CurrentItem == "Torch")
         {
             Torch.transform.position = Vector2.Lerp(Torch.transform.position, TorchAnchor.transform.position, TorchSmoothing/Vector2.Distance(Torch.transform.position, TorchAnchor.transform.position)*Time.deltaTime);
             Torch.transform.eulerAngles = new Vector3(0, 0, Mathf.Lerp(-30f,30f, Mathf.InverseLerp(TorchAnchor.transform.localPosition.x, -TorchAnchor.transform.localPosition.x, Torch.transform.localPosition.x)));
         }
+        
+        //Grappling Hook
         GrapplingGun.SetActive(CurrentItem == "Grappling Hook");
-        RopeRenderer.enabled = HookPresent;
+        
         HookSpawn.GetComponent<SpriteRenderer>().enabled = !HookPresent;
-        
-        //grapple gun direction
         GrappleDirection = transform.position - Cam.ScreenToWorldPoint(Controls.Gameplay.GrappleDirection.ReadValue<Vector2>());
-        
-        
         GrappleGunDirection = Vector2.Lerp(GrappleGunDirection, new Vector2(GrappleDirection.x, Mathf.Abs(GrappleDirection.y)).normalized, GrappleGunSmoothing/Vector2.Distance(GrappleGunDirection, (new Vector2(GrappleDirection.x, Mathf.Abs(GrappleDirection.y))).normalized * Time.deltaTime));
         if (PlayerMovementScript.FacingRight)
         {
@@ -109,18 +108,19 @@ public class GrapplePlayerSide : MonoBehaviour
         }
         
         GrapplingGun.transform.rotation = Quaternion.Euler(0, (GrappleDirection.x<0) ? 0:180,Mathf.Rad2Deg * Mathf.Atan2((GrappleGunDirection * GunPositionWarp).y,(((GrappleDirection.x<0) ? -GrappleGunDirection:GrappleGunDirection) * GunPositionWarp).x));
-            
+        
+        //Line Renderer
+        RopeRenderer.enabled = HookPresent;
         RopeRenderer.SetPosition(1, HookSpawn.transform.position);
         if (!HookPresent)
         {
             Line.enabled = false;
         }
-
         Line.anchor = HookSpawn.transform.position - transform.position;    
         Line.distance -= DistanceModifier * CoilRate * Time.deltaTime;
-        
         Line.distance = Mathf.Clamp(Line.distance, MinDistance, MaxDistance);
-
+        
+        //Destroy Hook if Goes Beyond Certain Distance if it Hasn't Latched Yet
         if (HookPresent && Vector2.Distance(HookSpawn.transform.position, SpawnedHook.transform.position) > MaxDistance & !HookLatched)
         {
             Destroy(SpawnedHook);
