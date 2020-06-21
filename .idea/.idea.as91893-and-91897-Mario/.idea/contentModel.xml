@@ -8,15 +8,19 @@
       <e p="Assets" t="Include">
         <e p="Code" t="Include">
           <e p="CrystalController.cs" t="Include" />
+          <e p="Darkening.cs" t="Include" />
+          <e p="Fire.cs" t="Include" />
           <e p="GrappleHookSide.cs" t="Include" />
           <e p="GrapplePlayerSide.cs" t="Include" />
           <e p="Player Controls" t="Include">
             <e p="PlayerMovement.cs" t="Include" />
           </e>
+          <e p="TorchExtinguish.cs" t="Include" />
         </e>
         <e p="Input" t="Include">
           <e p="Player Controls.cs" t="Include" />
         </e>
+        <e p="TorchFlameController.cs" t="Include" />
       </e>
       <e p="Temp/Bin" t="ExcludeRecursive" />
       <e p="as91893-and-91897-Mario.sln" t="IncludeFlat" />
