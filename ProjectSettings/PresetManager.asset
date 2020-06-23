@@ -13,6 +13,3 @@ PresetManager:
     - m_Preset: {fileID: 2655988077585873504, guid: 859c2ac7d62919f8899717fe12ef5617, type: 2}
       m_Filter: 
       m_Disabled: 0
-    - m_Preset: {fileID: 2655988077585873504, guid: d55b34e9d5038ced7b10edb4002a453e, type: 2}
-      m_Filter: 
-      m_Disabled: 0
