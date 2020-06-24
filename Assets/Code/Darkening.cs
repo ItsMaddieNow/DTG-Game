@@ -6,7 +6,7 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 public class Darkening : MonoBehaviour
 {
-    public Light2D ThisLight;
+    public LightController GlobalLight;
     
     // Start is called before the first frame update
     void Start()
@@ -24,14 +24,14 @@ public class Darkening : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            //Put Darkening code Here
+            GlobalLight.BodiesOfWater++;
         }
     }
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            //Put Darkening code Here
+            GlobalLight.BodiesOfWater--;
         }
     }
 }
