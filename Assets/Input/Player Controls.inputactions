@@ -216,17 +216,6 @@
                 },
                 {
                     "name": "",
-                    "id": "b022d3dd-b1d0-4ef2-8242-2cf0756ccf60",
-                    "path": "<Mouse>/scroll/y",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Grapple Distance Control",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "17bf7f07-60fe-4732-837c-17d8411bdc81",
                     "path": "<Keyboard>/t",
                     "interactions": "",

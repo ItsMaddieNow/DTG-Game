@@ -19,6 +19,5 @@ public class LightController : MonoBehaviour
     void Update()
     {
         ThisAnimator.SetBool("Dark", (BodiesOfWater>0));
-        Debug.Log(BodiesOfWater>0);
     }
 }
