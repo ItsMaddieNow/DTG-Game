@@ -36,10 +36,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private bool HeadSubmerged;
     public Vector3 HeadColliderOffset;
     public float HeadDistance;
+    
     [SerializeField] private bool FeetSubmerged;
     public Vector3 FootColliderOffset;
     public float FootDistance;
     public LayerMask WaterLayers;
+
+    public float SurfaceForce;
+    public float SubmergedForce;
     
     //Controls
     private PlayerControls Controls;
