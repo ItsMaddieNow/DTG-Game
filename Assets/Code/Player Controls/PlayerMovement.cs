@@ -25,13 +25,22 @@ public class PlayerMovement : MonoBehaviour
     public float GravityScale = 1f;
     public float FallMultiplier = 5f;
     
-    [Header("Collision")]
+    [Header("Ground Collision")]
     [SerializeField]
     private bool OnGround;
     public float MaxDistance = 0.6f;
     public LayerMask RaycastLayerDetect;
     public Vector3 ColliderOffset;
-
+    
+    [Header("Water Movement")]
+    [SerializeField] private bool HeadSubmerged;
+    public Vector3 HeadColliderOffset;
+    public float HeadDistance;
+    [SerializeField] private bool FeetSubmerged;
+    public Vector3 FootColliderOffset;
+    public float FootDistance;
+    public LayerMask WaterLayers;
+    
     //Controls
     private PlayerControls Controls;
     private bool JumpButtonDown;
@@ -55,10 +64,19 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Checks If The Character is On The Ground
         OnGround = (
             Physics2D.Raycast(transform.position + ColliderOffset, -transform.up, MaxDistance, RaycastLayerDetect) || 
             Physics2D.Raycast(transform.position - ColliderOffset, -transform.up, MaxDistance, RaycastLayerDetect) || 
             Physics2D.Raycast(transform.position, -transform.up, MaxDistance, RaycastLayerDetect)
+        );
+        FeetSubmerged = (
+            Physics2D.Raycast(transform.position + new Vector3(FootColliderOffset.x, -FootColliderOffset.y, FootColliderOffset.z), -transform.up, FootDistance, WaterLayers) || 
+            Physics2D.Raycast(transform.position - FootColliderOffset, -transform.up, FootDistance, WaterLayers)
+        );
+        HeadSubmerged = (
+            Physics2D.Raycast(transform.position + new Vector3(HeadColliderOffset.x, -HeadColliderOffset.y, HeadColliderOffset.z), -transform.up, -HeadDistance, WaterLayers) || 
+            Physics2D.Raycast(transform.position - HeadColliderOffset, -transform.up, -HeadDistance, WaterLayers)
         );
     }
 
@@ -136,12 +154,20 @@ public class PlayerMovement : MonoBehaviour
         transform.rotation = Quaternion.Euler(0,FacingRight ? 0:180,0);
     }
     
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawLine(transform.position + ColliderOffset, transform.position + ColliderOffset + -transform.up * MaxDistance);
         Gizmos.DrawLine(transform.position - ColliderOffset, transform.position - ColliderOffset + -transform.up * MaxDistance);
         Gizmos.DrawLine(transform.position, transform.position + -transform.up * MaxDistance);
+        
+        // Water
+        Gizmos.color = Color.blue;
+        Gizmos.DrawLine(transform.position + FootColliderOffset, transform.position + FootColliderOffset + -transform.up * FootDistance);
+        Gizmos.DrawLine(transform.position - new Vector3(FootColliderOffset.x, -FootColliderOffset.y, FootColliderOffset.z), transform.position - new Vector3(FootColliderOffset.x, -FootColliderOffset.y, FootColliderOffset.z) + -transform.up * FootDistance);
+        
+        Gizmos.DrawLine(transform.position + HeadColliderOffset, transform.position + HeadColliderOffset + -transform.up * HeadDistance);
+        Gizmos.DrawLine(transform.position - new Vector3(HeadColliderOffset.x, -HeadColliderOffset.y, HeadColliderOffset.z), transform.position - new Vector3(HeadColliderOffset.x, -HeadColliderOffset.y, HeadColliderOffset.z) + -transform.up * HeadDistance);
     }
 
     private void OnEnable()
