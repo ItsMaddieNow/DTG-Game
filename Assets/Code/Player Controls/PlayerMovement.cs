@@ -75,21 +75,31 @@ public class PlayerMovement : MonoBehaviour
             Physics2D.Raycast(transform.position, -transform.up, MaxDistance, RaycastLayerDetect)
         );
         FeetSubmerged = (
-            Physics2D.Raycast(transform.position + new Vector3(FootColliderOffset.x, -FootColliderOffset.y, FootColliderOffset.z), -transform.up, FootDistance, WaterLayers) || 
-            Physics2D.Raycast(transform.position - FootColliderOffset, -transform.up, FootDistance, WaterLayers)
+            Physics2D.Raycast(transform.position + FootColliderOffset, -transform.up, FootDistance, WaterLayers) || 
+            Physics2D.Raycast(transform.position - new Vector3(FootColliderOffset.x, -FootColliderOffset.y, FootColliderOffset.z), -transform.up, FootDistance, WaterLayers)
         );
         HeadSubmerged = (
-            Physics2D.Raycast(transform.position + new Vector3(HeadColliderOffset.x, -HeadColliderOffset.y, HeadColliderOffset.z), -transform.up, -HeadDistance, WaterLayers) || 
-            Physics2D.Raycast(transform.position - HeadColliderOffset, -transform.up, -HeadDistance, WaterLayers)
+            Physics2D.Raycast(transform.position + HeadColliderOffset, -transform.up, -HeadDistance, WaterLayers) || 
+            Physics2D.Raycast(transform.position - new Vector3(HeadColliderOffset.x, -HeadColliderOffset.y, HeadColliderOffset.z), -transform.up, -HeadDistance, WaterLayers)
         );
     }
 
     private void FixedUpdate()
     {
         MoveCharacter(Direction.x);
-        if (JumpTimer > Time.time && OnGround)
+        if (JumpTimer > Time.time)
         {
-            Jump();
+            if (OnGround && !(HeadSubmerged||FeetSubmerged))
+            {
+                Jump();
+            } else if (HeadSubmerged && FeetSubmerged)
+            {
+                WaterThrust();
+            } else if (!HeadSubmerged && FeetSubmerged)
+            {
+                Breach();
+            }
+            
         }
         
         ModifyPhysics();
@@ -106,7 +116,21 @@ public class PlayerMovement : MonoBehaviour
         Rb.AddForce(transform.up * JumpSpeed, ForceMode2D.Impulse);
         JumpTimer = 0f;
     }
-
+    
+    void Breach()
+    {
+        Rb.velocity = new Vector2(Rb.velocity.x,0);
+        Rb.AddForce(transform.up * SurfaceForce, ForceMode2D.Impulse);
+        JumpTimer = 0f;
+    }
+    
+    void WaterThrust()
+    {
+        Rb.velocity = new Vector2(Rb.velocity.x,0);
+        Rb.AddForce(transform.up * SubmergedForce, ForceMode2D.Impulse);
+        JumpTimer = 0f;
+    }
+    
     void MoveCharacter(float Horizontal)
     {
         Rb.AddForce(Vector2.right * Horizontal * MovementSpeed);
