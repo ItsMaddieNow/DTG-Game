@@ -3,7 +3,7 @@
 
 > WARNING: By using the code in this project in any form I and any person who has contributed code to this project is entitled to take any bluetooth device off your body and eat it.
 ## Required Software
- - Unity 2020.2.0a13 - To build and edit levels
+ - Unity 2020.2.0a15 - To build and edit levels
  - Code Editor (e.g. Jetbrains Rider, Visual Studio etc.) - To Edit Code
  - Image editors (e.g. Glimpse, Photoshop, Piskel)
  - Blender - 3D Modeling, UV Mapping, Texture Editing
@@ -12,7 +12,8 @@
 - [x] Player Movement
 	- [x] Walking
 	- [x] Jumping
-	- [x] Grappling hook
+	- [x] Grappling Hook
+	- [x] Underwater Vertical Movment
 - [x] Torch (Environment)
 	- [x] Bloom
 	- [x] 2D Light
@@ -24,6 +25,7 @@
 	- [x] Switching Directions
 	- [ ] Throwing Mechanic
 	- [ ] Fire Mechanic
+	- [x] Extinguishes Underwater
 - [ ] Crystal
 	- [x] Bloom
 	- [x] Light Effects
@@ -34,10 +36,13 @@
 	- [ ] Blur Effect
 	- [ ] Stop Time
 - [ ] Water
-	- [ ] Shader
-		- [x] Waves
-		- [x] Bubble Textures 
+	- [ ] Shader Overhaul
+		- [x] Waves  
 		- [ ] Tiles
+	- [ ] Particles
+		- [x] Physics
+		- [ ] Textures
 	- [ ] Level Elements
-		- [ ] Walls and Floor Behind Water
-	- [x] Bouyancy
+		- [x] Walls and Floor Behind Water
+	- [x] Buoyancy
+- [ ] Vegetation
