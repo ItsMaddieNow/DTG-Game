@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Fire : MonoBehaviour
 {
-    public bool UnderWater = false;
+    public int BodiesOfWater;
     public bool CanCatchFire = false;
     // Start is called before the first frame update
     void Start()
@@ -16,13 +16,13 @@ public class Fire : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CanCatchFire = (!UnderWater);
+        CanCatchFire = (!(BodiesOfWater>0));
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Water"))
         {
-            UnderWater = true;
+            BodiesOfWater++;
         }
     }
 
@@ -30,7 +30,7 @@ public class Fire : MonoBehaviour
     {
         if (other.CompareTag("Water"))
         {
-            UnderWater = false;
+            BodiesOfWater--;
         }
     }
 }

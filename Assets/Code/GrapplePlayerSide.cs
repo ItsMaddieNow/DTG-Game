@@ -173,6 +173,7 @@ public class GrapplePlayerSide : MonoBehaviour
             CurrentItem = "Torch";
             ItemSwitchCleanup();
             Torch.SetActive(true);
+            //Flame.SetActive();
             Torch.transform.position = TorchAnchor.transform.position;
         }
     }
