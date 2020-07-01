@@ -58,11 +58,11 @@
      <Compile Include="Assets\Code\RotationLock.cs" />
      <Compile Include="Assets\Code\Fire.cs" />
      <Compile Include="Assets\Code\TorchFlameController.cs" />
+     <Compile Include="Assets\Code\GlowWeedAnimationController.cs" />
      <Compile Include="Assets\Code\CrystalController.cs" />
      <Compile Include="Assets\Code\LightController.cs" />
      <Compile Include="Assets\Code\TorchExtinguish.cs" />
      <Compile Include="Assets\Input\Player Controls.cs" />
-     <Compile Include="Assets\Code\GlowWeedAnimationController.cs" />
  <Reference Include="UnityEngine">
  <HintPath>/home/mario-whitmore/Unity/Hub/Editor/2020.2.0a15/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
