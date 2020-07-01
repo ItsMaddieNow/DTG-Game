@@ -46,15 +46,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Background
-    uniqueID: 2660415057
+  - name: Player
+    uniqueID: 1131570965
     locked: 0
   - name: Light Sources
     uniqueID: 3886156769
     locked: 0
+  - name: Ground Behind Water
+    uniqueID: 1926485491
+    locked: 0
+  - name: Water
+    uniqueID: 2468372025
+    locked: 0
   - name: Foreground
     uniqueID: 3088885433
     locked: 0
-  - name: Player
-    uniqueID: 1131570965
+  - name: Background
+    uniqueID: 2660415057
     locked: 0

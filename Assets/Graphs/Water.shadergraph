@@ -46,7 +46,7 @@
             "typeInfo": {
                 "fullName": "UnityEditor.ShaderGraph.Internal.ColorShaderProperty"
             },
-            "JSONnodeData": "{\n    \"m_Guid\": {\n        \"m_GuidSerialized\": \"d81334f4-da66-4b33-9180-ea4b73355126\"\n    },\n    \"m_Name\": \"Inside Color\",\n    \"m_DefaultReferenceName\": \"Color_5F7EAE90\",\n    \"m_OverrideReferenceName\": \"\",\n    \"m_GeneratePropertyBlock\": true,\n    \"m_Precision\": 0,\n    \"m_GPUInstanced\": false,\n    \"m_Hidden\": false,\n    \"m_Value\": {\n        \"r\": 0.5040000081062317,\n        \"g\": 0.8463372588157654,\n        \"b\": 1.0,\n        \"a\": 1.0\n    },\n    \"m_ColorMode\": 0\n}"
+            "JSONnodeData": "{\n    \"m_Guid\": {\n        \"m_GuidSerialized\": \"d81334f4-da66-4b33-9180-ea4b73355126\"\n    },\n    \"m_Name\": \"Inside Color\",\n    \"m_DefaultReferenceName\": \"Color_5F7EAE90\",\n    \"m_OverrideReferenceName\": \"\",\n    \"m_GeneratePropertyBlock\": true,\n    \"m_Precision\": 0,\n    \"m_GPUInstanced\": false,\n    \"m_Hidden\": false,\n    \"m_Value\": {\n        \"r\": 0.5040000081062317,\n        \"g\": 0.8463372588157654,\n        \"b\": 1.0,\n        \"a\": 0.6039215922355652\n    },\n    \"m_ColorMode\": 0\n}"
         },
         {
             "typeInfo": {
