@@ -455,7 +455,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!43 &151976396
+--- !u!43 &87069565
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -21280,8 +21280,8 @@ MonoBehaviour:
   - {x: -0.17782927, y: 0.1875, z: 0}
   - {x: -0.17390943, y: 0.034128983, z: 0}
   m_ShapePathHash: 288868919
-  m_Mesh: {fileID: 151976396}
-  m_InstanceId: 19190
+  m_Mesh: {fileID: 87069565}
+  m_InstanceId: 19188
 --- !u!1 &936694126
 GameObject:
   m_ObjectHideFlags: 0
@@ -21911,8 +21911,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AssetsPPU: 32
-  m_RefResolutionX: 384
-  m_RefResolutionY: 216
+  m_RefResolutionX: 320
+  m_RefResolutionY: 180
   m_UpscaleRT: 0
   m_PixelSnapping: 0
   m_CropFrameX: 0
@@ -21953,7 +21953,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 4.28125
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -32308,7 +32308,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ThisAnimator: {fileID: 0}
   LightOn: 0
-  PlayerInRange: 0
 --- !u!1001 &1525786333
 PrefabInstance:
   m_ObjectHideFlags: 0
