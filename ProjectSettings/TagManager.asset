@@ -49,6 +49,12 @@ TagManager:
   - name: Background
     uniqueID: 2660415057
     locked: 0
+  - name: Behind Light Source
+    uniqueID: 2106043301
+    locked: 0
+  - name: Light Sources - Behind Player
+    uniqueID: 1452864197
+    locked: 0
   - name: Player
     uniqueID: 1131570965
     locked: 0

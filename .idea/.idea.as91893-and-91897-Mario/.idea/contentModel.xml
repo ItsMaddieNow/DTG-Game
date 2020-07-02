@@ -7,6 +7,7 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Code" t="Include">
+          <e p="BlurManagement.cs" t="Include" />
           <e p="CrystalController.cs" t="Include" />
           <e p="Darkening.cs" t="Include" />
           <e p="Fire.cs" t="Include" />
