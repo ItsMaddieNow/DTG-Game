@@ -63,7 +63,6 @@
      <Compile Include="Assets\Code\LightController.cs" />
      <Compile Include="Assets\Code\TorchExtinguish.cs" />
      <Compile Include="Assets\Input\Player Controls.cs" />
-     <Compile Include="Assets\Code\BlurManagement.cs" />
  <Reference Include="UnityEngine">
  <HintPath>/home/mario-whitmore/Unity/Hub/Editor/2020.2.0a15/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
