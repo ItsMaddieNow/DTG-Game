@@ -20,7 +20,6 @@ public class LightController : MonoBehaviour
     void Start()
     {
         ThisLight = this.GetComponent<Light2D>();
-        //ThisAnimator = this.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -34,7 +33,5 @@ public class LightController : MonoBehaviour
         {
             ThisLight.intensity = Mathf.Lerp(ThisLight.intensity, MaxLight, ChangeSpeed/Mathf.Abs(ThisLight.intensity - MaxLight) * Time.deltaTime);
         }
-        
-        //ThisAnimator.SetBool("Dark", (BodiesOfWater>0));
     }
 }

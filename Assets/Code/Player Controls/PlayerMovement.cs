@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -48,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
     //Controls
     private PlayerControls Controls;
     private bool JumpButtonDown;
+
     private void Awake()
     {
         Controls = new PlayerControls();
