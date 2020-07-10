@@ -25,13 +25,15 @@ public class Blur : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Blurred = PauseMenu.GameIsPaused;
         if (Blurred)
         {
-            ThisDepthOfField.aperture.value = Mathf.Lerp(ThisDepthOfField.aperture.value, BlurredApeture, BlurRate/Mathf.Abs(ThisDepthOfField.aperture.value - BlurredApeture)*Time.deltaTime);
+            ThisDepthOfField.aperture.value = Mathf.Lerp(ThisDepthOfField.aperture.value, BlurredApeture, BlurRate/Mathf.Abs(ThisDepthOfField.aperture.value - BlurredApeture)*Time.unscaledDeltaTime);
         }
         else
         {
-            ThisDepthOfField.aperture.value = Mathf.Lerp(ThisDepthOfField.aperture.value, UnblurredApeture, BlurRate/Mathf.Abs(ThisDepthOfField.aperture.value - UnblurredApeture)*Time.deltaTime);
+            ThisDepthOfField.aperture.value = Mathf.Lerp(ThisDepthOfField.aperture.value, UnblurredApeture, BlurRate/Mathf.Abs(ThisDepthOfField.aperture.value - UnblurredApeture)*Time.unscaledDeltaTime);
         }
+        
     }
 }
