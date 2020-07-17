@@ -2,8 +2,9 @@
 > WARNING: This Branch is Under Active Development Scripts Maybe Incomplete And/Or Fail To Compile
 
 > WARNING: By using the code in this project in any form I and any person who has contributed code to this project is entitled to take any bluetooth device off your body and eat it.
+
 ## Required Software
- - Unity 2020.2.0a15 - To build and edit levels
+ - Unity 2020.2.0a18 - To build and edit levels
  - Code Editor (e.g. Jetbrains Rider, Visual Studio etc.) - To Edit Code
  - Image editors (e.g. Glimpse, Photoshop, Piskel)
  - Blender - 3D Modeling, UV Mapping, Texture Editing
@@ -13,7 +14,7 @@
 	- [x] Walking
 	- [x] Jumping
 	- [x] Grappling Hook
-	- [x] Underwater Vertical Movment
+	- [x] Underwater Vertical Movement
 - [x] Torch (Environment)
 	- [x] Bloom
 	- [x] 2D Light
@@ -30,8 +31,8 @@
 	- [x] Bloom
 	- [x] Light Effects
 	- [ ] Particles
-	- [ ] Animations
-	- [ ] Item Effects
+	- [x] Animations
+	- [x] Item Effects
 - [ ] Pause Screen
 	- [ ] Blur Effect
 	- [ ] Stop Time
