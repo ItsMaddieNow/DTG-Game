@@ -57,8 +57,8 @@
      <Compile Include="Assets\LeanTween\Framework\LTDescr.cs" />
      <Compile Include="Assets\LeanTween\Framework\LeanTweenExt.cs" />
      <Compile Include="Assets\Code\GrappleHookSide.cs" />
-     <Compile Include="Assets\LeanTween\Framework\LTSeq.cs" />
      <Compile Include="Assets\LeanTween\Examples\Scripts\TestingUnitTests.cs" />
+     <Compile Include="Assets\LeanTween\Framework\LTSeq.cs" />
      <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralUISpace.cs" />
      <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralSimpleUI.cs" />
      <Compile Include="Assets\LeanTween\Examples\Scripts\PathSplineEndless.cs" />
@@ -698,6 +698,9 @@
  <Reference Include="Unity.TextMeshPro">
  <HintPath>/mnt/727fb0a1-0aba-43cf-b675-63069e43700d/Projects/as91893-and-91897-Mario/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.Burst.Editor">
+ <HintPath>/mnt/727fb0a1-0aba-43cf-b675-63069e43700d/Projects/as91893-and-91897-Mario/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.Searcher.Editor">
  <HintPath>/mnt/727fb0a1-0aba-43cf-b675-63069e43700d/Projects/as91893-and-91897-Mario/Library/ScriptAssemblies/Unity.Searcher.Editor.dll</HintPath>
  </Reference>
@@ -746,6 +749,9 @@
  <Reference Include="Cinemachine">
  <HintPath>/mnt/727fb0a1-0aba-43cf-b675-63069e43700d/Projects/as91893-and-91897-Mario/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.Burst">
+ <HintPath>/mnt/727fb0a1-0aba-43cf-b675-63069e43700d/Projects/as91893-and-91897-Mario/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
+ </Reference>
  <Reference Include="com.unity.cinemachine.editor">
  <HintPath>/mnt/727fb0a1-0aba-43cf-b675-63069e43700d/Projects/as91893-and-91897-Mario/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
  </Reference>
@@ -764,11 +770,11 @@
  <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
  <HintPath>/mnt/727fb0a1-0aba-43cf-b675-63069e43700d/Projects/as91893-and-91897-Mario/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
  </Reference>
- <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
- <HintPath>/mnt/727fb0a1-0aba-43cf-b675-63069e43700d/Projects/as91893-and-91897-Mario/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
- </Reference>
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>/mnt/727fb0a1-0aba-43cf-b675-63069e43700d/Projects/as91893-and-91897-Mario/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+ <HintPath>/mnt/727fb0a1-0aba-43cf-b675-63069e43700d/Projects/as91893-and-91897-Mario/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Mathematics.Editor">
  <HintPath>/mnt/727fb0a1-0aba-43cf-b675-63069e43700d/Projects/as91893-and-91897-Mario/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
@@ -787,12 +793,6 @@
  </Reference>
  <Reference Include="Unity.2D.SpriteShape.Runtime">
  <HintPath>/mnt/727fb0a1-0aba-43cf-b675-63069e43700d/Projects/as91893-and-91897-Mario/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Burst">
- <HintPath>/mnt/727fb0a1-0aba-43cf-b675-63069e43700d/Projects/as91893-and-91897-Mario/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Burst.Editor">
- <HintPath>/mnt/727fb0a1-0aba-43cf-b675-63069e43700d/Projects/as91893-and-91897-Mario/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

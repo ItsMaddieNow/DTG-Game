@@ -8,6 +8,7 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
     private PlayerControls Controls;
     public GameObject PauseMenuUI;
+    public RectTransform PauseMenuRectTransform;
     
     // Start is called before the first frame update
     void Awake()
@@ -27,6 +28,7 @@ public class PauseMenu : MonoBehaviour
         if (GameIsPaused)
         {
             Resume();
+            
         }
         else
         {
@@ -36,18 +38,29 @@ public class PauseMenu : MonoBehaviour
 
     void Resume()
     {
-        PauseMenuUI.SetActive(false);
-        Time.timeScale = 1f;
         GameIsPaused = false;
+        LeanTween.alpha(PauseMenuRectTransform, 0f, 1f).setOnComplete(OnResumeComplete);
     }
 
     void Pause()
     {
-        PauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+        PauseMenuUI.SetActive(true);
+        LeanTween.alpha(PauseMenuRectTransform, 1f, 1f).setOnComplete(OnPauseComplete);
     }
 
+    void OnPauseComplete()
+    {
+        
+    }
+
+    void OnResumeComplete()
+    {
+        Time.timeScale = 1f;
+        PauseMenuUI.SetActive(false);
+    }
+    
     private void OnEnable()
     {
         Controls.Enable();
