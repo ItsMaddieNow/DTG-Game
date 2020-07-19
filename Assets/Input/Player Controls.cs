@@ -81,6 +81,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""b293db4d-7347-4e86-a17f-6fbfefaa6ea5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -248,6 +256,28 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""Torch Throw"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f9708316-276a-4341-a502-a29d76c29a57"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b01441b6-7093-4b45-a42a-48ea91ef6454"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -264,6 +294,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Gameplay_GrappleDistanceControl = m_Gameplay.FindAction("Grapple Distance Control", throwIfNotFound: true);
         m_Gameplay_TorchEnable = m_Gameplay.FindAction("Torch Enable", throwIfNotFound: true);
         m_Gameplay_TorchThrow = m_Gameplay.FindAction("Torch Throw", throwIfNotFound: true);
+        m_Gameplay_Pause = m_Gameplay.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -321,6 +352,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Gameplay_GrappleDistanceControl;
     private readonly InputAction m_Gameplay_TorchEnable;
     private readonly InputAction m_Gameplay_TorchThrow;
+    private readonly InputAction m_Gameplay_Pause;
     public struct GameplayActions
     {
         private @PlayerControls m_Wrapper;
@@ -333,6 +365,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @GrappleDistanceControl => m_Wrapper.m_Gameplay_GrappleDistanceControl;
         public InputAction @TorchEnable => m_Wrapper.m_Gameplay_TorchEnable;
         public InputAction @TorchThrow => m_Wrapper.m_Gameplay_TorchThrow;
+        public InputAction @Pause => m_Wrapper.m_Gameplay_Pause;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -366,6 +399,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @TorchThrow.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTorchThrow;
                 @TorchThrow.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTorchThrow;
                 @TorchThrow.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTorchThrow;
+                @Pause.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPause;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -394,6 +430,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @TorchThrow.started += instance.OnTorchThrow;
                 @TorchThrow.performed += instance.OnTorchThrow;
                 @TorchThrow.canceled += instance.OnTorchThrow;
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
             }
         }
     }
@@ -408,5 +447,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnGrappleDistanceControl(InputAction.CallbackContext context);
         void OnTorchEnable(InputAction.CallbackContext context);
         void OnTorchThrow(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
 }
