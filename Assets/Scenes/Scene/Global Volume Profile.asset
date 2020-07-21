@@ -76,8 +76,8 @@ MonoBehaviour:
     m_Value: 0.3
     min: 0
   scatter:
-    m_OverrideState: 0
-    m_Value: 1
+    m_OverrideState: 1
+    m_Value: 0.5
     min: 0
     max: 1
   clamp:
@@ -86,7 +86,7 @@ MonoBehaviour:
     min: 0
   tint:
     m_OverrideState: 0
-    m_Value: {r: 0, g: 1, b: 1, a: 1}
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
     hdr: 0
     showAlpha: 0
     showEyeDropper: 1
@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c01700fd266d6914ababb731e09af2eb, type: 3}
   m_Name: DepthOfField
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   m_AdvancedMode: 0
   mode:
     m_OverrideState: 1
@@ -138,13 +138,8 @@ MonoBehaviour:
     m_Value: 1.5
     min: 0.1
   aperture:
-<<<<<<< HEAD
-    m_OverrideState: 0
-    m_Value: 23.2
-=======
     m_OverrideState: 1
     m_Value: 32
->>>>>>> 0997ee011f1b9758c2f1aad4cff940d4893bcd4e
     min: 1
     max: 32
   focalLength:

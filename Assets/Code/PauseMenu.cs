@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -15,6 +17,8 @@ public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        LeanTween.init();
+        //Starting Input
         Controls = new PlayerControls();
         Controls.Gameplay.Pause.started += ctx => PauseCall();
     }
@@ -40,10 +44,11 @@ public class PauseMenu : MonoBehaviour
 
     void Resume()
     {
-        Time.timeScale = 1f;
         GameIsPaused = false;
-        LeanTween.alpha(PauseMenuRectTransform, 0f, TransitionTime).setOnComplete(OnResumeComplete);
-        LeanTween.alpha(OpaqueRectTransform, 0f, TransitionTime);
+        //Background transparency
+        LeanTween.alpha(PauseMenuRectTransform, 0f, TransitionTime).setIgnoreTimeScale(true);
+        //Button transparency
+        LeanTween.alpha(OpaqueRectTransform, 0f, TransitionTime).setIgnoreTimeScale(true).setOnComplete(OnResumeComplete);
     }
 
     void Pause()
@@ -51,8 +56,10 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         GameIsPaused = true;
         UIContainer.SetActive(true);
-        LeanTween.alpha(PauseMenuRectTransform, 1f, TransitionTime).setOnComplete(OnResumeComplete);
-        LeanTween.alpha(OpaqueRectTransform, 1f, TransitionTime);
+        //Background transparency
+        LeanTween.alpha(PauseMenuRectTransform, 100f/255f, TransitionTime).setIgnoreTimeScale(true);
+        //Button transparency
+        LeanTween.alpha(OpaqueRectTransform, 1f, TransitionTime).setIgnoreTimeScale(true).setOnComplete(OnPauseComplete);
     }
 
     void OnPauseComplete()
@@ -62,16 +69,25 @@ public class PauseMenu : MonoBehaviour
 
     void OnResumeComplete()
     {
-        
         UIContainer.SetActive(false);
+        Time.timeScale = 1f;
     }
     
     private void OnEnable()
     {
+        //Enables The Input WHen This Script is Enabled
         Controls.Enable();
     }
     private void OnDisable()
     {
+        //Disables The Input WHen This Script is Disabled
         Controls.Disable();
     }
+
+    void TweenAlpha(Color TweenColor, float To)
+    {
+        //float a = AlphaValue;
+        DOTween.ToAlpha(() => TweenColor, x => TweenColor = x, To, TransitionTime);
+    }
+    
 }

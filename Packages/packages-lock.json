@@ -198,7 +198,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.timeline": {
-      "version": "1.5.0-preview.2",
+      "version": "1.5.0-preview.3",
       "depth": 0,
       "source": "registry",
       "dependencies": {

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -28,10 +29,12 @@ public class Blur : MonoBehaviour
         Blurred = PauseMenu.GameIsPaused;
         if (Blurred)
         {
+            //Opens the apeture to unblur
             ThisDepthOfField.aperture.value = Mathf.Lerp(ThisDepthOfField.aperture.value, BlurredApeture, BlurRate/Mathf.Abs(ThisDepthOfField.aperture.value - BlurredApeture)*Time.unscaledDeltaTime);
         }
         else
         {
+            //closes the apeture to blur
             ThisDepthOfField.aperture.value = Mathf.Lerp(ThisDepthOfField.aperture.value, UnblurredApeture, BlurRate/Mathf.Abs(ThisDepthOfField.aperture.value - UnblurredApeture)*Time.unscaledDeltaTime);
         }
         

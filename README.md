@@ -14,6 +14,8 @@
 	- [x] Walking
 	- [x] Jumping
 	- [x] Grappling Hook
+		- [ ] Refined Line Collision
+		- [ ] Prevent Player From Phasing Through Surfaces by Using The Grappling Hook
 	- [x] Underwater Vertical Movement
 - [x] Torch (Environment)
 	- [x] Bloom
@@ -33,9 +35,11 @@
 	- [ ] Particles
 	- [x] Animations
 	- [x] Item Effects
-- [ ] Pause Screen
+- [x] Pause Screen
 	- [ ] Blur Effect
-	- [ ] Stop Time
+	- [x] Stop Time
+	- [x] Fade In
+	- [x] Fade Out
 - [ ] Water
 	- [ ] Shader Overhaul
 		- [x] Waves  

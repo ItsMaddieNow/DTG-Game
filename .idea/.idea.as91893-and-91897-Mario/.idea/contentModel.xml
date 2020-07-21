@@ -1,25 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-<<<<<<< HEAD
-    <e p="C:\Users\frank\AppData\local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\frank\AppData\local\JetBrains\Rider2020.1\resharper-host\local\Transient\ReSharperHost\v201\SolutionCaches\_as91893-and-91897-Mario.-155177606.00" t="ExcludeRecursive" />
-    <e p="C:\Users\frank\Documents\GitHub\as91893-and-91897-Mario" t="IncludeRecursive">
+    <e p="C:\Users\frank\AppData\Local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\frank\AppData\Local\JetBrains\Rider2020.1\resharper-host\Local\Transient\ReSharperHost\v201\SolutionCaches\_as91893-and-91897-Mario.-1415446382.00" t="ExcludeRecursive" />
+    <e p="C:\Users\frank\OneDrive\Documents\GitHub\as91893-and-91897-Mario" t="IncludeRecursive">
       <e p="as91893-and-91897-Mario.sln" t="IncludeFlat" />
-=======
-    <e p="$USER_HOME$/.cache/JetBrains/Rider2020.1/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/.cache/JetBrains/Rider2020.1/resharper-host/local/Transient/ReSharperHost/v201/SolutionCaches/_as91893-and-91897-Mario.-1662001077.00" t="ExcludeRecursive" />
-    <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
->>>>>>> 0997ee011f1b9758c2f1aad4cff940d4893bcd4e
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="Blurring.cs" t="Include" />
         <e p="Code" t="Include">
-<<<<<<< HEAD
-=======
           <e p="Blur.cs" t="Include" />
->>>>>>> 0997ee011f1b9758c2f1aad4cff940d4893bcd4e
           <e p="CrystalController.cs" t="Include" />
           <e p="Darkening.cs" t="Include" />
           <e p="Fire.cs" t="Include" />
@@ -34,6 +24,20 @@
           <e p="RotationLock.cs" t="Include" />
           <e p="TorchExtinguish.cs" t="Include" />
           <e p="TorchFlameController.cs" t="Include" />
+        </e>
+        <e p="Demigiant" t="Include">
+          <e p="DOTween" t="Include">
+            <e p="Modules" t="Include">
+              <e p="DOTweenModuleAudio.cs" t="Include" />
+              <e p="DOTweenModulePhysics.cs" t="Include" />
+              <e p="DOTweenModulePhysics2D.cs" t="Include" />
+              <e p="DOTweenModuleSprite.cs" t="Include" />
+              <e p="DOTweenModuleUI.cs" t="Include" />
+              <e p="DOTweenModuleUnityVersion.cs" t="Include" />
+              <e p="DOTweenModuleUtils.cs" t="Include" />
+            </e>
+            <e p="ReadMe.txt" t="Include" />
+          </e>
         </e>
         <e p="Input" t="Include">
           <e p="Player Controls.cs" t="Include" />
@@ -67,29 +71,29 @@
               <e p="PathSpline2d.cs" t="Include" />
               <e p="PathSplineEndless.cs" t="Include" />
               <e p="PathSplinePerformance.cs" t="Include" />
-              <e p="PathSplineTrack.cs" t="Include" />
               <e p="PathSplines.cs" t="Include" />
+              <e p="PathSplineTrack.cs" t="Include" />
               <e p="TestingUnitTests.cs" t="Include" />
               <e p="TestingZLegacy.cs" t="Include" />
               <e p="TestingZLegacyExt.cs" t="Include" />
             </e>
           </e>
           <e p="Framework" t="Include">
-            <e p="LTDescr.cs" t="Include" />
-            <e p="LTDescrOptional.cs" t="Include" />
-            <e p="LTSeq.cs" t="Include" />
             <e p="LeanAudio.cs" t="Include" />
             <e p="LeanSmooth.cs" t="Include" />
             <e p="LeanTest.cs" t="Include" />
             <e p="LeanTween.cs" t="Include" />
             <e p="LeanTweenExt.cs" t="Include" />
+            <e p="LTDescr.cs" t="Include" />
+            <e p="LTDescrOptional.cs" t="Include" />
+            <e p="LTSeq.cs" t="Include" />
           </e>
           <e p="License.txt" t="Include" />
           <e p="ReadMe.txt" t="Include" />
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />
-      <e p="packages" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
       <e p="Temp\Bin" t="ExcludeRecursive" />
     </e>
   </component>
