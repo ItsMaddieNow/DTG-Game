@@ -1,9 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using DG.Tweening;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -13,10 +13,13 @@ public class PauseMenu : MonoBehaviour
     public RectTransform PauseMenuRectTransform;
     public RectTransform OpaqueRectTransform;
     public float TransitionTime = 0.5f;
-    
+    [SerializeField] private Volume MyVolume;
+    [SerializeField] private DepthOfField MyDepthOfField;
+
     // Start is called before the first frame update
     void Awake()
     {
+        MyVolume.profile.TryGet(out MyDepthOfField);
         LeanTween.init();
         //Starting Input
         Controls = new PlayerControls();
@@ -49,6 +52,11 @@ public class PauseMenu : MonoBehaviour
         LeanTween.alpha(PauseMenuRectTransform, 0f, TransitionTime).setIgnoreTimeScale(true);
         //Button transparency
         LeanTween.alpha(OpaqueRectTransform, 0f, TransitionTime).setIgnoreTimeScale(true).setOnComplete(OnResumeComplete);
+        LeanTween.value(gameObject,MyDepthOfField.aperture.value,32f,TransitionTime).setIgnoreTimeScale(true)
+            .setOnUpdate((float val) =>
+            {
+                MyDepthOfField.aperture.value = val;
+            });
     }
 
     void Pause()
@@ -60,6 +68,11 @@ public class PauseMenu : MonoBehaviour
         LeanTween.alpha(PauseMenuRectTransform, 100f/255f, TransitionTime).setIgnoreTimeScale(true);
         //Button transparency
         LeanTween.alpha(OpaqueRectTransform, 1f, TransitionTime).setIgnoreTimeScale(true).setOnComplete(OnPauseComplete);
+        LeanTween.value(MyDepthOfField.aperture.value, 1f, TransitionTime).setIgnoreTimeScale(true)
+            .setOnUpdate((float val) =>
+            {
+                MyDepthOfField.aperture.value = val;
+            });
     }
 
     void OnPauseComplete()
@@ -83,11 +96,4 @@ public class PauseMenu : MonoBehaviour
         //Disables The Input WHen This Script is Disabled
         Controls.Disable();
     }
-
-    void TweenAlpha(Color TweenColor, float To)
-    {
-        //float a = AlphaValue;
-        DOTween.ToAlpha(() => TweenColor, x => TweenColor = x, To, TransitionTime);
-    }
-    
 }

@@ -36,7 +36,7 @@
 	- [x] Animations
 	- [x] Item Effects
 - [x] Pause Screen
-	- [ ] Blur Effect
+	- [x] Blur Effect
 	- [x] Stop Time
 	- [x] Fade In
 	- [x] Fade Out
