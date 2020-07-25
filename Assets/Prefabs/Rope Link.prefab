@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6166250518407130611}
   - component: {fileID: 44748003612534267}
   - component: {fileID: 8930806159110805201}
-  - component: {fileID: 7950502048516443218}
+  - component: {fileID: 2891709241762410468}
   m_Layer: 0
   m_Name: Rope Link
   m_TagString: Untagged
@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28ebcab5dd69d384dba68c7af96184e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LinkTransform: {fileID: 7171721498096922395}
-  LinkJoint: {fileID: 7950502048516443218}
+  LinkRB: {fileID: 8930806159110805201}
+  LinkJoint: {fileID: 0}
 --- !u!58 &44748003612534267
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -85,8 +85,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!254 &7950502048516443218
-RelativeJoint2D:
+--- !u!232 &2891709241762410468
+DistanceJoint2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -98,9 +98,9 @@ RelativeJoint2D:
   m_ConnectedRigidBody: {fileID: 0}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_MaxForce: 10000
-  m_MaxTorque: 10000
-  m_CorrectionScale: 0.3
-  m_AutoConfigureOffset: 1
-  m_LinearOffset: {x: 0, y: 0}
-  m_AngularOffset: 0
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_AutoConfigureDistance: 0
+  m_Distance: 0.5
+  m_MaxDistanceOnly: 1
