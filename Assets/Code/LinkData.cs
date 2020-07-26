@@ -5,5 +5,5 @@ using UnityEngine;
 public class LinkData : MonoBehaviour
 {
     public Rigidbody2D LinkRB;
-    public RelativeJoint2D LinkJoint;
+    public DistanceJoint2D LinkJoint;
 }

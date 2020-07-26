@@ -5934,6 +5934,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2072599676}
   - component: {fileID: 2072599675}
+  - component: {fileID: 2072599678}
+  - component: {fileID: 2072599677}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -5957,9 +5959,10 @@ MonoBehaviour:
   LineDensity: 0.5
   ClosestLinkLength: 0
   NumberOfLinks: 0
-  LinkPrefab: {fileID: 0}
+  LinkPrefab: {fileID: 8056423918395787251, guid: ab2976137459a3740aae9fbf88fc60a5, type: 3}
   Links: []
-  LinkSpawnPoint: {fileID: 0}
+  LinkSpawnPoint: {fileID: 2072599676}
+  HookDeployed: 0
 --- !u!4 &2072599676
 Transform:
   m_ObjectHideFlags: 0
@@ -5974,3 +5977,43 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!232 &2072599677
+DistanceJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2072599674}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_AutoConfigureDistance: 0
+  m_Distance: 0.5
+  m_MaxDistanceOnly: 0
+--- !u!50 &2072599678
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2072599674}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

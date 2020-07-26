@@ -56,8 +56,8 @@ public class GrapplePlayerSide : MonoBehaviour
     {
         Line = this.GetComponent<DistanceJoint2D>();
         Cam = Camera.main;
+        
         Controls = new PlayerControls();
-        Controls.Gameplay.Enable();
         PlayerMovementScript = this.GetComponent<PlayerMovement>();
         
         Controls.Gameplay.GrappleButton.performed += ctx => Grapple();
@@ -207,5 +207,15 @@ public class GrapplePlayerSide : MonoBehaviour
             Destroy(SpawnedHook);
         }
         RopeRenderer.enabled = HookPresent;
+    }
+
+    private void OnEnable()
+    {
+        Controls.Gameplay.Enable();
+    }
+
+    private void OnDisable()
+    {
+        Controls.Gameplay.Disable();
     }
 }

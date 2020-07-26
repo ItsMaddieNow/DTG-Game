@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 44748003612534267}
   - component: {fileID: 8930806159110805201}
   - component: {fileID: 2891709241762410468}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rope Link
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LinkRB: {fileID: 8930806159110805201}
-  LinkJoint: {fileID: 0}
+  LinkJoint: {fileID: 2891709241762410468}
 --- !u!58 &44748003612534267
 CircleCollider2D:
   m_ObjectHideFlags: 0
