@@ -6,19 +6,18 @@ using UnityEngine;
 public class GrapplePlus : MonoBehaviour
 {
     private PlayerControls Controls;
-    
-    [Header("Line Settings")]
-    public float LineLength;
+
+    [Header("Line Settings")] public float LineLength;
     public float LineDensity = 0.5f;
     private float LengthNoHook;
     public float ClosestLinkLength;
     public int NumberOfLinks;
-    
+
     public GameObject LinkPrefab;
     public LinkData[] Links;
     public Transform LinkSpawnPoint;
-    private DistanceJoint2D SpawnPointJoint;
-    private Rigidbody2D DeployedHookRB;
+    [SerializeField] private DistanceJoint2D SpawnPointJoint;
+    [SerializeField] private Rigidbody2D DeployedHookRB;
     [SerializeField] private bool HookDeployed = false;
     
 
@@ -36,6 +35,7 @@ public class GrapplePlus : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        SpawnPointJoint.enabled = HookDeployed;
         LengthNoHook = LineLength - LineDensity;
         ClosestLinkLength = LineLength % LineDensity;
         NumberOfLinks = Mathf.Max(Mathf.FloorToInt((LengthNoHook - ClosestLinkLength) / LineDensity),0);
@@ -45,11 +45,12 @@ public class GrapplePlus : MonoBehaviour
             SpawnPointJoint.distance = ClosestLinkLength;
         }
 
+        //Debug.Log(NumberOfLinks + ", " + Links.Length);
         if (NumberOfLinks > Links.Length)
         {
             NewLink();
         }
-        else if (NumberOfLinks > Links.Length)
+        else if (NumberOfLinks < Links.Length)
         {
             RemoveLink();
         }
@@ -71,19 +72,22 @@ public class GrapplePlus : MonoBehaviour
             CurrentLink.transform.position = LinkSpawnPoint.transform.position;
             Links[i] = CurrentLink.GetComponent<LinkData>();
             Links[i].LinkJoint.connectedBody = 0 > i-1 ? DeployedHookRB : Links[i - 1].LinkRB;
+            Links[i].LinkJoint.distance = LineDensity;
         }
-        SpawnPointJoint.connectedBody = Links[Links.Length].LinkRB;
+        SpawnPointJoint.connectedBody = Links[Links.Length-1].LinkRB;
+        Debug.Log(Links.Length + ", " + Links[Links.Length-1].LinkRB);
     }
 
     private void RemoveLink()
     {
-        int FilledLinks = Links.Length;
-        for (int i = FilledLinks; i > NumberOfLinks; i--)
+        //int FilledLinks = Links.Length;
+        for (int i = Links.Length; i > NumberOfLinks; i--)
         {
-            Destroy(Links[Links.Length].gameObject);
+            Debug.Log("Destroyed Object (" + Links[Links.Length-1] + ")");
+            Destroy(Links[Links.Length-1].gameObject);
         }
         Array.Resize(ref Links, NumberOfLinks);
-        SpawnPointJoint.connectedBody = Links[Links.Length].LinkRB;
+        SpawnPointJoint.connectedBody = Links[Links.Length-1].LinkRB;
     }
 
     private void EndGrapple()
@@ -98,11 +102,11 @@ public class GrapplePlus : MonoBehaviour
     
     private void OnEnable()
     {
-        Controls.Gameplay.Enable();
+        Controls.Enable();
     }
 
     private void OnDisable()
     {
-        Controls.Gameplay.Disable();
+        Controls.Disable();
     }
 }
