@@ -5265,7 +5265,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 77db64f5b6526e3b1b62be17ca8970a9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5291,7 +5291,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 0.0625
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -5352,7 +5352,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 517870289}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7800817, y: 0.71613264, z: -5.1294646}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5887,7 +5887,7 @@ Rigidbody2D:
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 2
   m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!4 &1610925220
@@ -6011,6 +6011,7 @@ MonoBehaviour:
   LineDensity: 0.5
   ClosestLinkLength: 0
   NumberOfLinks: 0
+  RopeRenderer: {fileID: 517870290}
   LinkPrefab: {fileID: 8056423918395787251, guid: ab2976137459a3740aae9fbf88fc60a5, type: 3}
   Links: []
   LinkSpawnPoint: {fileID: 2072599676}
