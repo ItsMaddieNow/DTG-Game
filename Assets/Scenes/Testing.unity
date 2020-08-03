@@ -5868,7 +5868,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &1610925219
 Rigidbody2D:
   serializedVersion: 4
@@ -6008,16 +6008,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LineLength: 0
-  LineDensity: 0.5
+  LineDensity: 0.25
   ClosestLinkLength: 0
   NumberOfLinks: 0
+  HookPrefab: {fileID: 2439449067807056290, guid: 6f4ed490703c2de458bf99cb9fed66df, type: 3}
   RopeRenderer: {fileID: 517870290}
   LinkPrefab: {fileID: 8056423918395787251, guid: ab2976137459a3740aae9fbf88fc60a5, type: 3}
   Links: []
   LinkSpawnPoint: {fileID: 2072599676}
   SpawnPointJoint: {fileID: 2072599677}
-  DeployedHookRB: {fileID: 1610925219}
-  HookDeployed: 1
 --- !u!4 &2072599676
 Transform:
   m_ObjectHideFlags: 0
