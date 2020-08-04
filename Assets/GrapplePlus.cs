@@ -4,30 +4,30 @@ using UnityEngine.InputSystem;
 
 public class GrapplePlus : MonoBehaviour
 {
-    [Header("Controls")]
-    private PlayerControls Controls;
+    [Header("Controls")] private PlayerControls Controls;
     private Vector2 GrappleDirection;
     private Camera Cam;
-    
+
     [Header("Line Settings")] public float LineLength;
     public float LineDensity = 0.5f;
     private float LengthNoHook;
     private float ClosestLinkLength;
     private int NumberOfLinks;
-    [SerializeField]private float InitialLinkLeeway;
-    [SerializeField]private float DeltaLinkLeewayMultiplier;
+    public float InitialLinkLeeway;
+    public float DeltaLinkLeewayMultiplier;
+    private float CurrentLineDistance;
+    private float PreviousLineDistance;
 
-    [Header("Rope")]
-    [SerializeField] private GameObject HookPrefab;
+    [Header("Rope")] public GameObject HookPrefab;
     private Rigidbody2D DeployedHookRB;
-    private bool HookDeployed = false;
+    [SerializeField] private bool HookDeployed = false;
     
-    [SerializeField] private LineRenderer RopeRenderer;
-    [SerializeField] private GameObject LinkPrefab;
+    public LineRenderer RopeRenderer;
+    public GameObject LinkPrefab;
     public LinkData[] Links;
     private Vector3[] LineRendererPoints = new Vector3[1];
     public Transform LinkSpawnPoint;
-    [SerializeField] private DistanceJoint2D SpawnPointJoint;
+    public DistanceJoint2D SpawnPointJoint;
     public bool HookIsLatched;
 
         // Start is called before the first frame update
@@ -66,18 +66,18 @@ public class GrapplePlus : MonoBehaviour
             ClosestLinkLength = LineLength % LineDensity;
             NumberOfLinks = Mathf.Max(Mathf.FloorToInt((LengthNoHook - ClosestLinkLength) / LineDensity),0);
             SpawnPointJoint.distance = ClosestLinkLength;
+            
+            //Debug.Log(NumberOfLinks + ", " + Links.Length);
+            if (NumberOfLinks > Links.Length)
+            {
+                NewLink();
+            }
+            else if (NumberOfLinks <= Links.Length)
+            {
+                RemoveLink();
+            }
+            LineCompose();
         }
-
-        //Debug.Log(NumberOfLinks + ", " + Links.Length);
-        if (NumberOfLinks > Links.Length)
-        {
-            NewLink();
-        }
-        else if (NumberOfLinks <= Links.Length)
-        {
-            RemoveLink();
-        }
-        LineCompose();
     }
 
     private void GrappleToggle()
@@ -96,6 +96,7 @@ public class GrapplePlus : MonoBehaviour
     {
         //creates hook
         DeployedHookRB = Instantiate(HookPrefab).GetComponent<Rigidbody2D>();
+            DeployedHookRB.GetComponent<NewHookScript>().DeployedFrom = this;
         //amkes space for hook to move
         LineLength = InitialLinkLeeway;
         //adds force to hook
@@ -176,17 +177,27 @@ public class GrapplePlus : MonoBehaviour
 
     private void FlyingLineDistanceCalculator()
     {
-        float CurrentLineDistance;
-        for (int i = 0; i < Links.Length ;i++)
+        CurrentLineDistance = 0;
+        for (int i = 0; i < Links.Length+1 ;i++)
         {
-            //CurrentLineDistance += Vector2.Distance((i <= 0) ? LinkSpawnPoint.transform.position : Links[i - 1].transform.position , (i >= Links.Length) ? DeployedHookRB.transform.position : Links[i].transform.position);
-            Debug.Log("Calculating distance between" + ((i <= 0) ? LinkSpawnPoint.transform.position : Links[i - 1].transform.position) + "and" + ((i >= Links.Length) ? DeployedHookRB.transform.position : Links[i].transform.position));
+            CurrentLineDistance += Vector2.Distance((i <= 0) ? LinkSpawnPoint.transform.position : Links[i - 1].transform.position , (i >= Links.Length) ? DeployedHookRB.transform.position : Links[i].transform.position);
+            Debug.Log("Calculating distance between " + (
+                (i <= 0) ?     
+                    LinkSpawnPoint.gameObject : 
+                    Links[i - 1].gameObject
+                    ) + " and " + (
+                (i >= Links.Length) ?
+                    DeployedHookRB.gameObject : 
+                    Links[i].gameObject)
+                );
         }
+        Debug.Log(PreviousLineDistance-CurrentLineDistance);
+        PreviousLineDistance = CurrentLineDistance;
     }
     
     private void OnEnable()
     {
-        Controls.Enable();
+        Controls?.Enable();
     }
 
     private void OnDisable()
