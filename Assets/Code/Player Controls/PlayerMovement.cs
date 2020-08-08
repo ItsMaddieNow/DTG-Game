@@ -76,6 +76,7 @@ public class PlayerMovement : MonoBehaviour
             Physics2D.Raycast(transform.position - ColliderOffset, -transform.up, MaxDistance, RaycastLayerDetect) || 
             Physics2D.Raycast(transform.position, -transform.up, MaxDistance, RaycastLayerDetect)
         );
+        
         FeetSubmerged = (
             Physics2D.Raycast(transform.position + FootColliderOffset, -transform.up, FootDistance, WaterLayers) || 
             Physics2D.Raycast(transform.position - new Vector3(FootColliderOffset.x, -FootColliderOffset.y, FootColliderOffset.z), -transform.up, FootDistance, WaterLayers)
