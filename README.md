@@ -16,7 +16,7 @@
 	- [x] Grappling Hook
 		- [x] Refined Line Collision
 		- [ ] Prevent Player From Phasing Through Surfaces by Using The Grappling Hook
-		- [ ] Transform Childing (Syncing the hook's movement to the object it is attached to)
+		- [x] Hook Position Syncing
 	- [x] Underwater Vertical Movement
 - [x] Torch (Environment)
 	- [x] Bloom
