@@ -9,7 +9,7 @@ public class NewHookScript : MonoBehaviour
     private Transform ThisTransform;
     public bool HooksIsLatched;
 
-    public GrapplePlus DeployedFrom;
+    public PlayerAbilities DeployedFrom;
     // Start is called before the first frame update
     void Start()
     {

@@ -15,7 +15,6 @@
           <e p="GlowWeedAnimationController.cs" t="Include" />
           <e p="GrappleHookSide.cs" t="Include" />
           <e p="GrapplePlayerSide.cs" t="Include" />
-          <e p="GrapplePlus.cs" t="Include" />
           <e p="LightController.cs" t="Include" />
           <e p="LinkData.cs" t="Include" />
           <e p="NewHookScript.cs" t="Include" />
@@ -23,6 +22,7 @@
           <e p="Player Controls" t="Include">
             <e p="PlayerMovement.cs" t="Include" />
           </e>
+          <e p="PlayerAbilities.cs" t="Include" />
           <e p="RotationLock.cs" t="Include" />
           <e p="TorchExtinguish.cs" t="Include" />
           <e p="TorchFlameController.cs" t="Include" />
