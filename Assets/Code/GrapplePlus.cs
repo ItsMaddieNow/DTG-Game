@@ -10,13 +10,14 @@ public class GrapplePlus : MonoBehaviour
     private Camera Cam;
     public float LaunchSpeed = 20f;
 
-    [Header("Line Settings")] public float LineLength;
+    [Header("Line Settings")] 
+    public float LineLength;
     public float LineDensity = 0.5f;
     private float LengthNoHook;
     private float ClosestLinkLength;
     private int NumberOfLinks;
-    public float InitialLinkLeeway;
-    public float DeltaLinkLeewayMultiplier;
+    //public float InitialLinkLeeway;
+    //public float DeltaLinkLeewayMultiplier;
 
     [Header("Hook")]
     public LayerMask HookableLayers;
