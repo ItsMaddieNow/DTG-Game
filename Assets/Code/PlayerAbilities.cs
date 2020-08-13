@@ -12,6 +12,8 @@ public class PlayerAbilities : MonoBehaviour
     private Camera Cam;
     
     [Header("Grappling Hook")]
+    public GameObject GrapplingGun;
+    public Vector2 GunPositionWarp;
     public float HookLaunchSpeed = 20f;
     public GameObject HookPrefab;
     public GameObject LinkPrefab;
@@ -56,7 +58,7 @@ public class PlayerAbilities : MonoBehaviour
         Controls.Gameplay.Enable();
         Controls.Gameplay.GrappleDistanceControl.performed += ctx => LineLength += ctx.ReadValue<float>();
         Controls.Gameplay.GrappleDistanceControl.canceled += ctx => LineLength += 0f;
-        Controls.Gameplay.GrappleButton.performed += ctx => GrappleToggle();
+        Controls.Gameplay.GrappleToggle.performed += ctx => GrappleToggle();
         Controls.Gameplay.GrappleButton.performed += ctx => Grapple();
         
         Controls.Gameplay.TorchEnable.performed += ctx => TorchToggle();
@@ -88,6 +90,8 @@ public class PlayerAbilities : MonoBehaviour
             TorchTransform.eulerAngles = new Vector3(0, 0, Mathf.Lerp(-30f,30f, Mathf.InverseLerp(AnchorLocalPos.x, -AnchorLocalPos.x, Torch.transform.localPosition.x)));
         }
         //Grappling hook
+        GrapplingGun.SetActive(CurrentItem == "Grappling Hook");        
+        LinkSpawnPoint.GetComponent<SpriteRenderer>().enabled = !HookLaunched;
         if (HookLaunched)
         {
             Vector2 HookPos = DeployedHook.transform.position;
@@ -142,6 +146,20 @@ public class PlayerAbilities : MonoBehaviour
         if (CurrentItem == "Grapple")
         {
             LineCompose();
+        }
+    }
+    void Grapple()
+    {
+        if (CurrentItem == "Grappling Hook")
+        {
+            if (HookLaunched == false)
+            {
+                StartGrapple();
+            }
+            else
+            {
+                EndGrapple();
+            }
         }
     }
     // May Need Revision

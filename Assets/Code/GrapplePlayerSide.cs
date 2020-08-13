@@ -18,7 +18,7 @@ public class GrapplePlayerSide : MonoBehaviour
     public GameObject GrapplingGun;
     public Vector2 GunPositionWarp;
     
-    [Header("Hook")] 
+    [Header("Hook")]
     public GameObject HookSpawn;
     public GameObject Hook;
     [SerializeField]
