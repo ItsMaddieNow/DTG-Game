@@ -103,7 +103,9 @@ public class GrapplePlayerSide : MonoBehaviour
             GrapplingGun.transform.localPosition = GrappleGunDirection * GunPositionWarp;
         }
         
-        GrapplingGun.transform.rotation = Quaternion.Euler(0, (GrappleDirection.x<0) ? 0:180,Mathf.Rad2Deg * Mathf.Atan2((GrappleGunDirection * GunPositionWarp).y,(((GrappleDirection.x<0) ? -GrappleGunDirection:GrappleGunDirection) * GunPositionWarp).x));
+        GrapplingGun.transform.rotation = Quaternion.Euler(0, (GrappleDirection.x < 0) ? 0 : 180,
+            Mathf.Rad2Deg * Mathf.Atan2((GrappleGunDirection * GunPositionWarp).y,
+                (((GrappleDirection.x < 0) ? -GrappleGunDirection : GrappleGunDirection) * GunPositionWarp).x));
         
         //Line Renderer
         RopeRenderer.enabled = HookPresent;

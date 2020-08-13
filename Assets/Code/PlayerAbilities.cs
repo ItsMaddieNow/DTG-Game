@@ -6,23 +6,22 @@ public class PlayerAbilities : MonoBehaviour
 {
     [Header("General")]
     public string CurrentItem;
+
+    public PlayerMovement PlayerMovementScript;
     
     [Header("Controls")]
     private PlayerControls Controls;
     private Camera Cam;
-    
-    [Header("Grappling Hook")]
+
+    [Header("Grappling Hook")] 
     public GameObject GrapplingGun;
     public Vector2 GunPositionWarp;
-    public float HookLaunchSpeed = 20f;
     public GameObject HookPrefab;
     public GameObject LinkPrefab;
-    private Vector2 GrappleDirection;
-    public LayerMask LatchableLayers;
-    public float MaxLength = 20f;
-    public float DeploySpeed = 20f;
+    //public LayerMask LatchableLayers;
     private Vector2 Target;
     public Transform LinkSpawnPoint;
+    public SpriteRenderer HookRenderer;
     public DistanceJoint2D SpawnPointJoint;
 
     // Hook States
@@ -37,7 +36,10 @@ public class PlayerAbilities : MonoBehaviour
     private Rigidbody2D DeployedHookRB;
     public LineRenderer RopeRenderer;
     
-    [Header("Grappling Line Setting")]
+    [Header("Grappling Settings")]
+    public float GrappleGunSmoothing = 0.1f;
+    public float MaxLength = 20f;
+    public float DeploySpeed = 20f;
     public float LineLength;
     public float LineDensity = 0.5f;
     private float LengthNoHook;
@@ -50,6 +52,11 @@ public class PlayerAbilities : MonoBehaviour
     public GameObject TorchAnchor;
     public GameObject TorchContainer;
     public GameObject Flame;
+    
+    // Control Processing
+    private Vector2 ProcessedGrappleGunDirection;
+    private Vector2 GrappleGunDirection;
+    private Vector2 GrappleDirection;
     
     // Controls need to be started in awake or warnings will occur
     void Awake()
@@ -91,10 +98,29 @@ public class PlayerAbilities : MonoBehaviour
         }
         //Grappling hook
         GrapplingGun.SetActive(CurrentItem == "Grappling Hook");        
-        LinkSpawnPoint.GetComponent<SpriteRenderer>().enabled = !HookLaunched;
+        
+        HookRenderer.enabled = !HookLaunched;
+        
+        GrappleGunDirection = transform.position - Cam.ScreenToWorldPoint(Controls.Gameplay.GrappleDirection.ReadValue<Vector2>());
+        ProcessedGrappleGunDirection = Vector2.Lerp(ProcessedGrappleGunDirection, new Vector2(GrappleGunDirection.x, Mathf.Abs(GrappleGunDirection.y)).normalized, GrappleGunSmoothing/Vector2.Distance(ProcessedGrappleGunDirection, (new Vector2(GrappleGunDirection.x, Mathf.Abs(GrappleGunDirection.y))).normalized * Time.deltaTime));
+        
+        if (PlayerMovementScript.FacingRight)
+        {
+            GrapplingGun.transform.localPosition = new Vector2(-ProcessedGrappleGunDirection.x, ProcessedGrappleGunDirection.y) * GunPositionWarp;
+        }
+        else
+        {
+            GrapplingGun.transform.localPosition = ProcessedGrappleGunDirection * GunPositionWarp;
+        }
+        
+        GrapplingGun.transform.eulerAngles = new Vector3(0, (GrappleGunDirection.x < 0) ? 0 : 180,
+            Mathf.Rad2Deg * Mathf.Atan2((GrappleGunDirection * GunPositionWarp).y,
+                (((GrappleGunDirection.x < 0) ? -GrappleGunDirection : GrappleGunDirection) * GunPositionWarp).x));
+        
         if (HookLaunched)
         {
             Vector2 HookPos = DeployedHook.transform.position;
+            
             if (!ReachedTarget && !HookIsLatched)
             {
                 HookPos = Vector2.Lerp(DeployedHook.transform.position, Target,
@@ -165,18 +191,15 @@ public class PlayerAbilities : MonoBehaviour
     // May Need Revision
     void GrappleToggle()
     {
-        void GrappleToggle()
+        if (CurrentItem == "Grappling Hook") 
+        { 
+            CurrentItem = null;
+            ItemSwitchCleanup();
+        }
+        else
         {
-            if (CurrentItem == "Grappling Hook")
-            {
-                CurrentItem = null;
-                ItemSwitchCleanup();
-            }
-            else
-            {
-                CurrentItem = "Grappling Hook";
-                ItemSwitchCleanup();
-            }
+            CurrentItem = "Grappling Hook";
+            ItemSwitchCleanup();
         }
     }
     void TorchToggle()

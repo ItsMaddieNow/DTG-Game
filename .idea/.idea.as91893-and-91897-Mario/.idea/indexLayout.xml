@@ -3,12 +3,12 @@
   <component name="ContentModelUserStore">
     <attachedFolders />
     <explicitIncludes>
-      <Path>Library/PackageCache/com.unity.2d.animation@5.0.0</Path>
-      <Path>Library/PackageCache/com.unity.2d.common@4.0.0</Path>
-      <Path>Library/PackageCache/com.unity.2d.path@4.0.0</Path>
-      <Path>Library/PackageCache/com.unity.2d.pixel-perfect@4.0.0</Path>
-      <Path>Library/PackageCache/com.unity.2d.psdimporter@4.0.0</Path>
-      <Path>Library/PackageCache/com.unity.2d.spriteshape@5.0.0</Path>
+      <Path>Library/PackageCache/com.unity.2d.animation@5.0.1</Path>
+      <Path>Library/PackageCache/com.unity.2d.common@4.0.1</Path>
+      <Path>Library/PackageCache/com.unity.2d.path@4.0.1</Path>
+      <Path>Library/PackageCache/com.unity.2d.pixel-perfect@4.0.1</Path>
+      <Path>Library/PackageCache/com.unity.2d.psdimporter@4.0.1</Path>
+      <Path>Library/PackageCache/com.unity.2d.spriteshape@5.0.1</Path>
       <Path>Library/PackageCache/com.unity.burst@1.2.3</Path>
       <Path>Library/PackageCache/com.unity.cinemachine@2.6.0</Path>
       <Path>Library/PackageCache/com.unity.ext.nunit@1.0.0</Path>
