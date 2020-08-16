@@ -112,10 +112,8 @@ public class PlayerAbilities : MonoBehaviour
             new Vector2(PlayerMovementScript.FacingRight ? -GrappleGunDirection.x : GrappleGunDirection.x,
                 GrappleGunDirection.y) * GunPositionWarp;
 
-        GrapplingGun.transform.eulerAngles = new Vector3(0, (GunPointDirection.x < 0) ? 0 : 180,
-            Mathf.Rad2Deg * Mathf.Atan2((GunPointDirection * GunPositionWarp).y,
-                (((GunPointDirection.x < 0) ? -GunPointDirection : GunPointDirection) * GunPositionWarp).x));
-        
+        GrapplingGun.transform.rotation = Quaternion.Euler(0, (GunPointDirection.x<0) ? 0:180,Mathf.Rad2Deg * Mathf.Atan2((GrappleGunDirection * GunPositionWarp).y,(((GunPointDirection.x<0) ? -GrappleGunDirection:GrappleGunDirection) * GunPositionWarp).x));
+
         if (HookLaunched)
         {
             Vector2 HookPos = DeployedHook.transform.position;
