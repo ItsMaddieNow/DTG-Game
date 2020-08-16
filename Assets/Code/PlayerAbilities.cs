@@ -101,10 +101,16 @@ public class PlayerAbilities : MonoBehaviour
         
         HookRenderer.enabled = !HookLaunched;
         
-        GunPointDirection = transform.position - Cam.ScreenToWorldPoint(Controls.Gameplay.GrappleDirection.ReadValue<Vector2>());
-        GrappleGunDirection = Vector2.Lerp(GrappleGunDirection, new Vector2(GunPointDirection.x, Mathf.Abs(GunPointDirection.y)).normalized, GrappleGunSmoothing/Vector2.Distance(GrappleGunDirection, (new Vector2(GunPointDirection.x, Mathf.Abs(GunPointDirection.y))).normalized * Time.deltaTime));
+        GunPointDirection = transform.position -
+                            Cam.ScreenToWorldPoint(Controls.Gameplay.GrappleDirection.ReadValue<Vector2>());
+        GrappleGunDirection = Vector2.Lerp(GrappleGunDirection,
+            new Vector2(GunPointDirection.x, Mathf.Abs(GunPointDirection.y)).normalized,
+            GrappleGunSmoothing / Vector2.Distance(GrappleGunDirection,
+                (new Vector2(GunPointDirection.x, Mathf.Abs(GunPointDirection.y))).normalized * Time.deltaTime));
 
-        GrapplingGun.transform.localPosition = new Vector2(PlayerMovementScript.FacingRight ? -GrappleGunDirection.x : GrappleGunDirection.x, GrappleGunDirection.y) * GunPositionWarp;
+        GrapplingGun.transform.localPosition =
+            new Vector2(PlayerMovementScript.FacingRight ? -GrappleGunDirection.x : GrappleGunDirection.x,
+                GrappleGunDirection.y) * GunPositionWarp;
 
         GrapplingGun.transform.eulerAngles = new Vector3(0, (GunPointDirection.x < 0) ? 0 : 180,
             Mathf.Rad2Deg * Mathf.Atan2((GunPointDirection * GunPositionWarp).y,
