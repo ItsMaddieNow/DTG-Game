@@ -54,8 +54,8 @@ public class PlayerAbilities : MonoBehaviour
     public GameObject Flame;
     
     // Control Processing
-    private Vector2 ProcessedGrappleGunDirection;
     private Vector2 GrappleGunDirection;
+    private Vector2 GunPointDirection;
     private Vector2 GrappleDirection;
     
     // Controls need to be started in awake or warnings will occur
@@ -101,21 +101,14 @@ public class PlayerAbilities : MonoBehaviour
         
         HookRenderer.enabled = !HookLaunched;
         
-        GrappleGunDirection = transform.position - Cam.ScreenToWorldPoint(Controls.Gameplay.GrappleDirection.ReadValue<Vector2>());
-        ProcessedGrappleGunDirection = Vector2.Lerp(ProcessedGrappleGunDirection, new Vector2(GrappleGunDirection.x, Mathf.Abs(GrappleGunDirection.y)).normalized, GrappleGunSmoothing/Vector2.Distance(ProcessedGrappleGunDirection, (new Vector2(GrappleGunDirection.x, Mathf.Abs(GrappleGunDirection.y))).normalized * Time.deltaTime));
-        
-        if (PlayerMovementScript.FacingRight)
-        {
-            GrapplingGun.transform.localPosition = new Vector2(-ProcessedGrappleGunDirection.x, ProcessedGrappleGunDirection.y) * GunPositionWarp;
-        }
-        else
-        {
-            GrapplingGun.transform.localPosition = ProcessedGrappleGunDirection * GunPositionWarp;
-        }
-        
-        GrapplingGun.transform.eulerAngles = new Vector3(0, (GrappleGunDirection.x < 0) ? 0 : 180,
-            Mathf.Rad2Deg * Mathf.Atan2((GrappleGunDirection * GunPositionWarp).y,
-                (((GrappleGunDirection.x < 0) ? -GrappleGunDirection : GrappleGunDirection) * GunPositionWarp).x));
+        GunPointDirection = transform.position - Cam.ScreenToWorldPoint(Controls.Gameplay.GrappleDirection.ReadValue<Vector2>());
+        GrappleGunDirection = Vector2.Lerp(GrappleGunDirection, new Vector2(GunPointDirection.x, Mathf.Abs(GunPointDirection.y)).normalized, GrappleGunSmoothing/Vector2.Distance(GrappleGunDirection, (new Vector2(GunPointDirection.x, Mathf.Abs(GunPointDirection.y))).normalized * Time.deltaTime));
+
+        GrapplingGun.transform.localPosition = new Vector2(PlayerMovementScript.FacingRight ? -GrappleGunDirection.x : GrappleGunDirection.x, GrappleGunDirection.y) * GunPositionWarp;
+
+        GrapplingGun.transform.eulerAngles = new Vector3(0, (GunPointDirection.x < 0) ? 0 : 180,
+            Mathf.Rad2Deg * Mathf.Atan2((GunPointDirection * GunPositionWarp).y,
+                (((GunPointDirection.x < 0) ? -GunPointDirection : GunPointDirection) * GunPositionWarp).x));
         
         if (HookLaunched)
         {

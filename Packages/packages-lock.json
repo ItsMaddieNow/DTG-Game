@@ -72,15 +72,6 @@
       "source": "builtin",
       "dependencies": {}
     },
-    "com.unity.burst": {
-      "version": "1.2.3",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.mathematics": "1.1.0"
-      },
-      "url": "https://packages.unity.com"
-    },
     "com.unity.cinemachine": {
       "version": "2.6.0",
       "depth": 0,
@@ -140,7 +131,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.render-pipelines.core": {
-      "version": "9.0.0-preview.38",
+      "version": "8.2.0",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -149,14 +140,12 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.render-pipelines.universal": {
-      "version": "9.0.0-preview.35",
+      "version": "8.2.0",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.mathematics": "1.1.0",
-        "com.unity.burst": "1.2.3",
-        "com.unity.render-pipelines.core": "9.0.0-preview.38",
-        "com.unity.shadergraph": "9.0.0-preview.34"
+        "com.unity.render-pipelines.core": "8.2.0",
+        "com.unity.shadergraph": "8.2.0"
       },
       "url": "https://packages.unity.com"
     },
@@ -168,12 +157,12 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.shadergraph": {
-      "version": "9.0.0-preview.34",
+      "version": "8.2.0",
       "depth": 1,
       "source": "registry",
       "dependencies": {
-        "com.unity.render-pipelines.core": "9.0.0-preview.38",
-        "com.unity.searcher": "4.2.0"
+        "com.unity.render-pipelines.core": "8.2.0",
+        "com.unity.searcher": "4.0.9"
       },
       "url": "https://packages.unity.com"
     },

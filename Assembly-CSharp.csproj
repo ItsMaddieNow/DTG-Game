@@ -59,8 +59,8 @@
      <Compile Include="Assets\LeanTween\Framework\LeanTweenExt.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
      <Compile Include="Assets\Code\GrappleHookSide.cs" />
-     <Compile Include="Assets\LeanTween\Examples\Scripts\TestingUnitTests.cs" />
      <Compile Include="Assets\LeanTween\Framework\LTSeq.cs" />
+     <Compile Include="Assets\LeanTween\Examples\Scripts\TestingUnitTests.cs" />
      <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralUISpace.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
      <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralSimpleUI.cs" />
@@ -376,9 +376,6 @@
  </Reference>
  <Reference Include="UnityEditor.UnityConnectModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.2.0a19/Editor/Data/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Burst.Unsafe">
- <HintPath>C:/Users/mario/Documents/GitHub/as91893-and-91897-Mario/Library/PackageCache/com.unity.burst@1.2.3/Unity.Burst.Unsafe.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.2.0a19/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -764,9 +761,6 @@
  <Reference Include="Unity.TextMeshPro">
  <HintPath>C:/Users/mario/Documents/GitHub/as91893-and-91897-Mario/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
- <Reference Include="Unity.Burst.Editor">
- <HintPath>C:/Users/mario/Documents/GitHub/as91893-and-91897-Mario/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
- </Reference>
  <Reference Include="Unity.Searcher.Editor">
  <HintPath>C:/Users/mario/Documents/GitHub/as91893-and-91897-Mario/Library/ScriptAssemblies/Unity.Searcher.Editor.dll</HintPath>
  </Reference>
@@ -815,9 +809,6 @@
  <Reference Include="Cinemachine">
  <HintPath>C:/Users/mario/Documents/GitHub/as91893-and-91897-Mario/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
  </Reference>
- <Reference Include="Unity.Burst">
- <HintPath>C:/Users/mario/Documents/GitHub/as91893-and-91897-Mario/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
- </Reference>
  <Reference Include="com.unity.cinemachine.editor">
  <HintPath>C:/Users/mario/Documents/GitHub/as91893-and-91897-Mario/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
  </Reference>
@@ -836,11 +827,11 @@
  <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
  <HintPath>C:/Users/mario/Documents/GitHub/as91893-and-91897-Mario/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
  </Reference>
- <Reference Include="Unity.Timeline.Editor">
- <HintPath>C:/Users/mario/Documents/GitHub/as91893-and-91897-Mario/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
- </Reference>
  <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
  <HintPath>C:/Users/mario/Documents/GitHub/as91893-and-91897-Mario/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Timeline.Editor">
+ <HintPath>C:/Users/mario/Documents/GitHub/as91893-and-91897-Mario/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Mathematics.Editor">
  <HintPath>C:/Users/mario/Documents/GitHub/as91893-and-91897-Mario/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
