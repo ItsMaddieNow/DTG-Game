@@ -6060,29 +6060,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2072599674}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fff17fb3e5901d4289bd52062bf6cef, type: 3}
+  m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  GrappleDirection: {x: 0, y: 0}
-  LaunchSpeed: 0.1
-  LineLength: 20
-  LineDensity: 0.25
-  InitialLinkLeeway: 0.25
-  DeltaLinkLeewayMultiplier: 1.1
-  HookableLayers:
-    serializedVersion: 2
-    m_Bits: 1
-  MaxLength: 20
-  DeploySpeed: 20
-  ReachedTarget: 0
-  HookPrefab: {fileID: 2439449067807056290, guid: 6f4ed490703c2de458bf99cb9fed66df, type: 3}
-  HookDeployed: 1
-  RopeRenderer: {fileID: 517870290}
-  LinkPrefab: {fileID: 8056423918395787251, guid: ab2976137459a3740aae9fbf88fc60a5, type: 3}
-  Links: []
-  LinkSpawnPoint: {fileID: 2072599676}
-  SpawnPointJoint: {fileID: 2072599677}
-  HookIsLatched: 0
 --- !u!4 &2072599676
 Transform:
   m_ObjectHideFlags: 0
