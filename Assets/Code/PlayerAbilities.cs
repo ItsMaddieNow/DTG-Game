@@ -140,7 +140,7 @@ public class PlayerAbilities : MonoBehaviour
             {
                 Destroy(DeployedHook);
                 LineLength = 0;
-                CurrentItem = "Nothing";
+                //CurrentItem = "Nothing";
                 HookLaunched = false;
             }
         }
@@ -217,11 +217,12 @@ public class PlayerAbilities : MonoBehaviour
     }
     void StartGrapple()
     {
-        GrappleDirection = Cam.ScreenToWorldPoint(Controls.Gameplay.GrappleDirection.ReadValue<Vector2>());
-        
         Vector3 CastStartPos = LinkSpawnPoint.position;
+        
+        GrappleDirection = Cam.ScreenToWorldPoint(Controls.Gameplay.GrappleDirection.ReadValue<Vector2>() - new Vector2(CastStartPos.x,CastStartPos.y));
+        
         Target = 
-            (GrappleDirection - new Vector2(CastStartPos.x,CastStartPos.y))
+            (GrappleDirection)
             / Vector2.Distance(GrappleDirection,CastStartPos)
             * MaxLength;
         DeployedHook = Instantiate(HookPrefab);
