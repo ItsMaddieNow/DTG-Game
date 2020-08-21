@@ -1,9 +1,11 @@
 using System;
 using System.Drawing;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerAbilities : MonoBehaviour
 {
+    public LineRenderer lr;
     [Header("General")]
     public string CurrentItem;
 
@@ -56,7 +58,7 @@ public class PlayerAbilities : MonoBehaviour
     // Control Processing
     private Vector2 GrappleGunDirection;
     private Vector2 GunPointDirection;
-    private Vector2 GrappleDirection;
+    //private Vector2 GrappleDirection;
     
     // Controls need to be started in awake or warnings will occur
     void Awake()
@@ -217,14 +219,23 @@ public class PlayerAbilities : MonoBehaviour
     }
     void StartGrapple()
     {
-        Vector3 CastStartPos = LinkSpawnPoint.position;
+        Vector2 CastStartPos = LinkSpawnPoint.position;
+        Vector2 CursorWorldPoint = Cam.ScreenToWorldPoint(Controls.Gameplay.GrappleDirection.ReadValue<Vector2>());
+        Vector2 GrappleDirection = CursorWorldPoint - CastStartPos;
         
-        GrappleDirection = Cam.ScreenToWorldPoint(Controls.Gameplay.GrappleDirection.ReadValue<Vector2>() - new Vector2(CastStartPos.x,CastStartPos.y));
+        Target = (GrappleDirection / Vector2.Distance(GrappleDirection,Vector2.zero) * MaxLength)+CastStartPos;
+        //Debug.Log(Target);
+        //Debug.Log(Vector2.Distance(GrappleDirection,Vector2.zero));
         
-        Target = 
-            (GrappleDirection)
-            / Vector2.Distance(GrappleDirection,CastStartPos)
-            * MaxLength;
+        //new GameObject().transform.position = Target;
+        
+        /*lr.positionCount = 4;
+        lr.SetPosition(0,CastStartPos);
+        lr.SetPosition(1,Cam.ScreenToWorldPoint(Controls.Gameplay.GrappleDirection.ReadValue<Vector2>()));
+        lr.SetPosition(2, (GrappleDirection)/Vector2.Distance(Cam.ScreenToWorldPoint(Controls.Gameplay.GrappleDirection.ReadValue<Vector2>()), CastStartPos) * MaxLength + CastStartPos);
+        lr.SetPosition(3,Target);*/
+        
+        
         DeployedHook = Instantiate(HookPrefab);
         DeployedHookRB = DeployedHook.GetComponent<Rigidbody2D>();
         DeployedHook.transform.position = CastStartPos;
@@ -236,8 +247,8 @@ public class PlayerAbilities : MonoBehaviour
         DeployedHookRB.GetComponent<NewHookScript>().DeployedFrom = this;
         DeployedHookRB.bodyType = RigidbodyType2D.Dynamic;
         DeployedHookRB.gravityScale = 0;
-        Debug.Log(Target);
-
+        
+        
         HookLaunched = true;
         HookIsLatched = false;
         ReachedTarget = false;
