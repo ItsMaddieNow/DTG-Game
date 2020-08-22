@@ -1,7 +1,10 @@
 # DTG-2020
-> WARNING: This Branch is Under Active Development Scripts Maybe Incomplete And/Or Fail To Compile
+> WARNING: This Branch is Under Active Development Scripts Maybe Incomplete And/Or Not Function Properly
 
 > WARNING: By using the code in this project in any form I and any person who has contributed code to this project is entitled to take any bluetooth device off your body and eat it.
+## Devlog
+
+The Devlog can be found [Here](https://docs.google.com/document/d/1dlkuR8-kJrk5Gb-2dnSxjFOAtlGaBdAp_Ha4KYHXjuI/edit?usp=sharing) on google docs
 
 ## Required Software
  - Unity 2020.2.0a18 - To build and edit levels
