@@ -20,7 +20,6 @@ public class PlayerAbilities : MonoBehaviour
     public Vector2 GunPositionWarp;
     public GameObject HookPrefab;
     public GameObject LinkPrefab;
-    //public LayerMask LatchableLayers;
     private Vector2 Target;
     public Transform LinkSpawnPoint;
     public SpriteRenderer HookRenderer;
@@ -145,18 +144,22 @@ public class PlayerAbilities : MonoBehaviour
                 //CurrentItem = "Nothing";
                 HookLaunched = false;
             }
+
+            RopeRenderer.positionCount = 2;
+            RopeRenderer.SetPosition(0,LinkSpawnPoint.position);
+            RopeRenderer.SetPosition(1,DeployedHook.transform.position);
         }
-        
+
         if (HookIsLatched)
         {
             //Line Length Calculations
-            LineLength=Mathf.Max(LineLength, 0);
+            LineLength = Mathf.Max(LineLength, 0);
             //Debug.Log(GrappleDirection);
             LengthNoHook = LineLength;
             ClosestLinkLength = LineLength % LineDensity;
-            NumberOfLinks = Mathf.Max(Mathf.FloorToInt((LengthNoHook - ClosestLinkLength) / LineDensity),0);
+            NumberOfLinks = Mathf.Max(Mathf.FloorToInt((LengthNoHook - ClosestLinkLength) / LineDensity), 0);
             SpawnPointJoint.distance = ClosestLinkLength;
-            
+
             //Debug.Log(NumberOfLinks + ", " + Links.Length);
             if (NumberOfLinks > Links.Length)
             {
@@ -166,10 +169,6 @@ public class PlayerAbilities : MonoBehaviour
             {
                 RemoveLinks();
             }
-            
-        }
-        if (CurrentItem == "Grapple")
-        {
             LineCompose();
         }
     }
