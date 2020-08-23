@@ -31,6 +31,8 @@ public class PlayerAbilities : MonoBehaviour
     public bool HookIsLatched;
     
     // Line
+    private float LineDelta;
+    public float LineSensitivity = .5f;
     private LinkData[] Links;
     private Vector3[] LineRendererPoints = new Vector3[1];
     private GameObject DeployedHook;
@@ -64,8 +66,8 @@ public class PlayerAbilities : MonoBehaviour
     {
         Controls = new PlayerControls();
         Controls.Gameplay.Enable();
-        Controls.Gameplay.GrappleDistanceControl.performed += ctx => LineLength += ctx.ReadValue<float>();
-        Controls.Gameplay.GrappleDistanceControl.canceled += ctx => LineLength += 0f;
+        Controls.Gameplay.GrappleDistanceControl.performed += ctx => LineDelta = ctx.ReadValue<float>();
+        Controls.Gameplay.GrappleDistanceControl.canceled += ctx => LineDelta = 0f;
         Controls.Gameplay.GrappleToggle.performed += ctx => GrappleToggle();
         Controls.Gameplay.GrappleButton.performed += ctx => Grapple();
         
@@ -78,7 +80,7 @@ public class PlayerAbilities : MonoBehaviour
     {
         RopeRenderer.enabled = false;
         Cam = Camera.main;
-        SpawnPointJoint = LinkSpawnPoint.GetComponent<DistanceJoint2D>();
+        //SpawnPointJoint = LinkSpawnPoint.GetComponent<DistanceJoint2D>();
     }
 
     // Update is called once per frame
@@ -101,6 +103,8 @@ public class PlayerAbilities : MonoBehaviour
         GrapplingGun.SetActive(CurrentItem == "Grappling Hook");        
         
         HookRenderer.enabled = !HookLaunched;
+
+        LineLength += LineDelta * Time.deltaTime;
         
         GunPointDirection = transform.position -
                             Cam.ScreenToWorldPoint(Controls.Gameplay.GrappleDirection.ReadValue<Vector2>());
@@ -171,6 +175,8 @@ public class PlayerAbilities : MonoBehaviour
             }
             LineCompose();
         }
+
+        SpawnPointJoint.anchor = LinkSpawnPoint.transform.position - transform.position;
     }
     void Grapple()
     {
