@@ -1,14 +1,14 @@
 using System;
-using System.Drawing;
+using System.Runtime.InteropServices;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerAbilities : MonoBehaviour
 {
-    public LineRenderer lr;
+    //public LineRenderer lr;
     [Header("General")]
     public string CurrentItem;
 
+    public Rigidbody2D PlayerRB;
     public PlayerMovement PlayerMovementScript;
     
     [Header("Controls")]
@@ -33,7 +33,8 @@ public class PlayerAbilities : MonoBehaviour
     // Line
     private float LineDelta;
     public float LineSensitivity = .5f;
-    private LinkData[] Links;
+    public LinkData[] Links;
+    public LinkData DeployedHookData;
     private Vector3[] LineRendererPoints = new Vector3[1];
     private GameObject DeployedHook;
     private Rigidbody2D DeployedHookRB;
@@ -242,6 +243,7 @@ public class PlayerAbilities : MonoBehaviour
         
         
         DeployedHook = Instantiate(HookPrefab);
+        print(DeployedHook);
         DeployedHookRB = DeployedHook.GetComponent<Rigidbody2D>();
         DeployedHook.transform.position = CastStartPos;
         Vector3 HookAngle = DeployedHookRB.transform.eulerAngles;
@@ -285,19 +287,33 @@ public class PlayerAbilities : MonoBehaviour
         float Dist = Vector2.Distance(LinkSpawnPoint.position, HookPosition);
         LineLength = Dist;
         int LinksRequired = Mathf.Max(Mathf.FloorToInt((Dist - Dist % LineDensity) / LineDensity),0);
-        Debug.Log("Links Required : " + LinksRequired);
+        //Debug.Log("Links Required : " + LinksRequired);
         Array.Resize(ref Links, LinksRequired);
-        Array.Resize(ref LineRendererPoints, LinksRequired+2);
+        Array.Resize(ref LineRendererPoints, LinksRequired+2); 
+        
+        DeployedHookData = DeployedHook.GetComponent<LinkData>();
+        print(DeployedHookData);
+        
         for (int i = 0; i < LinksRequired; i++)
         {
             GameObject CurrentLink = Instantiate(LinkPrefab);
+
             Vector3 Pos = LinkSpawnPoint.position;
             CurrentLink.transform.position = Vector2.Lerp(HookPosition, new Vector2(Pos.x,Pos.y), (i+1)/((float)LinksRequired));
             Links[i] = CurrentLink.GetComponent<LinkData>();
+            //Debug.Log(Links[i]);
+            //Debug.Log("Created Link " + i);
             LineRendererPoints[i + 1] = CurrentLink.transform.position;
-            Links[i].LinkJoint.connectedBody = 0 > i-1 ? DeployedHookRB : Links[i - 1].LinkRB;
-            Links[i].LinkJoint.distance = LineDensity;
+            
+            LinkData LD = (i == 0) ? DeployedHookData : Links[i-1];
+            print(LD);
+            LD.LinkJoint.connectedBody = LinksRequired <= i ? PlayerRB : Links[i].LinkRB;
+            LD.LinkJoint.distance = LineDensity;
+            //Debug.Log("Linked " + (LinksRequired <= i ? PlayerRB.gameObject : Links[i].LinkRB.gameObject) + "to" + LD.gameObject);
+            //Debug.Log("Created links : " + i);
         }
+        Debug.Log("Links Required = " + LinksRequired);
+        
         SpawnPointJoint.enabled = true;
         SpawnPointJoint.connectedBody = Links[LinksRequired-1].LinkRB;
     }
@@ -314,10 +330,13 @@ public class PlayerAbilities : MonoBehaviour
             CurrentLink.transform.position = LinkSpawnPoint.transform.position;
             Links[i] = CurrentLink.GetComponent<LinkData>();
             LineRendererPoints[i + 1] = CurrentLink.transform.position;
-            Links[i].LinkJoint.connectedBody = 0 > i-1 ? DeployedHookRB : Links[i - 1].LinkRB;
-            Links[i].LinkJoint.distance = LineDensity;
+            LinkData LD = i == 0 ? DeployedHookData : Links[i-1];
+            LD.LinkJoint.connectedBody = NumberOfLinks <= i ? DeployedHookRB : Links[i].LinkRB;
+            Links[i-1].LinkJoint.connectedAnchor = Vector2.zero;
+            Links[i-1].LinkJoint.distance = LineDensity;
         }
-        
+
+        Links[Links.Length - 1].LinkJoint.connectedAnchor = LinkSpawnPoint.transform.position - transform.position;
         LineRendererPoints[NumberOfLinks + 1] = SpawnPointJoint.transform.position;
         SpawnPointJoint.connectedBody = Links[Links.Length-1].LinkRB;
     }
@@ -329,7 +348,7 @@ public class PlayerAbilities : MonoBehaviour
             Destroy(Links[i - 1].gameObject);
         }
         Array.Resize(ref Links, NumberOfLinks);
-        SpawnPointJoint.connectedBody = (0 == NumberOfLinks) ? DeployedHookRB : Links[Links.Length - 1].LinkRB;
+        Links[Links.Length-1].LinkJoint.connectedBody = (0 == NumberOfLinks) ? DeployedHookRB : Links[Links.Length - 1].LinkRB;
         HookLaunched = false;
     }
     

@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 8542294776095375973}
   - component: {fileID: 1241576370431413720}
   - component: {fileID: 7725494428017962760}
+  - component: {fileID: 6581584979836151199}
+  - component: {fileID: 2844456815478943740}
   m_Layer: 10
   m_Name: Hook
   m_TagString: Untagged
@@ -84,7 +86,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 8542294776095375973}
+  Joint: {fileID: 6581584979836151199}
+  HooksIsLatched: 0
   DeployedFrom: {fileID: 0}
+--- !u!232 &6581584979836151199
+DistanceJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2439449067807056290}
+  m_Enabled: 0
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_AutoConfigureDistance: 1
+  m_Distance: 0.005
+  m_MaxDistanceOnly: 1
+--- !u!114 &2844456815478943740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2439449067807056290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28ebcab5dd69d384dba68c7af96184e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LinkRB: {fileID: 8542294776095375973}
+  LinkJoint: {fileID: 6581584979836151199}
 --- !u!1 &7193397280867646994
 GameObject:
   m_ObjectHideFlags: 0

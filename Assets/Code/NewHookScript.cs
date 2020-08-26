@@ -3,6 +3,7 @@ using UnityEngine;
 public class NewHookScript : MonoBehaviour
 {
     public Rigidbody2D rb;
+    public DistanceJoint2D Joint;
     private Vector3 PositionOffset;
     private Vector3 RotationOffset;
     private Transform ToFollow;
@@ -28,10 +29,13 @@ public class NewHookScript : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
+        Debug.Log("Hook has collided");
         if (other.gameObject.CompareTag("Terrain") && !HooksIsLatched)
         {
             //makes sure it isn't effected by gravity or collisions
             rb.bodyType = RigidbodyType2D.Static;
+            // Enables joint as when it isn't disabled checking for collisions due to the order in which physics calculations are performed 
+            Joint.enabled = true;
             // Communicates to the main script that it has hit terrain
             DeployedFrom.HookIsLatched = true;
             Vector3 Pos = transform.position;
