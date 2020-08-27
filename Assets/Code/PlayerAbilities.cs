@@ -174,6 +174,7 @@ public class PlayerAbilities : MonoBehaviour
             {
                 RemoveLinks();
             }
+            Links[Links.Length-1].LinkJoint.connectedAnchor = LinkSpawnPoint.transform.position - transform.position;
             LineCompose();
         }
 
@@ -336,19 +337,20 @@ public class PlayerAbilities : MonoBehaviour
             Links[i-1].LinkJoint.distance = LineDensity;
         }
 
-        Links[Links.Length - 1].LinkJoint.connectedAnchor = LinkSpawnPoint.transform.position - transform.position;
+        //Links[Links.Length - 1].LinkJoint.connectedAnchor = LinkSpawnPoint.transform.position - transform.position;
         LineRendererPoints[NumberOfLinks + 1] = SpawnPointJoint.transform.position;
         SpawnPointJoint.connectedBody = Links[Links.Length-1].LinkRB;
     }
     
     private void RemoveLinks()
     {
+        Debug.Log("Removing links");
         for (int i = Links.Length; i > NumberOfLinks; i--)
         {
             Destroy(Links[i - 1].gameObject);
         }
         Array.Resize(ref Links, NumberOfLinks);
-        Links[Links.Length-1].LinkJoint.connectedBody = (0 == NumberOfLinks) ? DeployedHookRB : Links[Links.Length - 1].LinkRB;
+        Links[Links.Length-1].LinkJoint.connectedBody = PlayerRB/*(0 == NumberOfLinks) ? DeployedHookRB : Links[Links.Length - 1].LinkRB*/;
         HookLaunched = false;
     }
     
