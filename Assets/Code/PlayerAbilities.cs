@@ -173,17 +173,18 @@ public class PlayerAbilities : MonoBehaviour
             {
                 RemoveLinks();
             }
+            
+            Vector2 Pos = transform.position;
+            Vector2 SpawnPos = LinkSpawnPoint.transform.position;
+            Vector2 LinkPos = Links[Links.Length - 1].transform.position;
+            SpawnPointJoint.anchor = SpawnPos - Pos;
+
+            Vector2 FirstStep = (LinkPos-SpawnPos)/LineDensity;
+
+            transform.position = FirstStep.normalized * LineDensity + SpawnPos;
+            
             LineCompose();
         }
-
-        Vector2 Pos = transform.position;
-        Vector2 SpawnPos = LinkSpawnPoint.transform.position;
-        Vector2 LinkPos = Links[Links.Length - 1].transform.position;
-        SpawnPointJoint.anchor = SpawnPos - Pos;
-
-        Vector2 FirstStep = (LinkPos-SpawnPos)/LineDensity;
-
-        transform.position = FirstStep.normalized * LineDensity + SpawnPos;
     }
     void Grapple()
     {
