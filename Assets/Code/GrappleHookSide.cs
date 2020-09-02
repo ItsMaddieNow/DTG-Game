@@ -11,7 +11,12 @@ public class GrappleHookSide : MonoBehaviour
     private float InitialForce = 20f;
     public Vector2 Direction;
     public LineRenderer RopeRenderer;
-    
+    //Position Syncing
+    public bool HookIsLatched;
+    private Vector3 PositionOffset;
+    private Transform ToFollow;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +27,9 @@ public class GrappleHookSide : MonoBehaviour
     void Update()
     {
         RopeRenderer.SetPosition(0, transform.position);
+        if (HookIsLatched){
+            transform.position = ToFollow.position + PositionOffset;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D CollisionInfo)
@@ -31,6 +39,11 @@ public class GrappleHookSide : MonoBehaviour
             Rb.bodyType = RigidbodyType2D.Static;
             PlayerScript.HookLatched = true;
             PlayerScript.Link(Rb);
+
+            //Position Syncing
+            ToFollow = CollisionInfo.transform;
+            HookIsLatched = true;
+            PositionOffset = transform.position - ToFollow.position;
         }
     }
 
