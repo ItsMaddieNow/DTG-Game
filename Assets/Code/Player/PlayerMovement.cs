@@ -50,6 +50,11 @@ public class PlayerMovement : MonoBehaviour
     private PlayerControls Controls;
     private bool JumpButtonDown;
 
+    [Header("Bubbling")]
+    public Transform Bubble;
+    public bool Bubbled;
+    public float PullIntensity = 2.5f;
+
     private void Awake()
     {
         Controls = new PlayerControls();
@@ -84,6 +89,12 @@ public class PlayerMovement : MonoBehaviour
             Physics2D.Raycast(transform.position + HeadColliderOffset, -transform.up, -HeadDistance, WaterLayers) || 
             Physics2D.Raycast(transform.position - new Vector3(HeadColliderOffset.x, -HeadColliderOffset.y, HeadColliderOffset.z), -transform.up, -HeadDistance, WaterLayers)
         );
+        if (Bubbled){
+            Vector2 ThisPos = transform.position;
+            Vector2 BubblePos = Bubble.position;
+            print("Lerped Position");
+            this.transform.position = Vector2.Lerp(ThisPos, BubblePos,PullIntensity * Time.deltaTime/(Vector2.Distance(ThisPos, BubblePos)));
+        }
     }
 
     private void FixedUpdate()
@@ -163,6 +174,11 @@ public class PlayerMovement : MonoBehaviour
                 Rb.drag = 0f;
             }
             Rb.gravityScale = 0;
+        } 
+        else if (Bubbled)
+        {
+            Rb.gravityScale = 0;
+            Rb.drag = 1f;
         }
         else
         {
@@ -182,6 +198,17 @@ public class PlayerMovement : MonoBehaviour
     {
         FacingRight = !FacingRight;
         transform.rotation = Quaternion.Euler(0,FacingRight ? 0:180,0);
+    }
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.CompareTag("Bubble")){
+            Bubble = other.transform;
+            Bubbled = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other) {
+        if(other.CompareTag("Bubble")){
+            Bubbled = false;
+        }
     }
     
     private void OnDrawGizmosSelected()

@@ -216,7 +216,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": ""negative"",
                     ""id"": ""6cdc70e9-4a68-44a0-a9aa-f647d3ad5cdd"",
-                    ""path"": ""<Keyboard>/upArrow"",
+                    ""path"": ""<Keyboard>/downArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -227,7 +227,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": ""positive"",
                     ""id"": ""1a7e1eb0-8df9-4269-9144-cd2dba4ab72b"",
-                    ""path"": ""<Keyboard>/downArrow"",
+                    ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

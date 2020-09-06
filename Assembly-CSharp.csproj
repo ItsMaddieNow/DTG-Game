@@ -36,15 +36,18 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Code\CrystalController.cs" />
      <Compile Include="Assets\Code\Darkening.cs" />
      <Compile Include="Assets\Code\Fire.cs" />
-     <Compile Include="Assets\Code\GlowWeedAnimationController.cs" />
      <Compile Include="Assets\Code\GrappleHookSide.cs" />
      <Compile Include="Assets\Code\GrapplePlayerSide.cs" />
+     <Compile Include="Assets\Code\Level Elements\Bubble.cs" />
+     <Compile Include="Assets\Code\Level Elements\CrystalController.cs" />
+     <Compile Include="Assets\Code\Level Elements\GlowWeedAnimationController.cs" />
+     <Compile Include="Assets\Code\Level Elements\MovingPlatform.cs" />
+     <Compile Include="Assets\Code\Level Elements\PlatformActivator.cs" />
      <Compile Include="Assets\Code\LightController.cs" />
      <Compile Include="Assets\Code\PauseMenu.cs" />
-     <Compile Include="Assets\Code\Player Controls\PlayerMovement.cs" />
+     <Compile Include="Assets\Code\Player\PlayerMovement.cs" />
      <Compile Include="Assets\Code\RotationLock.cs" />
      <Compile Include="Assets\Code\TorchExtinguish.cs" />
      <Compile Include="Assets\Code\TorchFlameController.cs" />

@@ -13,7 +13,7 @@ public class PauseMenu : MonoBehaviour
     public RectTransform PauseMenuRectTransform;
     public RectTransform OpaqueRectTransform;
     public float TransitionTime = 0.5f;
-    [SerializeField] private Volume MyVolume;
+    public Volume MyVolume;
     [SerializeField] private DepthOfField MyDepthOfField;
 
     // Start is called before the first frame update
