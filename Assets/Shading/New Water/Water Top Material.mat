@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Water Top Material
+  m_Shader: {fileID: -6465566751694194690, guid: 1ec6335eaf89c256ba04c3f7848effac,
+    type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Floats:
+    - Vector1_47B685E3: 2
+    - Vector1_716A37C6: 1.2
+    - Vector1_C2B3A34C: 32
+    - Vector1_C3050C25: 0.1
+    - Vector1_EE5E97EA: 1
+    - Vector1_F968DCAB: 28
+    - Vector1_FA375B95: 0.15
+    m_Colors:
+    - Color_A618EC7E: {r: 0.2117647, g: 0.6078432, b: 0.8901961, a: 0.6039216}
+    - Color_FDAD5200: {r: 0.7686275, g: 0.9058824, b: 1, a: 1}
