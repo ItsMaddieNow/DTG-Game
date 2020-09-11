@@ -10,6 +10,7 @@ TagManager:
   - Water
   - Flammable
   - Bubble
+  - Hazard
   layers:
   - Default
   - TransparentFX

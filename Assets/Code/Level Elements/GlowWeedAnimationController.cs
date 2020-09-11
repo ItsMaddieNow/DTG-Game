@@ -24,7 +24,6 @@ public class GlowWeedAnimationController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Trigger");
             ThisAnimator.SetBool("Player In Range",true);
         }
     }
