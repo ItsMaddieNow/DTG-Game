@@ -22,14 +22,14 @@ public class Darkening : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Water"))
         {
             GlobalLight.BodiesOfWater++;
         }
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Water"))
         {
             GlobalLight.BodiesOfWater--;
         }

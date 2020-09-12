@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class Bubble : MonoBehaviour
 {
-    public float PopDelay=1f;
+    public float MaxHeight = 1;
 
-    private void OnCollisionExit2D(Collision2D other) {
-        if(other.gameObject.CompareTag("Water")){
-            Destroy(this.gameObject, PopDelay);
+    // Update is called once per frame
+    void Update()
+    {
+        if (transform.position.y>=MaxHeight){
+            Destroy(this.gameObject);
         }
     }
+    
 }

@@ -10,6 +10,8 @@ public class BubbleEmitter : MonoBehaviour
     public float TimeBetweenBubbles = 3;
     private bool BubbleEmitted;
     public SpriteRenderer ThisSpriteRenderer;
+
+    public float MaxHeight;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,9 +27,17 @@ public class BubbleEmitter : MonoBehaviour
         ThisSpriteRenderer.enabled = Timer <= TimeToGrow;
         if(Timer >= TimeToGrow & !BubbleEmitted){
             BubbleEmitted = true;
-            Instantiate(BubblePrefab).transform.position = transform.position;
+            GameObject NewBubble = Instantiate(BubblePrefab);
+            NewBubble.transform.position = transform.position;
+            NewBubble.GetComponent<Bubble>().MaxHeight=MaxHeight;
         }
         BubbleEmitted = Timer >= TimeBetweenBubbles ? false : BubbleEmitted;
         Timer = Timer >= TimeBetweenBubbles ? Timer -= TimeBetweenBubbles : Timer;
+    }
+    
+    private void OnDrawGizmosSelected() {
+        Gizmos.color = Color.yellow;
+        Vector3 pos = transform.position;
+        Gizmos.DrawWireSphere(new Vector3(pos.x,MaxHeight,pos.z),1);
     }
 }
