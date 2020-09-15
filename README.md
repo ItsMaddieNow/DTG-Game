@@ -14,7 +14,7 @@
 	- [x] Walking
 	- [x] Jumping
 	- [x] Grappling Hook
-		- [ ] Refined Line Collision
+		- [ ] ~~Refined Line Collision~~
 		- [ ] Prevent Player From Phasing Through Surfaces by Using The Grappling Hook
 	- [x] Underwater Vertical Movement
 - [x] Torch (Environment)
@@ -41,13 +41,16 @@
 	- [x] Fade In
 	- [x] Fade Out
 - [ ] Water
-	- [ ] Shader Overhaul
+	- [x] Shader Overhaul
 		- [x] Waves  
-		- [ ] Tiles
+		- [x] Tiles
 	- [ ] Particles
 		- [x] Physics
 		- [ ] Textures
 	- [ ] Level Elements
 		- [x] Walls and Floor Behind Water
+		- [x] Spikes
+		- [x] Bubbles
+		- [ ] Falling Level Segments
 	- [x] Buoyancy
 - [ ] Vegetation
