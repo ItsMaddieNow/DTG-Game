@@ -43,10 +43,12 @@
      <Compile Include="Assets\Code\Level Elements\Bubble.cs" />
      <Compile Include="Assets\Code\Level Elements\BubbleEmitter.cs" />
      <Compile Include="Assets\Code\Level Elements\CrystalController.cs" />
+     <Compile Include="Assets\Code\Level Elements\FallingLevelSegment.cs" />
      <Compile Include="Assets\Code\Level Elements\GlowWeedAnimationController.cs" />
      <Compile Include="Assets\Code\Level Elements\Hazard.cs" />
      <Compile Include="Assets\Code\Level Elements\MovingPlatform.cs" />
      <Compile Include="Assets\Code\Level Elements\PlatformActivator.cs" />
+     <Compile Include="Assets\Code\Level Elements\SegmentFall.cs" />
      <Compile Include="Assets\Code\LightController.cs" />
      <Compile Include="Assets\Code\PauseMenu.cs" />
      <Compile Include="Assets\Code\Player\Death.cs" />
