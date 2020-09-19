@@ -92,7 +92,6 @@ public class PlayerMovement : MonoBehaviour
         if (Bubbled){
             Vector2 ThisPos = transform.position;
             Vector2 BubblePos = Bubble.position;
-            print("Lerped Position");
             this.transform.position = Vector2.Lerp(ThisPos, BubblePos,PullIntensity * Time.deltaTime/(Vector2.Distance(ThisPos, BubblePos)));
         }
     }

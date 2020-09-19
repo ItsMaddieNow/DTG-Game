@@ -27,7 +27,7 @@ public class Death : MonoBehaviour
                     print("You got pricked by some pricks ya prick");
                     break;
                 default:
-                    print("Generic Death");
+                    print("Undefined Death of Type\""+ CauseOfDeath + "\" ");
                     break;
             }
     }
