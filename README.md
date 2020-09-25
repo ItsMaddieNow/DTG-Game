@@ -46,9 +46,9 @@
 	- [x] Shader Overhaul
 		- [x] Waves  
 		- [x] Tiles
-	- [ ] Particles
+	- [x] Particles
 		- [x] Physics
-		- [ ] Textures
+		- [x] Textures
 	- [ ] Level Elements
 		- [x] Walls and Floor Behind Water
 		- [x] Spikes
@@ -56,3 +56,5 @@
 		- [ ] Falling Level Segments
 	- [x] Buoyancy
 - [ ] Vegetation
+## Attribution
+- This project uses the [Fira Type Face](github.com/mozilla/Fira). Thanks [Mozilla](www.mozilla.org) and Contributors for your hard work.

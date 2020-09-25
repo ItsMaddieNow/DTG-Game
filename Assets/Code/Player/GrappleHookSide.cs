@@ -6,7 +6,7 @@ using UnityEngine;
 public class GrappleHookSide : MonoBehaviour
 {
     public Rigidbody2D Rb;
-    public GrapplePlayerSide PlayerScript;
+    public PlayerAbilities PlayerScript;
     [SerializeField]
     private float InitialForce = 20f;
     public Vector2 Direction;

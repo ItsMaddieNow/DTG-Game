@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class GrapplePlayerSide : MonoBehaviour
+public class PlayerAbilities : MonoBehaviour
 {
     public string CurrentItem;
     public PlayerMovement PlayerMovementScript;
@@ -51,7 +51,9 @@ public class GrapplePlayerSide : MonoBehaviour
     public GameObject TorchAnchor;
     public GameObject TorchContainer;
     public GameObject Flame;
-
+    [Header("Tools")]
+    public static bool GrapplingHookAvaliable = false;
+    public static bool TorchAvaliable = false;
     private void Awake()
     {
         Line = this.GetComponent<DistanceJoint2D>();
@@ -154,7 +156,7 @@ public class GrapplePlayerSide : MonoBehaviour
             CurrentItem = null;
             ItemSwitchCleanup();
         }
-        else
+        else if(GrapplingHookAvaliable)
         {
             CurrentItem = "Grappling Hook";
             ItemSwitchCleanup();
@@ -163,18 +165,20 @@ public class GrapplePlayerSide : MonoBehaviour
 
     void TorchEnable()
     {
-        if (CurrentItem == "Torch")
-        {
-            CurrentItem = null;
-            ItemSwitchCleanup();
-        }
-        else
-        {
-            CurrentItem = "Torch";
-            ItemSwitchCleanup();
-            Torch.SetActive(true);
-            //Flame.SetActive();
-            Torch.transform.position = TorchAnchor.transform.position;
+        if (!PauseMenu.GameIsPaused){
+            if (CurrentItem == "Torch")
+            {
+                CurrentItem = null;
+                ItemSwitchCleanup();
+            }
+            else if(TorchAvaliable)
+            {
+                CurrentItem = "Torch";
+                ItemSwitchCleanup();
+                Torch.SetActive(true);
+                //Flame.SetActive();
+                Torch.transform.position = TorchAnchor.transform.position;
+            }
         }
     }
 
