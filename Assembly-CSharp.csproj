@@ -53,6 +53,7 @@
      <Compile Include="Assets\Code\Player\Death.cs" />
      <Compile Include="Assets\Code\Player\GrappleHookSide.cs" />
      <Compile Include="Assets\Code\Player\PlayerAbilities.cs" />
+     <Compile Include="Assets\Code\Player\PlayerCollection.cs" />
      <Compile Include="Assets\Code\Player\PlayerMovement.cs" />
      <Compile Include="Assets\Code\RotationLock.cs" />
      <Compile Include="Assets\Code\Test.cs" />

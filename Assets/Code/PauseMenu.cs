@@ -16,6 +16,10 @@ public class PauseMenu : MonoBehaviour
     public Volume MyVolume;
     [SerializeField] private DepthOfField MyDepthOfField;
 
+    [Header("Player Data")]
+    public static PlayerCollection PC;
+
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -84,6 +88,10 @@ public class PauseMenu : MonoBehaviour
     {
         UIContainer.SetActive(false);
         Time.timeScale = 1f;
+    }
+
+    public static void Save(){
+        Debug.Log("Dummy Save");
     }
     
     private void OnEnable()

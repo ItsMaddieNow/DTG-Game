@@ -76,6 +76,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Quick Save",
+                    "type": "Value",
+                    "id": "08927aa9-9d57-4b16-bf6d-335c590fed60",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -265,6 +273,39 @@
                     "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "1ec051d7-4026-4931-a097-56f99ccb083f",
+                    "path": "1DAxis(minValue=1)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Quick Save",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "positive",
+                    "id": "799eecd7-a691-4190-8812-adbbfe649422",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Quick Save",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "992da1b1-31b4-41b6-bce8-8e90a75f235f",
+                    "path": "<Keyboard>/leftCtrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Quick Save",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }

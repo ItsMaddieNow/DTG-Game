@@ -98,6 +98,14 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Quick Save"",
+                    ""type"": ""Value"",
+                    ""id"": ""08927aa9-9d57-4b16-bf6d-335c590fed60"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -287,6 +295,39 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""1ec051d7-4026-4931-a097-56f99ccb083f"",
+                    ""path"": ""1DAxis(minValue=1)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Quick Save"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""799eecd7-a691-4190-8812-adbbfe649422"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Quick Save"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""992da1b1-31b4-41b6-bce8-8e90a75f235f"",
+                    ""path"": ""<Keyboard>/leftCtrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Quick Save"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -304,6 +345,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Gameplay_TorchEnable = m_Gameplay.FindAction("Torch Enable", throwIfNotFound: true);
         m_Gameplay_TorchThrow = m_Gameplay.FindAction("Torch Throw", throwIfNotFound: true);
         m_Gameplay_Pause = m_Gameplay.FindAction("Pause", throwIfNotFound: true);
+        m_Gameplay_QuickSave = m_Gameplay.FindAction("Quick Save", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -372,6 +414,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_TorchEnable;
     private readonly InputAction m_Gameplay_TorchThrow;
     private readonly InputAction m_Gameplay_Pause;
+    private readonly InputAction m_Gameplay_QuickSave;
     public struct GameplayActions
     {
         private @PlayerControls m_Wrapper;
@@ -385,6 +428,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @TorchEnable => m_Wrapper.m_Gameplay_TorchEnable;
         public InputAction @TorchThrow => m_Wrapper.m_Gameplay_TorchThrow;
         public InputAction @Pause => m_Wrapper.m_Gameplay_Pause;
+        public InputAction @QuickSave => m_Wrapper.m_Gameplay_QuickSave;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -421,6 +465,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Pause.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPause;
                 @Pause.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPause;
                 @Pause.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPause;
+                @QuickSave.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnQuickSave;
+                @QuickSave.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnQuickSave;
+                @QuickSave.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnQuickSave;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -452,6 +499,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Pause.started += instance.OnPause;
                 @Pause.performed += instance.OnPause;
                 @Pause.canceled += instance.OnPause;
+                @QuickSave.started += instance.OnQuickSave;
+                @QuickSave.performed += instance.OnQuickSave;
+                @QuickSave.canceled += instance.OnQuickSave;
             }
         }
     }
@@ -467,5 +517,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnTorchEnable(InputAction.CallbackContext context);
         void OnTorchThrow(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnQuickSave(InputAction.CallbackContext context);
     }
 }
