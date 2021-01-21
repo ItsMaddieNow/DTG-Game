@@ -57,6 +57,7 @@
      <Compile Include="Assets\LeanTween\Examples\Scripts\PathBezier.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
+     <Compile Include="Assets\Code\Rebinding UI\RebindingDisplay.cs" />
      <Compile Include="Assets\LeanTween\Examples\Scripts\PathSplines.cs" />
      <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralEventsListeners.cs" />
      <Compile Include="Assets\Code\Cheats.cs" />
