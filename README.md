@@ -1,9 +1,12 @@
 # DTG-2020
-> WARNING: This Branch is Under Active Development Features May Be Incomplete
+> This repo requires Git LFS support, install it from [here](https://git-lfs.github.com/) or from your preffered package manager
 
-> WARNING: By using the code in this project in any form I and any person who has contributed code to this project is entitled to take any bluetooth device off your body and eat it.
-
-"This game f*ckin rules" - Some Guy From Hard Drive
+## Examples
+### Debian
+```bash
+sudo apt install git-lfs
+git install lfs
+```
 
 ## Required Software
  - Unity 2020.2.0a18 - To build and edit levels
