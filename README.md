@@ -1,14 +1,7 @@
 # DTG-2020
 > This repo requires Git LFS support, install it from [here](https://git-lfs.github.com/) or from your preffered package manager
-
-## Examples
-### Debian
-```bash
-sudo apt install git-lfs
-git install lfs
-```
-
 ## Required Software
+ - Git and Git LFS
  - Unity 2020.2.0a18 - To build and edit levels
  - Code Editor (e.g. Jetbrains Rider, Visual Studio etc.) - To Edit Code
  - Image editors (e.g. Glimpse, Photoshop, Piskel)
