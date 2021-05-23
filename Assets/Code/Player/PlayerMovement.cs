@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -55,9 +56,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Controls = new PlayerControls();
 
-        Controls.Gameplay.Jump.performed += ctx => JumpCall();
-        Controls.Gameplay.Jump.performed += ctx => JumpButtonDown = ctx.ReadValueAsButton();
-        Controls.Gameplay.Jump.canceled += ctx => JumpButtonDown = ctx.ReadValueAsButton();
+        //Controls.Gameplay.Jump.performed += ctx => JumpCall();
         Controls.Gameplay.Movement.performed += ctx => Direction = ctx.ReadValue<Vector2>();
         Controls.Gameplay.Movement.canceled += ctx => Direction = Vector2.zero;
     }
@@ -113,8 +112,8 @@ public class PlayerMovement : MonoBehaviour
         ModifyPhysics();
     }
 
-    void JumpCall()
-    {
+    public void JumpCall()
+    {   
         JumpTimer = Time.time + JumpDelay;
     }
     
@@ -229,5 +228,9 @@ public class PlayerMovement : MonoBehaviour
     private void OnDisable()
     {
         Controls.Gameplay.Disable();
+    }
+    public void JumpButtonStateUpdate(bool ButtonDown)
+    {
+        JumpButtonDown = ButtonDown;
     }
 }

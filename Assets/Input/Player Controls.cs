@@ -24,6 +24,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""id"": ""86fde03a-38cb-4d4f-9adb-e40c132fd544"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
+                    ""interactions"": ""Press""
+                },
+                {
+                    ""name"": ""Jump Release"",
+                    ""type"": ""Button"",
+                    ""id"": ""145c0b66-986c-448d-a7c0-13608282c698"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
                     ""interactions"": """"
                 },
                 {
@@ -319,6 +327,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""Quick Save"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f8ef7f2b-57ec-4509-8ee6-0cdb3e65abf1"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": ""Press(behavior=1)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump Release"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -328,6 +347,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         // Gameplay
         m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
         m_Gameplay_Jump = m_Gameplay.FindAction("Jump", throwIfNotFound: true);
+        m_Gameplay_JumpRelease = m_Gameplay.FindAction("Jump Release", throwIfNotFound: true);
         m_Gameplay_Movement = m_Gameplay.FindAction("Movement", throwIfNotFound: true);
         m_Gameplay_GrappleButton = m_Gameplay.FindAction("Grapple Button", throwIfNotFound: true);
         m_Gameplay_GrappleToggle = m_Gameplay.FindAction("Grapple Toggle", throwIfNotFound: true);
@@ -387,6 +407,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputActionMap m_Gameplay;
     private IGameplayActions m_GameplayActionsCallbackInterface;
     private readonly InputAction m_Gameplay_Jump;
+    private readonly InputAction m_Gameplay_JumpRelease;
     private readonly InputAction m_Gameplay_Movement;
     private readonly InputAction m_Gameplay_GrappleButton;
     private readonly InputAction m_Gameplay_GrappleToggle;
@@ -401,6 +422,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         private @PlayerControls m_Wrapper;
         public GameplayActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Jump => m_Wrapper.m_Gameplay_Jump;
+        public InputAction @JumpRelease => m_Wrapper.m_Gameplay_JumpRelease;
         public InputAction @Movement => m_Wrapper.m_Gameplay_Movement;
         public InputAction @GrappleButton => m_Wrapper.m_Gameplay_GrappleButton;
         public InputAction @GrappleToggle => m_Wrapper.m_Gameplay_GrappleToggle;
@@ -422,6 +444,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Jump.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnJump;
+                @JumpRelease.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnJumpRelease;
+                @JumpRelease.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnJumpRelease;
+                @JumpRelease.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnJumpRelease;
                 @Movement.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMovement;
                 @Movement.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMovement;
                 @Movement.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMovement;
@@ -456,6 +481,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
+                @JumpRelease.started += instance.OnJumpRelease;
+                @JumpRelease.performed += instance.OnJumpRelease;
+                @JumpRelease.canceled += instance.OnJumpRelease;
                 @Movement.started += instance.OnMovement;
                 @Movement.performed += instance.OnMovement;
                 @Movement.canceled += instance.OnMovement;
@@ -490,6 +518,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     public interface IGameplayActions
     {
         void OnJump(InputAction.CallbackContext context);
+        void OnJumpRelease(InputAction.CallbackContext context);
         void OnMovement(InputAction.CallbackContext context);
         void OnGrappleButton(InputAction.CallbackContext context);
         void OnGrappleToggle(InputAction.CallbackContext context);
