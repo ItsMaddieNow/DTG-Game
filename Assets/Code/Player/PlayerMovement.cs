@@ -43,23 +43,12 @@ public class PlayerMovement : MonoBehaviour
     public float SurfaceForce;
     public float SubmergedForce;
     
-    //Controls
-    //private PlayerControls Controls;
     private bool JumpButtonDown;
 
     [Header("Bubbling")]
     public Transform Bubble;
     public bool Bubbled;
     public float PullIntensity = 2.5f;
-
-    private void Awake()
-    {
-        //Controls = new PlayerControls();
-
-        //Controls.Gameplay.Jump.performed += ctx => JumpCall();
-        //Controls.Gameplay.Movement.performed += ctx => Direction = ctx.ReadValue<Vector2>();
-        //Controls.Gameplay.Movement.canceled += ctx => Direction = Vector2.zero;
-    }
 
     // Start is called before the first frame update
     void Start()
