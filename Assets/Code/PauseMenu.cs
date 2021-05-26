@@ -8,7 +8,6 @@ using UnityEngine.Rendering.Universal;
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
-    private PlayerControls Controls;
     public GameObject UIContainer;
     public RectTransform PauseMenuRectTransform;
     public RectTransform OpaqueRectTransform;
@@ -25,9 +24,6 @@ public class PauseMenu : MonoBehaviour
     {
         MyVolume.profile.TryGet(out MyDepthOfField);
         LeanTween.init();
-        //Starting Input
-        Controls = new PlayerControls();
-        Controls.Gameplay.Pause.started += ctx => PauseCall();
     }
 
     // Update is called once per frame
@@ -36,7 +32,7 @@ public class PauseMenu : MonoBehaviour
         
     }
 
-    void PauseCall()
+    public void PauseCall()
     {
         if (GameIsPaused)
         {
@@ -94,14 +90,4 @@ public class PauseMenu : MonoBehaviour
         Debug.Log("Dummy Save");
     }
     
-    private void OnEnable()
-    {
-        //Enables The Input WHen This Script is Enabled
-        Controls.Enable();
-    }
-    private void OnDisable()
-    {
-        //Disables The Input WHen This Script is Disabled
-        Controls.Disable();
-    }
 }
