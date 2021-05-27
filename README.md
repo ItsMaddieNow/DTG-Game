@@ -7,6 +7,25 @@
  - Image editors (e.g. Glimpse, Photoshop, Piskel)
  - Blender - 3D Modeling, UV Mapping, Texture Editing
 
+## VS Code Intellisense (Linux)
+1. Install Mono Complete and DotNet SDK
+
+	Example (Fedora)
+```bash
+ $ sudo dnf install dotnet-sdk-5.0 monocomplete
+```
+2. Configure Unity Preferences, Edit > Preferences > External Tools,
+	select VS Code (usr/bin/code or bin/code) as the default editor.
+3. In the same menu select the following to generate .csproj files for
+	- Embedded Packages
+	- Local Packages
+	- Git Packages
+	- Built In Packages
+	
+	and regenerate the project files
+4. Install the VS Code C# Extension
+5. Go Manage (the cog icon) > Extension Settings and set "Use Global Mono" to "always"
+
 ## Todo
 - [x] Player Movement
 	- [x] Walking

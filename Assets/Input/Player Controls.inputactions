@@ -22,17 +22,17 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Grapple Button",
+                    "name": "Grapple Gun Toggle",
                     "type": "Button",
-                    "id": "65ebe67a-f09c-4f78-bdf9-f5a99f008588",
+                    "id": "83a293b7-167e-4c5f-b4d8-b96d81520225",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 },
                 {
-                    "name": "Grapple Toggle",
+                    "name": "Grapple Button",
                     "type": "Button",
-                    "id": "0f9d2dcb-23c1-4f71-a95f-11fc150eed25",
+                    "id": "65ebe67a-f09c-4f78-bdf9-f5a99f008588",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -75,13 +75,21 @@
                     "id": "b293db4d-7347-4e86-a17f-6fbfefaa6ea5",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Press"
                 },
                 {
                     "name": "Quick Save",
                     "type": "Value",
                     "id": "08927aa9-9d57-4b16-bf6d-335c590fed60",
                     "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Mouse Movement",
+                    "type": "Value",
+                    "id": "488dc46b-6f45-4023-af82-ddf133c697f0",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
                 }
@@ -172,17 +180,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Grapple Button",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "67d1d579-a496-4ea2-b2f0-46c447878de2",
-                    "path": "<Keyboard>/g",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Grapple Toggle",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -306,6 +303,28 @@
                     "action": "Quick Save",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "d27b2410-b256-4cc6-a4e9-5639b0d06c7f",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Mouse Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8601c3a8-db55-453f-a50d-6a22eda370e6",
+                    "path": "<Keyboard>/g",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Grapple Gun Toggle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

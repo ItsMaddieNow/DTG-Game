@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -43,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
     public float SubmergedForce;
     
     //Controls
-    private PlayerControls Controls;
+    //private PlayerControls Controls;
     private bool JumpButtonDown;
 
     [Header("Bubbling")]
@@ -53,13 +54,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        Controls = new PlayerControls();
+        //Controls = new PlayerControls();
 
-        Controls.Gameplay.Jump.performed += ctx => JumpCall();
-        Controls.Gameplay.Jump.performed += ctx => JumpButtonDown = ctx.ReadValueAsButton();
-        Controls.Gameplay.Jump.canceled += ctx => JumpButtonDown = ctx.ReadValueAsButton();
-        Controls.Gameplay.Movement.performed += ctx => Direction = ctx.ReadValue<Vector2>();
-        Controls.Gameplay.Movement.canceled += ctx => Direction = Vector2.zero;
+        //Controls.Gameplay.Jump.performed += ctx => JumpCall();
+        //Controls.Gameplay.Movement.performed += ctx => Direction = ctx.ReadValue<Vector2>();
+        //Controls.Gameplay.Movement.canceled += ctx => Direction = Vector2.zero;
     }
 
     // Start is called before the first frame update
@@ -113,8 +112,9 @@ public class PlayerMovement : MonoBehaviour
         ModifyPhysics();
     }
 
-    void JumpCall()
+    public void JumpCall(InputAction.CallbackContext context)
     {
+        JumpButtonDown = context.ReadValueAsButton();
         JumpTimer = Time.time + JumpDelay;
     }
     
@@ -222,12 +222,17 @@ public class PlayerMovement : MonoBehaviour
         Gizmos.DrawLine(transform.position - new Vector3(HeadColliderOffset.x, -HeadColliderOffset.y, HeadColliderOffset.z), transform.position - new Vector3(HeadColliderOffset.x, -HeadColliderOffset.y, HeadColliderOffset.z) + -transform.up * HeadDistance);
     }
 
-    private void OnEnable()
+    /*private void OnEnable()
     {
         Controls.Gameplay.Enable();
     }
     private void OnDisable()
     {
         Controls.Gameplay.Disable();
+    }*/
+
+    public void MovementVectorUpdate(InputAction.CallbackContext context)
+    {
+        Direction = context.ReadValue<Vector2>();
     }
 }

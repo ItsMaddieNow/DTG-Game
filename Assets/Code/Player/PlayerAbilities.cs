@@ -15,7 +15,7 @@ public class PlayerAbilities : MonoBehaviour
     
     public float GrappleGunSmoothing = 5f;
     private bool CanGrapple;
-    private PlayerControls Controls;
+    //private PlayerControls Controls;
 
     [Header("Grappling Gun")]
     public GameObject GrapplingGun;
@@ -32,6 +32,7 @@ public class PlayerAbilities : MonoBehaviour
     private GrappleHookSide GrappleHookSideScript;
     private DistanceJoint2D Line;
     public float CoilRate = 1f;
+    private Vector2 MousePosition;
     
     [Header("Hook Distance")]
     public float MaxDistance = 10f;
@@ -58,19 +59,18 @@ public class PlayerAbilities : MonoBehaviour
     {
         Line = this.GetComponent<DistanceJoint2D>();
         Cam = Camera.main;
-        Controls = new PlayerControls();
-        Controls.Gameplay.Enable();
+        //Controls = new PlayerControls();
+        //Controls.Gameplay.Enable();
         PlayerMovementScript = this.GetComponent<PlayerMovement>();
         
-        Controls.Gameplay.GrappleButton.performed += ctx => Grapple();
-        Controls.Gameplay.GrappleToggle.performed += ctx => GrappleToggle();
-        Controls.Gameplay.GrappleDirection.performed += OnMouseMoved;
+        //Controls.Gameplay.GrappleButton.performed += ctx => Grapple();
+        //Controls.Gameplay.GrappleToggle.performed += ctx => GrappleToggle();
         
-        Controls.Gameplay.GrappleDistanceControl.performed += ctx => DistanceModifier = ctx.ReadValue<float>();
-        Controls.Gameplay.GrappleDistanceControl.canceled += ctx => DistanceModifier = 0f;
+        //Controls.Gameplay.GrappleDistanceControl.performed += ctx => DistanceModifier = ctx.ReadValue<float>();
+        //Controls.Gameplay.GrappleDistanceControl.canceled += ctx => DistanceModifier = 0f;
 
-        Controls.Gameplay.TorchEnable.performed += ctx => TorchEnable();
-        Controls.Gameplay.TorchThrow.performed += ctx => TorchThrow();
+        //Controls.Gameplay.TorchEnable.performed += ctx => TorchEnable();
+        //Controls.Gameplay.TorchThrow.performed += ctx => TorchThrow();
     }
 
     
@@ -98,7 +98,7 @@ public class PlayerAbilities : MonoBehaviour
         GrapplingGun.SetActive(CurrentItem == "Grappling Hook");
         
         HookSpawn.GetComponent<SpriteRenderer>().enabled = !HookPresent;
-        GrappleDirection = transform.position - Cam.ScreenToWorldPoint(Controls.Gameplay.GrappleDirection.ReadValue<Vector2>());
+        GrappleDirection = transform.position - Cam.ScreenToWorldPoint(MousePosition);
         GrappleGunDirection = Vector2.Lerp(GrappleGunDirection, new Vector2(GrappleDirection.x, Mathf.Abs(GrappleDirection.y)).normalized, GrappleGunSmoothing/Vector2.Distance(GrappleGunDirection, (new Vector2(GrappleDirection.x, Mathf.Abs(GrappleDirection.y))).normalized * Time.deltaTime));
         if (PlayerMovementScript.FacingRight)
         {
@@ -128,7 +128,7 @@ public class PlayerAbilities : MonoBehaviour
             Destroy(SpawnedHook);
         }
     }
-    void Grapple()
+    public void Grapple()
     {
         if (CurrentItem == "Grappling Hook")
         {
@@ -149,21 +149,24 @@ public class PlayerAbilities : MonoBehaviour
         }
     }
 
-    void GrappleToggle()
+    public void GrappleToggle(InputAction.CallbackContext context)
     {
-        if (CurrentItem == "Grappling Hook")
+        if(context.started)
         {
-            CurrentItem = null;
-            ItemSwitchCleanup();
-        }
-        else if(GrapplingHookAvaliable)
-        {
-            CurrentItem = "Grappling Hook";
-            ItemSwitchCleanup();
+            if (CurrentItem == "Grappling Hook")
+            {
+                CurrentItem = null;
+                ItemSwitchCleanup();
+            }
+            else if(GrapplingHookAvaliable)
+            {
+                CurrentItem = "Grappling Hook";
+                ItemSwitchCleanup();
+            }
         }
     }
 
-    void TorchEnable()
+    public void TorchEnable()
     {
         if (!PauseMenu.GameIsPaused){
             if (CurrentItem == "Torch")
@@ -193,15 +196,14 @@ public class PlayerAbilities : MonoBehaviour
         }
     }
 
-    private void TorchThrow()
+    public void TorchThrow()
     {
         
     }
     
-    private void OnMouseMoved(InputAction.CallbackContext context)
+    public void OnMouseMoved(InputAction.CallbackContext context)
     {
-        //callback
-        //Debug.Log(context.ReadValue<Vector2>());
+        MousePosition = context.ReadValue<Vector2>();
     }
 
     private void ItemSwitchCleanup()
@@ -211,5 +213,10 @@ public class PlayerAbilities : MonoBehaviour
             Destroy(SpawnedHook);
         }
         RopeRenderer.enabled = HookPresent;
+    }
+
+    public void GrappleDistanceControl(InputAction.CallbackContext context)
+    {
+        DistanceModifier = context.ReadValue<float>();
     }
 }
