@@ -9,6 +9,6 @@ public class StartButton : MonoBehaviour
     public void StartGame()
     {
         print("Hello world Welcome to the game");
-        SceneManager.LoadScene("Scene",  LoadSceneMode.Single);
+        SceneManager.LoadScene("scene",  LoadSceneMode.Single);
     }
 }
