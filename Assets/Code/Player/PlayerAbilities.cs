@@ -15,25 +15,35 @@ public class PlayerAbilities : MonoBehaviour
     
     public float GrappleGunSmoothing = 5f;
     private bool CanGrapple;
-    //private PlayerControls Controls;
 
     [Header("Grappling Gun")]
     public GameObject GrapplingGun;
     [SerializeField]
-    public Vector2 GunPositionWarp;
+    //public Vector2 GunPositionWarp;
+    public float GunRadiusScale = 0.75f;
+    public Vector2 EllipseDimensions = new Vector2(1,1);
+    public Vector2 GunPosition;
+    private Vector2 Target;
     
     [Header("Hook")] 
     public GameObject HookSpawn;
     public GameObject Hook;
+    public float HookSpeed = 10f;
     [SerializeField]
     private GameObject SpawnedHook;
     public bool HookPresent;
     public bool HookLatched;
+    //private NewHookScript GrappleHookSideScript;
     private GrappleHookSide GrappleHookSideScript;
     private DistanceJoint2D Line;
     public float CoilRate = 1f;
     private Vector2 MousePosition;
+    private Rigidbody2D GrappleHookRB;
     
+    //Hook States
+    public bool ReachedTarget;
+    public bool HookIsLatched;
+
     [Header("Hook Distance")]
     public float MaxDistance = 10f;
     public float MinDistance = 1.5f;
@@ -59,18 +69,8 @@ public class PlayerAbilities : MonoBehaviour
     {
         Line = this.GetComponent<DistanceJoint2D>();
         Cam = Camera.main;
-        //Controls = new PlayerControls();
-        //Controls.Gameplay.Enable();
-        PlayerMovementScript = this.GetComponent<PlayerMovement>();
-        
-        //Controls.Gameplay.GrappleButton.performed += ctx => Grapple();
-        //Controls.Gameplay.GrappleToggle.performed += ctx => GrappleToggle();
-        
-        //Controls.Gameplay.GrappleDistanceControl.performed += ctx => DistanceModifier = ctx.ReadValue<float>();
-        //Controls.Gameplay.GrappleDistanceControl.canceled += ctx => DistanceModifier = 0f;
 
-        //Controls.Gameplay.TorchEnable.performed += ctx => TorchEnable();
-        //Controls.Gameplay.TorchThrow.performed += ctx => TorchThrow();
+        PlayerMovementScript = this.GetComponent<PlayerMovement>();
     }
 
     
@@ -99,18 +99,51 @@ public class PlayerAbilities : MonoBehaviour
         
         HookSpawn.GetComponent<SpriteRenderer>().enabled = !HookPresent;
         GrappleDirection = transform.position - Cam.ScreenToWorldPoint(MousePosition);
-        GrappleGunDirection = Vector2.Lerp(GrappleGunDirection, new Vector2(GrappleDirection.x, Mathf.Abs(GrappleDirection.y)).normalized, GrappleGunSmoothing/Vector2.Distance(GrappleGunDirection, (new Vector2(GrappleDirection.x, Mathf.Abs(GrappleDirection.y))).normalized * Time.deltaTime));
-        if (PlayerMovementScript.FacingRight)
+        Vector2 CursorToPlayer = Cam.ScreenToWorldPoint(MousePosition) - transform.position;
+        //float tanc = Mathf.Tan(Vector2.Angle(transform.position, Cam.ScreenToWorldPoint(MousePosition))*Mathf.Deg2Rad);
+        float tanc = 1/Mathf.Tan(Mathf.Atan2(transform.position.y-Cam.ScreenToWorldPoint(MousePosition).y,transform.position.x-Cam.ScreenToWorldPoint(MousePosition).x));
+        float cotc = 1/tanc;
+        GunPosition = new Vector2(
+            (( CursorToPlayer.x < 0)? -1 : 1) *(PlayerMovementScript.FacingRight? 1 : -1) * (EllipseDimensions.x*EllipseDimensions.y/Mathf.Sqrt(EllipseDimensions.y*EllipseDimensions.y + EllipseDimensions.x*EllipseDimensions.x * cotc*cotc)),
+            (( CursorToPlayer.y > 0)? 1 : -1) * (EllipseDimensions.x*EllipseDimensions.y/Mathf.Sqrt(EllipseDimensions.y*EllipseDimensions.y * tanc*tanc +EllipseDimensions.x*EllipseDimensions.x))
+        );
+        //print("Grapple Gun Angle Degrees: " + Vector2.Angle(transform.position, Cam.ScreenToWorldPoint(MousePosition)) + ", Radians: " + Vector2.Angle(transform.position, Cam.ScreenToWorldPoint(MousePosition))*Mathf.Deg2Rad);
+        
+        GrappleGunDirection = Vector2.Lerp(GrappleGunDirection, GunPosition, GrappleGunSmoothing/Vector2.Distance(GrappleGunDirection, GunPosition * Time.deltaTime));
+        /*if (PlayerMovementScript.FacingRight)
         {
-            GrapplingGun.transform.localPosition = new Vector2(-GrappleGunDirection.x, GrappleGunDirection.y) * GunPositionWarp;
+            GrapplingGun.transform.localPosition = new Vector2(-GrappleGunDirection.x, GrappleGunDirection.y) * GunRadiusScale;
         }
         else
         {
-            GrapplingGun.transform.localPosition = GrappleGunDirection * GunPositionWarp;
+            GrapplingGun.transform.localPosition = GrappleGunDirection * GunRadiusScale;
+        }*/
+        GrapplingGun.transform.localPosition = GrappleGunDirection;
+        
+        GrapplingGun.transform.rotation = Quaternion.Euler(0, !(PlayerMovementScript.FacingRight^GrappleDirection.x<0) ? 0:180,Mathf.Rad2Deg * Mathf.Atan2((GrappleGunDirection * GunRadiusScale).y,(((GrappleDirection.x>0) ? -GrappleGunDirection:GrappleGunDirection) * GunRadiusScale).x));
+        
+        if (HookPresent)
+        {
+            Vector2 HookPos = SpawnedHook.transform.position;
+            if(!ReachedTarget && !HookIsLatched){
+                HookPos = Vector2.Lerp(SpawnedHook.transform.position, Target, HookSpeed / Vector2.Distance(HookPos, Target)*Time.deltaTime);
+            } else if (!HookIsLatched) {
+                Vector3 PointPos = HookSpawn.transform.position;
+                HookPos = Vector2.Lerp(SpawnedHook.transform.position, PointPos, HookSpeed / Vector2.Distance(HookPos, PointPos)*Time.deltaTime);
+            }
+
+            SpawnedHook.transform.position = HookPos;
+            if (HookPos == Target){
+                ReachedTarget = true;
+            }
+
+            if (HookPos == new Vector2(HookSpawn.transform.position.x,HookSpawn.transform.position.y) && ReachedTarget)
+            {
+                Destroy(SpawnedHook);
+                HookPresent = false;
+            }
         }
-        
-        GrapplingGun.transform.rotation = Quaternion.Euler(0, (GrappleDirection.x<0) ? 0:180,Mathf.Rad2Deg * Mathf.Atan2((GrappleGunDirection * GunPositionWarp).y,(((GrappleDirection.x<0) ? -GrappleGunDirection:GrappleGunDirection) * GunPositionWarp).x));
-        
+
         //Line Renderer
         RopeRenderer.enabled = HookPresent;
         RopeRenderer.SetPosition(1, HookSpawn.transform.position);
@@ -134,12 +167,12 @@ public class PlayerAbilities : MonoBehaviour
         {
             if (HookPresent == false)
             {
-                //W.I.P.
-                SpawnedHook = Instantiate(Hook, HookSpawn.transform.position,Quaternion.Euler(0, 0, Mathf.Rad2Deg * Mathf.Atan2(-GrappleDirection.y, -GrappleDirection.x)));
-                GrappleHookSideScript = SpawnedHook.GetComponent<GrappleHookSide>();
-                GrappleHookSideScript.Direction = GrappleDirection;
-                GrappleHookSideScript.PlayerScript = this;
-                GrappleHookSideScript.RopeRenderer = RopeRenderer;
+                //W.I.P.	
+	            SpawnedHook = Instantiate(Hook, HookSpawn.transform.position,Quaternion.Euler(0, 0, Mathf.Rad2Deg * Mathf.Atan2(-GrappleDirection.y, -GrappleDirection.x)));	
+	            GrappleHookSideScript = SpawnedHook.GetComponent<GrappleHookSide>();	
+	            GrappleHookSideScript.Direction = GrappleDirection;	
+                GrappleHookSideScript.PlayerScript = this;	
+	            GrappleHookSideScript.RopeRenderer = RopeRenderer;
                 HookPresent = true;
             }
             else

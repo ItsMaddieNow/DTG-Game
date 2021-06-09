@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6842319812025989750}
   - component: {fileID: -8320911978712150761}
-  - component: {fileID: 3288098239107062838}
   - component: {fileID: 1495426356860272863}
+  - component: {fileID: 1026706365500816228}
   m_Layer: 10
   m_Name: Hook Container
   m_TagString: Hook
@@ -55,23 +55,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &3288098239107062838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6842319812025989748}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 978aeaca2a1ce131e9d27b6d5cafecc9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Rb: {fileID: -8320911978712150761}
-  PlayerScript: {fileID: 0}
-  InitialForce: 3.46
-  Direction: {x: 0, y: 0}
-  RopeRenderer: {fileID: 0}
 --- !u!58 &1495426356860272863
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -88,6 +71,24 @@ CircleCollider2D:
   m_Offset: {x: -0.088388346, y: 0}
   serializedVersion: 2
   m_Radius: 0.19887379
+--- !u!114 &1026706365500816228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6842319812025989748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 978aeaca2a1ce131e9d27b6d5cafecc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Rb: {fileID: -8320911978712150761}
+  PlayerScript: {fileID: 0}
+  InitialForce: 10
+  Direction: {x: 0, y: 0}
+  RopeRenderer: {fileID: 0}
+  HookIsLatched: 0
 --- !u!1 &6842319812212107760
 GameObject:
   m_ObjectHideFlags: 0

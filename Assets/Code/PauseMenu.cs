@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.InputSystem;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -32,16 +33,18 @@ public class PauseMenu : MonoBehaviour
         
     }
 
-    public void PauseCall()
+    public void PauseCall(InputAction.CallbackContext context)
     {
-        if (GameIsPaused)
-        {
-            Resume();
-            
-        }
-        else
-        {
-            Pause();
+        if(context.started){
+            if (GameIsPaused)
+            {
+                Resume();
+                
+            }
+            else
+            {
+                Pause();
+            }
         }
     }
 
