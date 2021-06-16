@@ -104,7 +104,9 @@ public class PlayerMovement : MonoBehaviour
     public void JumpCall(InputAction.CallbackContext context)
     {
         JumpButtonDown = context.ReadValueAsButton();
-        JumpTimer = Time.time + JumpDelay;
+        if (context.performed){
+            JumpTimer = Time.time + JumpDelay;
+        }
     }
     
     void Jump()

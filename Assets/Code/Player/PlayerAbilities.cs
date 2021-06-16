@@ -104,7 +104,7 @@ public class PlayerAbilities : MonoBehaviour
         float tanc = 1/Mathf.Tan(Mathf.Atan2(transform.position.y-Cam.ScreenToWorldPoint(MousePosition).y,transform.position.x-Cam.ScreenToWorldPoint(MousePosition).x));
         float cotc = 1/tanc;
         GunPosition = new Vector2(
-            (( CursorToPlayer.x < 0)? -1 : 1) *(PlayerMovementScript.FacingRight? 1 : -1) * (EllipseDimensions.x*EllipseDimensions.y/Mathf.Sqrt(EllipseDimensions.y*EllipseDimensions.y + EllipseDimensions.x*EllipseDimensions.x * cotc*cotc)),
+            (( CursorToPlayer.x < 0)? -1 : 1) * (PlayerMovementScript.FacingRight? 1 : -1) * (EllipseDimensions.x*EllipseDimensions.y/Mathf.Sqrt(EllipseDimensions.y*EllipseDimensions.y + EllipseDimensions.x*EllipseDimensions.x * cotc*cotc)),
             (( CursorToPlayer.y > 0)? 1 : -1) * (EllipseDimensions.x*EllipseDimensions.y/Mathf.Sqrt(EllipseDimensions.y*EllipseDimensions.y * tanc*tanc +EllipseDimensions.x*EllipseDimensions.x))
         );
         //print("Grapple Gun Angle Degrees: " + Vector2.Angle(transform.position, Cam.ScreenToWorldPoint(MousePosition)) + ", Radians: " + Vector2.Angle(transform.position, Cam.ScreenToWorldPoint(MousePosition))*Mathf.Deg2Rad);
@@ -120,7 +120,7 @@ public class PlayerAbilities : MonoBehaviour
         }*/
         GrapplingGun.transform.localPosition = GrappleGunDirection;
         
-        GrapplingGun.transform.rotation = Quaternion.Euler(0, !(PlayerMovementScript.FacingRight^GrappleDirection.x<0) ? 0:180,Mathf.Rad2Deg * Mathf.Atan2((GrappleGunDirection * GunRadiusScale).y,(((GrappleDirection.x>0) ? -GrappleGunDirection:GrappleGunDirection) * GunRadiusScale).x));
+        GrapplingGun.transform.rotation = Quaternion.Euler(0, !(PlayerMovementScript.FacingRight ^GrappleDirection.x<0) ? 0:180,Mathf.Rad2Deg * Mathf.Atan2((GrappleGunDirection * GunRadiusScale).y,(((GrappleDirection.x>0) ? -GrappleGunDirection:GrappleGunDirection) * GunRadiusScale).x));
         
         if (HookPresent)
         {
