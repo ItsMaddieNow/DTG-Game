@@ -120,7 +120,7 @@ public class PlayerAbilities : MonoBehaviour
         }*/
         GrapplingGun.transform.localPosition = GrappleGunDirection;
         
-        GrapplingGun.transform.rotation = Quaternion.Euler(0, !(PlayerMovementScript.FacingRight ^GrappleDirection.x<0) ? 0:180,Mathf.Rad2Deg * Mathf.Atan2((GrappleGunDirection * GunRadiusScale).y,(((GrappleDirection.x>0) ? -GrappleGunDirection:GrappleGunDirection) * GunRadiusScale).x));
+        GrapplingGun.transform.rotation = Quaternion.Euler(PlayerMovementScript.FacingRight?0:180, !(PlayerMovementScript.FacingRight ^ GrappleDirection.x<0) ? 0:180,(PlayerMovementScript.FacingRight? 1:-1) * Mathf.Rad2Deg * Mathf.Atan2((GrappleGunDirection * GunRadiusScale).y,(((GrappleDirection.x>0) ? -GrappleGunDirection:GrappleGunDirection) * GunRadiusScale).x));
         
         if (HookPresent)
         {
