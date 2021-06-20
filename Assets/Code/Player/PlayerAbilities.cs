@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerAbilities : MonoBehaviour
 {
-    public string CurrentItem;
+    public Items CurrentItem;
     public PlayerMovement PlayerMovementScript;
     
     public Vector2 GrappleDirection;
@@ -65,6 +65,12 @@ public class PlayerAbilities : MonoBehaviour
     [Header("Tools")]
     public static bool GrapplingHookAvaliable = false;
     public static bool TorchAvaliable = false;
+    public enum Items
+    {
+        None = 0,
+        GrapplingHook,
+        Torch
+    }
     private void Awake()
     {
         Line = this.GetComponent<DistanceJoint2D>();
@@ -86,16 +92,16 @@ public class PlayerAbilities : MonoBehaviour
     {
         //Torch
         TorchContainer.transform.eulerAngles = Vector3.zero;
-        Torch.SetActive(CurrentItem == "Torch");
+        Torch.SetActive(CurrentItem == Items.Torch);
         //Setting Torch Position
-        if (CurrentItem == "Torch")
+        if (CurrentItem == Items.Torch)
         {
             Torch.transform.position = Vector2.Lerp(Torch.transform.position, TorchAnchor.transform.position, TorchSmoothing/Vector2.Distance(Torch.transform.position, TorchAnchor.transform.position)*Time.deltaTime);
             Torch.transform.eulerAngles = new Vector3(0, 0, Mathf.Lerp(-30f,30f, Mathf.InverseLerp(TorchAnchor.transform.localPosition.x, -TorchAnchor.transform.localPosition.x, Torch.transform.localPosition.x)));
         }
         
         //Grappling Hook
-        GrapplingGun.SetActive(CurrentItem == "Grappling Hook");
+        GrapplingGun.SetActive(CurrentItem == Items.GrapplingHook);
         
         HookSpawn.GetComponent<SpriteRenderer>().enabled = !HookPresent;
         GrappleDirection = transform.position - Cam.ScreenToWorldPoint(MousePosition);
@@ -163,7 +169,7 @@ public class PlayerAbilities : MonoBehaviour
     }
     public void Grapple()
     {
-        if (CurrentItem == "Grappling Hook")
+        if (CurrentItem == Items.GrapplingHook)
         {
             if (HookPresent == false)
             {
@@ -186,14 +192,14 @@ public class PlayerAbilities : MonoBehaviour
     {
         if(context.started)
         {
-            if (CurrentItem == "Grappling Hook")
+            if (CurrentItem == Items.GrapplingHook)
             {
-                CurrentItem = null;
+                CurrentItem = Items.None;
                 ItemSwitchCleanup();
             }
             else if(GrapplingHookAvaliable)
             {
-                CurrentItem = "Grappling Hook";
+                CurrentItem = Items.GrapplingHook;
                 ItemSwitchCleanup();
             }
         }
@@ -202,14 +208,14 @@ public class PlayerAbilities : MonoBehaviour
     public void TorchEnable()
     {
         if (!PauseMenu.GameIsPaused){
-            if (CurrentItem == "Torch")
+            if (CurrentItem == Items.Torch)
             {
-                CurrentItem = null;
+                CurrentItem = Items.None;
                 ItemSwitchCleanup();
             }
             else if(TorchAvaliable)
             {
-                CurrentItem = "Torch";
+                CurrentItem = Items.Torch;
                 ItemSwitchCleanup();
                 Torch.SetActive(true);
                 //Flame.SetActive();
@@ -241,7 +247,7 @@ public class PlayerAbilities : MonoBehaviour
 
     private void ItemSwitchCleanup()
     {
-        if (CurrentItem != "Grappling Hook")
+        if (CurrentItem != Items.GrapplingHook)
         {
             Destroy(SpawnedHook);
         }
