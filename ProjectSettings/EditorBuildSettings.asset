@@ -7,9 +7,15 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 0
     path: 
-    guid: 2cda990e2423bbf4892e6590ba056729
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Main menu/Main menu.unity
+    guid: 60482bdacdc99e94f94c046f4e4b735b
   - enabled: 1
     path: Assets/Scenes/Scene.unity
     guid: 1e6734222096148c7a4f92c21d94134d
+  - enabled: 1
+    path: Assets/Scenes/settings.unity
+    guid: a4cc02e657a691a48898a01aea437c78
   m_configObjects:
-    com.unity.input.settings: {fileID: 11400000, guid: 389f8775eb0520477a32a34feac2a20b, type: 2}
+    com.unity.input.settings: {fileID: 11400000, guid: 2c5d611c8a242164ab2bf99e36bb016c, type: 2}
