@@ -87,7 +87,6 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
-     <Compile Include="Assets\Code\Level Elements\MovingPlatform.cs" />
      <Compile Include="Assets\Code\LightController.cs" />
      <Compile Include="Assets\Code\Player\PlayerAbilities.cs" />
      <Compile Include="Assets\Code\Level Elements\FallingLevelSegment.cs" />
@@ -745,6 +744,10 @@
       <Project>{4b0c5c79-733e-4389-e736-bf95578459e1}</Project>
       <Name>Unity.TextMeshPro</Name>
     </ProjectReference>
+    <ProjectReference Include="BezierSolution.Runtime.csproj">
+      <Project>{513788d1-249a-3a21-3ef8-e97096833ad8}</Project>
+      <Name>BezierSolution.Runtime</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.Searcher.Editor.csproj">
       <Project>{d77cf88e-eb6a-c27d-821c-cafa29f3986e}</Project>
       <Name>Unity.Searcher.Editor</Name>
@@ -816,6 +819,10 @@
     <ProjectReference Include="Unity.RenderPipelines.Universal.Editor.csproj">
       <Project>{4ab74f49-663c-cd2d-1143-ea35ee5774b2}</Project>
       <Name>Unity.RenderPipelines.Universal.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="BezierSolution.Editor.csproj">
+      <Project>{721a5c27-f4f4-084e-e2bc-c2f9a71ac371}</Project>
+      <Name>BezierSolution.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.Animation.Triangle.Runtime.csproj">
       <Project>{2c42c2c1-75cf-92f9-f134-691f3822764b}</Project>

@@ -1,14 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using BezierSolution;
 
+[RequireComponent(typeof(BezierWalkerWithSpeed))]
 public class PlatformActivator : MonoBehaviour
 {
-    private MovingPlatform Platform;
+    private BezierWalkerWithSpeed Walker;
     // Start is called before the first frame update
     void Start()
     {
-        Platform = GetComponent<MovingPlatform>();
+        Walker = GetComponent<BezierWalkerWithSpeed>();
+        transform.position = Walker.spline[0].position;
     }
 
     // Update is called once per frame
@@ -18,7 +21,7 @@ public class PlatformActivator : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.CompareTag("Hook")){
-            Platform.Moving = true;
+            Walker.enabled = true;
         }
     }
 }
