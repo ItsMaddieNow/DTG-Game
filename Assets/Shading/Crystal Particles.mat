@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Crystal Particles
-  m_Shader: {fileID: -6465566751694194690, guid: 92955497e98bbdc6ca74dd65623b0b89, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 9970f3cb670435a1cae9053524da451f, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -19,10 +19,38 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Emision:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Emission:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainText:
         m_Texture: {fileID: 2800000, guid: d8bad2edb1959b5be90114b72b2874b8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats: []
-    m_Colors: []
+    m_Colors:
+    - Color_5151BE0E: {r: 0.8980393, g: 0.8980393, b: 0.8980393, a: 1}
+    - Color_75D2DE2B: {r: 0.17139463, g: 0.025347091, b: 0.28243902, a: 1}
+    - Color_87A3FF06: {r: 0.454902, g: 2.196079, b: 3.592157, a: 1}
+    - Color_E01BD533: {r: 0.1137255, g: 0.5490196, b: 0.8980392, a: 1}
   m_BuildTextureStacks: []

@@ -8,8 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Moving Platform
-  m_Shader: {fileID: -6465566751694194690, guid: 9970f3cb670435a1cae9053524da451f,
-    type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 9970f3cb670435a1cae9053524da451f, type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -24,10 +23,27 @@ Material:
         m_Texture: {fileID: 2800000, guid: 7409e14a50e35b50f9af7346ad6384b0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Emission:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: cc297a5417839c8eb8f7d1a83d8465dd, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats: []
     m_Colors:
-    - Color_75D2DE2B: {r: 1.168628, g: 1.301961, b: 1.819608, a: 1}
+    - Color_75D2DE2B: {r: 4.1357846, g: 4.673773, b: 6.4222345, a: 1}
+  m_BuildTextureStacks: []

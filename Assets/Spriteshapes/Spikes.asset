@@ -22,27 +22,27 @@ MonoBehaviour:
   m_CornerSprites:
   - m_CornerType: 0
     m_Sprites:
-    - {fileID: 0}
+    - {fileID: 21300000, guid: aa28b404a9a61c4eebc3e841c51988d7, type: 3}
   - m_CornerType: 1
     m_Sprites:
-    - {fileID: 0}
+    - {fileID: 21300000, guid: dd47e9c79c8c7bef68efc1c772111cc4, type: 3}
   - m_CornerType: 2
     m_Sprites:
-    - {fileID: 0}
+    - {fileID: 21300000, guid: 5e8ddb7bed35193238240d7c7fac6065, type: 3}
   - m_CornerType: 3
     m_Sprites:
-    - {fileID: 0}
+    - {fileID: 21300000, guid: b9de3a9de8f4cf8288e425b17d3c932a, type: 3}
   - m_CornerType: 4
     m_Sprites:
-    - {fileID: 0}
+    - {fileID: 21300000, guid: 3114532530b11901c96e1fbc62dc635c, type: 3}
   - m_CornerType: 5
     m_Sprites:
-    - {fileID: 0}
+    - {fileID: 21300000, guid: 3114532530b11901c96e1fbc62dc635c, type: 3}
   - m_CornerType: 6
     m_Sprites:
-    - {fileID: 0}
+    - {fileID: 21300000, guid: 3114532530b11901c96e1fbc62dc635c, type: 3}
   - m_CornerType: 7
     m_Sprites:
-    - {fileID: 0}
+    - {fileID: 21300000, guid: 3114532530b11901c96e1fbc62dc635c, type: 3}
   m_FillOffset: 0
   m_UseSpriteBorders: 1

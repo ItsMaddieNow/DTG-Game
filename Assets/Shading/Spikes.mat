@@ -8,8 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Spikes
-  m_Shader: {fileID: -6465566751694194690, guid: 9970f3cb670435a1cae9053524da451f,
-    type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 9970f3cb670435a1cae9053524da451f, type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -21,13 +20,30 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Emision:
-        m_Texture: {fileID: 2800000, guid: 3f66ca309b7c539778d8c94601fa644f, type: 3}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Emission:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: c8b69a2557e19c34aa657ae5879b8ffc, type: 3}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
     m_Colors:
-    - Color_75D2DE2B: {r: 2.6980393, g: 1.7882353, b: 2.9960785, a: 1}
+    - Color_75D2DE2B: {r: 2.458025, g: 1.4201922, b: 5.2164755, a: 1}
+  m_BuildTextureStacks: []
