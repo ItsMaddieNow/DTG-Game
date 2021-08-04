@@ -43,6 +43,7 @@
      <Compile Include="Assets\Code\Level Elements\SegmentFall.cs" />
      <Compile Include="Assets\Code\Player\GrappleHookSide.cs" />
      <Compile Include="Assets\Colorblind Effect\Assets\Scripts\Colorblind.cs" />
+     <Compile Include="Assets\Code\Saving\Checkpoint.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
      <Compile Include="Assets\Code\Level Elements\BubbleEmitter.cs" />
@@ -64,10 +65,12 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
+     <Compile Include="Assets\Code\Saving\DebugSaveLoader.cs" />
      <Compile Include="Assets\Code\Level Elements\PlatformActivator.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
+     <Compile Include="Assets\Code\Saving\SaveMonoBehaviourAmbassador.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
      <Compile Include="Assets\Code\RotationLock.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
@@ -100,7 +103,7 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
      <Compile Include="Assets\Code\Level Elements\Hazard.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
-     <Compile Include="Assets\Code\Saving\DebugSaveLoader.cs" />
+     <Compile Include="Assets\Code\Saving\CheckPointIndex.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -703,6 +706,10 @@
       <Project>{49ac0fba-27af-d49a-7736-ded55616bb17}</Project>
       <Name>Unity.2D.Animation.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.VisualEffectGraph.Editor.csproj">
+      <Project>{2c16c702-024d-7b56-c5fb-5336e242244b}</Project>
+      <Name>Unity.VisualEffectGraph.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.InternalAPIEngineBridge.001.csproj">
       <Project>{b2ceb3b8-77d9-0ee5-085b-5d9d81628b0a}</Project>
       <Name>Unity.InternalAPIEngineBridge.001</Name>
@@ -738,6 +745,10 @@
     <ProjectReference Include="Unity.VisualStudio.Editor.csproj">
       <Project>{64f093f5-64de-5efc-b17d-4e2e68e2b94a}</Project>
       <Name>Unity.VisualStudio.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualEffectGraph.Runtime.csproj">
+      <Project>{b4d9ded4-1c4a-f883-6616-44fade802fd8}</Project>
+      <Name>Unity.VisualEffectGraph.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Timeline.csproj">
       <Project>{1d791be2-f877-9449-dcd1-7b17807b0655}</Project>
@@ -874,6 +885,10 @@
     <ProjectReference Include="Unity.2D.SpriteShape.Runtime.csproj">
       <Project>{8af196f9-b58d-ae00-7a32-4bdaca78938e}</Project>
       <Name>Unity.2D.SpriteShape.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="AsepriteImporter.Editor.csproj">
+      <Project>{8b5e622f-7f07-4624-71b9-6467d7219729}</Project>
+      <Name>AsepriteImporter.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
