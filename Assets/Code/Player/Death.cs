@@ -1,10 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Death : MonoBehaviour
 {
     public static bool TurtleSavingIsAHobby=false;
+    public enum DeathCauses
+    {
+        Spikes,
+        Water
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -29,25 +35,27 @@ public class Death : MonoBehaviour
                 return;
             case "Water":
                 if (TurtleSavingIsAHobby){
-                    DeathEvent("Water");
+                    DeathEvent(DeathCauses.Water);
                 }
                 return;
             default:
-                return;
+                return; 
         }
     }
-    public void DeathEvent(string CauseOfDeath){
+    public void DeathEvent(DeathCauses CauseOfDeath){
         switch (CauseOfDeath)
             {
-                case "Spikes":
+                case DeathCauses.Spikes:
                     print("You got pricked by some pricks ya prick");
                     break;
-                case "Water":
+                case DeathCauses.Water:
                     print("Turtle Saving Is A Hobby");
                     break;
                 default:
                     print("Undefined Death of Type\""+ CauseOfDeath + "\" ");
                     break;
             }
+        SceneManager.LoadScene("scene");
     }
+   
 }
