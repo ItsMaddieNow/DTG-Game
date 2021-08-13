@@ -5,7 +5,7 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 public class Checkpoint : MonoBehaviour
 {
-    public enum Checkpoints{Start=0, Grapple1=1}
+    public enum Checkpoints{Start=0, Grapple1=1, Grapple2}
     public Checkpoints ThisCheckpoint;
     public CheckpointIndex checkpointIndex;
     public float RespawnEscalation = 1f;
@@ -17,11 +17,18 @@ public class Checkpoint : MonoBehaviour
         Gizmos.color = Color.cyan;
         Gizmos.DrawSphere(transform.position + new Vector3(0, RespawnEscalation, 0), 4f/32);
     }
+
+    void Awake(){
+        thisRenderer.material = new Material(thisRenderer.material);
+    }
     public void OnTriggerEnter2D(Collider2D col) {
         if (col.tag == "Player"&&!IsActiveCheckpoint) {
             IsActiveCheckpoint = true;
             // Dims Previous Checkpoint 
-            if (SaveManagement.saveData.CheckpointIndex!=0) checkpointIndex.NumberToCheckpoint[SaveManagement.saveData.CheckpointIndex].Deactivate();
+            if (SaveManagement.saveData.CheckpointIndex!=0) {
+                checkpointIndex.NumberToCheckpoint[SaveManagement.saveData.CheckpointIndex].Deactivate();
+                print("deactivated: " + checkpointIndex.NumberToCheckpoint[SaveManagement.saveData.CheckpointIndex]);
+            }
             
             // Update Save Slot
             SaveManagement.saveData.Position[0] = transform.position.x;
@@ -51,6 +58,8 @@ public class Checkpoint : MonoBehaviour
                 return 0;
             case Checkpoints.Grapple1 :
                 return 1;
+            case Checkpoints.Grapple2 :
+                return 2;
             default :
                 return 0;
         }
@@ -76,6 +85,7 @@ public class Checkpoint : MonoBehaviour
     // Dimming Coroutine
     IEnumerator WrongLever(){
         float AnimEndPoint = Time.time + LightingTransitionTime;
+
         while (AnimEndPoint > Time.time) {
             float LV = (Time.time - AnimEndPoint)/LightingTransitionTime+1f;
             ThisLight.intensity = Mathf.Lerp(1f, 0f, LV);
