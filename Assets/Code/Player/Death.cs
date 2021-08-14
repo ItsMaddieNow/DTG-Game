@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,7 +9,8 @@ public class Death : MonoBehaviour
     public enum DeathCauses
     {
         Spikes,
-        Water
+        Water,
+        Lava
     }
     // Start is called before the first frame update
     void Start()
@@ -50,6 +51,9 @@ public class Death : MonoBehaviour
                     break;
                 case DeathCauses.Water:
                     print("Turtle Saving Is A Hobby");
+                    break;
+                case DeathCauses.Lava:
+                    print("You were burnt to a crisp");
                     break;
                 default:
                     print("Undefined Death of Type\""+ CauseOfDeath + "\" ");
