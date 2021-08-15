@@ -44,12 +44,15 @@
      <Compile Include="Assets\Code\Player\GrappleHookSide.cs" />
      <Compile Include="Assets\Colorblind Effect\Assets\Scripts\Colorblind.cs" />
      <Compile Include="Assets\Code\Saving\Checkpoint.cs" />
+     <Compile Include="Assets\Code\Level Elements\LavaSaveStateUpdater.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
      <Compile Include="Assets\Code\Level Elements\BubbleEmitter.cs" />
+     <Compile Include="Assets\Code\WalkerEnder.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
      <Compile Include="Assets\Code\Rebinding UI\RebindingDisplay.cs" />
+     <Compile Include="Assets\Code\Saving\LavaManager.cs" />
      <Compile Include="Assets\Code\Cheats.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
@@ -57,6 +60,7 @@
      <Compile Include="Assets\Code\DevTools.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
+     <Compile Include="Assets\Code\SwingSequenceActivator.cs" />
      <Compile Include="Assets\Code\Player\Death.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />

@@ -13,6 +13,7 @@ public class SaveData
     
     public float[] Position = {1f,1f};
     public int CheckpointIndex = 0;
+    public LavaManager.LavaState lavaState = LavaManager.LavaState.Start;
 }
 
 public static class SaveManagement

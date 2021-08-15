@@ -7,13 +7,15 @@ public class LavaRiser : MonoBehaviour
 {
     [SerializeField]
     private BezierWalkerWithSpeed Walker;
-
+    [SerializeField]
+    private LavaManager lavaManager;
+    
     // Start is called before the first frame update
     void Start()
     {
         
     }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -21,7 +23,8 @@ public class LavaRiser : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other) {
         print("Collission Detected");
-        if(other.gameObject.CompareTag("Player")){
+        //print(SaveManagement.saveData.lavaState);
+        if(other.gameObject.CompareTag("Player") & SaveManagement.saveData.lavaState == LavaManager.LavaState.Start){
             print("Lava Triggered");
             Walker.enabled = true;
         }

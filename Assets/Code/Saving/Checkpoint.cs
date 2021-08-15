@@ -5,7 +5,7 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 public class Checkpoint : MonoBehaviour
 {
-    public enum Checkpoints{Start=0, Grapple1=1, Grapple2}
+    public enum Checkpoints{Start=0, Grapple1=1, Grapple2, Grapple3, Grapple4}
     public Checkpoints ThisCheckpoint;
     public CheckpointIndex checkpointIndex;
     public float RespawnEscalation = 1f;
@@ -60,6 +60,10 @@ public class Checkpoint : MonoBehaviour
                 return 1;
             case Checkpoints.Grapple2 :
                 return 2;
+            case Checkpoints.Grapple3 :
+                return 3;
+            case Checkpoints.Grapple4 :
+                return 4;
             default :
                 return 0;
         }
