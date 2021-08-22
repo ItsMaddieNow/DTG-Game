@@ -20,7 +20,7 @@ public class GrappleHookSide : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Rb.AddForce(-Direction * InitialForce, ForceMode2D.Impulse);
+        Rb.AddForce(-Direction.normalized * InitialForce, ForceMode2D.Impulse);
     }
 
     // Update is called once per frame

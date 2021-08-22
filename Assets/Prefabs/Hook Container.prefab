@@ -85,7 +85,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Rb: {fileID: -8320911978712150761}
   PlayerScript: {fileID: 0}
-  InitialForce: 10
+  InitialForce: 25
   Direction: {x: 0, y: 0}
   RopeRenderer: {fileID: 0}
   HookIsLatched: 0
