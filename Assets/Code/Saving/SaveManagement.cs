@@ -20,7 +20,7 @@ public static class SaveManagement
 {
     public static SaveData saveData = new SaveData();
     public static bool SaveLoaded = false;
-    static string SaveSlotDir = Application.persistentDataPath + "/Debug"; //Set Default Save Slot to Debug
+    public static string SaveSlotDir = Application.persistentDataPath + "/Debug"; //Set Default Save Slot to Debug
 
     public static void CreateSave(string SaveName){
         Directory.CreateDirectory(SaveSlotDir);
@@ -40,7 +40,7 @@ public static class SaveManagement
         Directory.CreateDirectory(SaveSlotDir);
         saveData.SaveVersion = Application.version;
         saveData.Time = System.DateTime.Now.Hour + ":" + System.DateTime.Now.Minute + " " + System.DateTime.Now.Day + "/" + System.DateTime.Now.Month + "/" + System.DateTime.Now.Year;
-        
+
         string json = JsonUtility.ToJson(saveData);
         BinaryFormatter bf = new BinaryFormatter();
 
