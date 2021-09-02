@@ -45,6 +45,8 @@ public class Quitter : MonoBehaviour
         switch(QuitTo)
         {
             case QuitType.Title:
+                Time.timeScale = 1f;
+                PauseMenu.GameIsPaused = false;
                 SceneManager.LoadScene("Main menu");
                 break;
             case QuitType.OS:
