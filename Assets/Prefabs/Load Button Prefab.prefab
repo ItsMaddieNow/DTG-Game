@@ -149,6 +149,8 @@ GameObject:
   - component: {fileID: 9072714948146772328}
   - component: {fileID: 9072714948146772331}
   - component: {fileID: 5005709325065382380}
+  - component: {fileID: 7294703733078170264}
+  - component: {fileID: 8658787261143801454}
   m_Layer: 5
   m_Name: Load Button Prefab
   m_TagString: Untagged
@@ -258,7 +260,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 9072714948146772328}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7294703733078170264}
+        m_TargetAssemblyTypeName: LoadSaves, Assembly-CSharp
+        m_MethodName: Load
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8658787261143801454}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: scene
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5005709325065382380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,8 +298,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SaveNameText: {fileID: 9072714948898694192}
+  LoadOfSaves: {fileID: 7294703733078170264}
   SaveDateText: {fileID: 2418397467760581716}
   RT: {fileID: 9072714948146772330}
+--- !u!114 &7294703733078170264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9072714948146772325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb7cd2b6180c9fa458b15ab00ab29bd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SaveDirectory: 
+--- !u!114 &8658787261143801454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9072714948146772325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2c8697017f061e4fa40eefd94fdae6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9072714948898694194
 GameObject:
   m_ObjectHideFlags: 0

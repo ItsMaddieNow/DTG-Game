@@ -29,6 +29,7 @@ public class LoadMenu : MonoBehaviour
             button.RT.anchoredPosition = new Vector2(button.RT.anchoredPosition.x,-ButtonPosition);
             button.SaveNameText.text = saveData.SaveName;
             button.SaveDateText.text = saveData.Time;
+            button.LoadOfSaves.SaveDirectory = save;
             ButtonPosition += ButtonVerticalSize;
         }
 
