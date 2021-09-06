@@ -51,12 +51,15 @@
      <Compile Include="Assets\Code\Level Elements\BubbleEmitter.cs" />
      <Compile Include="Assets\Code\WalkerEnder.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
+     <Compile Include="Assets\Code\ButtonData.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
      <Compile Include="Assets\Code\Rebinding UI\RebindingDisplay.cs" />
      <Compile Include="Assets\Code\Saving\LavaManager.cs" />
      <Compile Include="Assets\Code\Cheats.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
+     <Compile Include="Assets\Code\Saving\LoadSaves.cs" />
+     <Compile Include="Assets\Code\Saving\LoadMenu.cs" />
      <Compile Include="Assets\Code\UI\LevelLoadingBar.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
      <Compile Include="Assets\Code\DevTools.cs" />
@@ -113,9 +116,6 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
      <Compile Include="Assets\Code\Level Elements\Hazard.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
-     <Compile Include="Assets\Code\Saving\LoadSaves.cs" />
-     <Compile Include="Assets\Code\Saving\LoadMenu.cs" />
-     <Compile Include="Assets\Code\ButtonData.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
