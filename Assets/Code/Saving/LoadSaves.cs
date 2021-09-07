@@ -10,5 +10,10 @@ public class LoadSaves: MonoBehaviour
         SaveManagement.SaveSlotDir = SaveDirectory;
         SaveManagement.Load("Loading error");
     }
+    /*public void LoadNoCreate()
+    {
+        SaveManagement.SaveSlotDir = SaveDirectory;
+        SaveManagement.LoadNoCreate("Loading error");
+    }*/
 }
     

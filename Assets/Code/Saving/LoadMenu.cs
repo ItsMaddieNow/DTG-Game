@@ -10,16 +10,20 @@ public class LoadMenu : MonoBehaviour
     public RectTransform Content;
     public float ButtonVerticalSize = 45f;
     private string Savedirectory;
+    public MainLevelLoad MainLevelLoader;
     public void Start()
     {
         Savedirectory = Application.persistentDataPath + "/saves";
+        Load();
     }
     public void Load() 
     {
+        Directory.CreateDirectory(Savedirectory);
         string[] Saves = Directory.GetDirectories(Savedirectory);
         print("Starting loading");
         Content.sizeDelta = new Vector2(Content.sizeDelta.x,Saves.Length*ButtonVerticalSize);
-         float ButtonPosition = 5f;
+        buttonprefab.SceneLoader.LoadManager = MainLevelLoader;
+        float ButtonPosition = 5f;
         foreach (string save in Saves)
         {
             print("Loading:" + save );

@@ -23,6 +23,7 @@ public static class SaveManagement
     public static string SaveSlotDir = Application.persistentDataPath + "/saves/Debug"; //Set Default Save Slot to Debug
 
     public static void CreateSave(string SaveName){
+        Debug.Log("Creating Save, Name: " + SaveName);
         Directory.CreateDirectory(SaveSlotDir);
         SaveData data = new SaveData();
         data.SaveName = SaveName;
@@ -58,6 +59,15 @@ public static class SaveManagement
         SaveLoaded = true;
         Debug.Log("Loaded Saveslot: " + saveData.SaveName);
     }
+    /*public static void LoadNoCreate(string SaveName){
+        // Checks if SaveData Exists in Save Slot and loads it into a class that can be pulled from if found, creates save if it isn't.s
+        if (File.Exists(SaveSlotDir + "/SaveData.json")){
+            string json = File.ReadAllText(SaveSlotDir + "/SaveData.json");
+            saveData = JsonUtility.FromJson<SaveData>(json);
+        }
+        SaveLoaded = true;
+        Debug.Log("Loaded Saveslot: " + saveData.SaveName);
+    }*/
     public static void AsynchronousLoad(string SaveName){
         // Checks if SaveData Exists in Save Slot and loads it into a class that can be pulled from if found, creates save if it isn't.s
         if (File.Exists(SaveSlotDir + "/SaveData.json")){

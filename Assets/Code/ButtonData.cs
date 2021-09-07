@@ -6,6 +6,7 @@ public class ButtonData : MonoBehaviour
 {
     public TMP_Text SaveNameText;
     public LoadSaves LoadOfSaves;
+    public ButtonSceneLoader SceneLoader;
     public TMP_Text SaveDateText;
     public RectTransform RT;
 }

@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: 9072714948146772331}
   - component: {fileID: 5005709325065382380}
   - component: {fileID: 7294703733078170264}
-  - component: {fileID: 8658787261143801454}
+  - component: {fileID: 5019304791321007096}
   m_Layer: 5
   m_Name: Load Button Prefab
   m_TagString: Untagged
@@ -273,10 +273,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8658787261143801454}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
+      - m_Target: {fileID: 5019304791321007096}
+        m_TargetAssemblyTypeName: ButtonSceneLoader, Assembly-CSharp
+        m_MethodName: LoadLevel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -299,6 +299,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SaveNameText: {fileID: 9072714948898694192}
   LoadOfSaves: {fileID: 7294703733078170264}
+  SceneLoader: {fileID: 5019304791321007096}
   SaveDateText: {fileID: 2418397467760581716}
   RT: {fileID: 9072714948146772330}
 --- !u!114 &7294703733078170264
@@ -314,7 +315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SaveDirectory: 
---- !u!114 &8658787261143801454
+--- !u!114 &5019304791321007096
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -323,9 +324,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 9072714948146772325}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2c8697017f061e4fa40eefd94fdae6e, type: 3}
+  m_Script: {fileID: 11500000, guid: dcf35d3406b218b9f8bf2de660834663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LoadManager: {fileID: 0}
 --- !u!1 &9072714948898694194
 GameObject:
   m_ObjectHideFlags: 0
